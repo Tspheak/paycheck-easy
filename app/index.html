@@ -1,76 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Web calculator — PayCheck Easy</title>
-<meta name="description" content="The PayCheck Easy web calculator is coming soon. Get the Android app on Google Play." />
-<link rel="icon" type="image/png" href="../assets/icon.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/style.css" />
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/paycheck-easy/app/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Rough paycheck estimate. Not tax or payroll advice.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="PayCheck Easy">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>PayCheck Easy</title>
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <header>
-    <div class="container header-inner">
-      <a class="brand" href="../">
-        <img src="../assets/icon.png" alt="PayCheck Easy icon" width="40" height="40" />
-        <span>PayCheck Easy</span>
-      </a>
-      <nav>
-        <a href="../#features">Features</a>
-        <a href="../#pricing">Pricing</a>
-        <a href="../app/">Calculator</a>
-        <a href="../privacy/">Privacy</a>
-        <a href="mailto:tspheak+paycheckeasy@gmail.com">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
 
-  <main class="page">
-    <div class="page-narrow">
-      <div class="ad-slot" aria-hidden="true"></div>
-
-      <div class="card soon">
-        <h1>Web calculator coming soon</h1>
-        <p>We’re building a browser version of the PayCheck Easy calculator. In the meantime, the full calculator is available on Android.</p>
-      </div>
-
-      <div class="ad-slot" aria-hidden="true"></div>
-
-      <div class="card get-app">
-        <h3>Get the app</h3>
-        <p>Save multiple jobs, track tips, and more on Android</p>
-        <div class="hero-cta" style="display:flex;justify-content:center;">
-          <a class="play-btn" href="https://play.google.com/store/apps/details?id=com.tspheak.paycheckeasy.paycheck_easy" aria-label="Get it on Google Play">
-              <span class="play-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.6 2.3c-.3.2-.5.6-.5 1.1v17.2c0 .5.2.9.5 1.1l.1.1 9.6-9.6v-.3L3.7 2.2l-.1.1zm12.1 7L13 6.6 4.9 1.9l9.3 9.3 1.5-1.9zm1.7 1.1l-1.9 1.1 1.9 1.1 4.3-2.5c.6-.4.6-1 0-1.3l-4.3 1.6zM13 17.4l2.7-2.7-1.5-1.9L4.9 22.1 13 17.4z"/></svg>
-              </span>
-              <span class="play-text">
-                <small>GET IT ON</small>
-                <strong>Google Play</strong>
-              </span>
-            </a>
-        </div>
-      </div>
-
-      <div class="ad-slot" aria-hidden="true"></div>
-
-      <p class="note-small">Estimates only, not tax advice.</p>
-    </div>
-  </main>
-
-  <footer id="contact">
-    <div class="container footer-inner">
-      <div class="footer-brand">Tun Labs</div>
-      <div class="footer-links">
-        <a href="../app/">Web calculator</a>
-        <a href="../privacy/">Privacy policy</a>
-        <a href="mailto:tspheak+paycheckeasy@gmail.com">Contact tspheak+paycheckeasy@gmail.com</a>
-      </div>
-      <div class="footer-copy">© 2026 Tun Labs. PayCheck Easy for Android.</div>
-    </div>
-  </footer>
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
