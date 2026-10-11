@@ -1,0 +1,2477 @@
+{
+  "schemaVersion": 1,
+  "country": "us",
+  "taxYear": "2026",
+  "effectiveFrom": "2026-01-01",
+  "generatedAt": "2026-10-11T08:59:00.770377Z",
+  "fica": {
+    "socialSecurityRate": 0.062,
+    "socialSecurityWageBase": 184500.0,
+    "medicareRate": 0.0145,
+    "additionalMedicareRate": 0.009,
+    "additionalMedicareThreshold": 200000.0
+  },
+  "withholdingAdjustment": {
+    "marriedFilingJointly": 12900.0,
+    "otherFilers": 8600.0
+  },
+  "federal": {
+    "standard": {
+      "single": [
+        {
+          "atLeast": 0.0,
+          "base": 0.0,
+          "rate": 0.0
+        },
+        {
+          "atLeast": 7500.0,
+          "base": 0.0,
+          "rate": 0.1
+        },
+        {
+          "atLeast": 19900.0,
+          "base": 1240.0,
+          "rate": 0.12
+        },
+        {
+          "atLeast": 57900.0,
+          "base": 5800.0,
+          "rate": 0.22
+        },
+        {
+          "atLeast": 113200.0,
+          "base": 17966.0,
+          "rate": 0.24
+        },
+        {
+          "atLeast": 209275.0,
+          "base": 41024.0,
+          "rate": 0.32
+        },
+        {
+          "atLeast": 263725.0,
+          "base": 58448.0,
+          "rate": 0.35
+        },
+        {
+          "atLeast": 648100.0,
+          "base": 192979.25,
+          "rate": 0.37
+        }
+      ],
+      "married": [
+        {
+          "atLeast": 0.0,
+          "base": 0.0,
+          "rate": 0.0
+        },
+        {
+          "atLeast": 19300.0,
+          "base": 0.0,
+          "rate": 0.1
+        },
+        {
+          "atLeast": 44100.0,
+          "base": 2480.0,
+          "rate": 0.12
+        },
+        {
+          "atLeast": 120100.0,
+          "base": 11600.0,
+          "rate": 0.22
+        },
+        {
+          "atLeast": 230700.0,
+          "base": 35932.0,
+          "rate": 0.24
+        },
+        {
+          "atLeast": 422850.0,
+          "base": 82048.0,
+          "rate": 0.32
+        },
+        {
+          "atLeast": 531750.0,
+          "base": 116896.0,
+          "rate": 0.35
+        },
+        {
+          "atLeast": 788000.0,
+          "base": 206583.5,
+          "rate": 0.37
+        }
+      ],
+      "headOfHousehold": [
+        {
+          "atLeast": 0.0,
+          "base": 0.0,
+          "rate": 0.0
+        },
+        {
+          "atLeast": 15550.0,
+          "base": 0.0,
+          "rate": 0.1
+        },
+        {
+          "atLeast": 33250.0,
+          "base": 1770.0,
+          "rate": 0.12
+        },
+        {
+          "atLeast": 83000.0,
+          "base": 7740.0,
+          "rate": 0.22
+        },
+        {
+          "atLeast": 121250.0,
+          "base": 16155.0,
+          "rate": 0.24
+        },
+        {
+          "atLeast": 217300.0,
+          "base": 39207.0,
+          "rate": 0.32
+        },
+        {
+          "atLeast": 271750.0,
+          "base": 56631.0,
+          "rate": 0.35
+        },
+        {
+          "atLeast": 656150.0,
+          "base": 191171.0,
+          "rate": 0.37
+        }
+      ]
+    },
+    "step2": {
+      "single": [
+        {
+          "atLeast": 0.0,
+          "base": 0.0,
+          "rate": 0.0
+        },
+        {
+          "atLeast": 8050.0,
+          "base": 0.0,
+          "rate": 0.1
+        },
+        {
+          "atLeast": 14250.0,
+          "base": 620.0,
+          "rate": 0.12
+        },
+        {
+          "atLeast": 33250.0,
+          "base": 2900.0,
+          "rate": 0.22
+        },
+        {
+          "atLeast": 60900.0,
+          "base": 8983.0,
+          "rate": 0.24
+        },
+        {
+          "atLeast": 108938.0,
+          "base": 20512.0,
+          "rate": 0.32
+        },
+        {
+          "atLeast": 136163.0,
+          "base": 29224.0,
+          "rate": 0.35
+        },
+        {
+          "atLeast": 328350.0,
+          "base": 96489.63,
+          "rate": 0.37
+        }
+      ],
+      "married": [
+        {
+          "atLeast": 0.0,
+          "base": 0.0,
+          "rate": 0.0
+        },
+        {
+          "atLeast": 16100.0,
+          "base": 0.0,
+          "rate": 0.1
+        },
+        {
+          "atLeast": 28500.0,
+          "base": 1240.0,
+          "rate": 0.12
+        },
+        {
+          "atLeast": 66500.0,
+          "base": 5800.0,
+          "rate": 0.22
+        },
+        {
+          "atLeast": 121800.0,
+          "base": 17966.0,
+          "rate": 0.24
+        },
+        {
+          "atLeast": 217875.0,
+          "base": 41024.0,
+          "rate": 0.32
+        },
+        {
+          "atLeast": 272325.0,
+          "base": 58448.0,
+          "rate": 0.35
+        },
+        {
+          "atLeast": 400450.0,
+          "base": 103291.75,
+          "rate": 0.37
+        }
+      ],
+      "headOfHousehold": [
+        {
+          "atLeast": 0.0,
+          "base": 0.0,
+          "rate": 0.0
+        },
+        {
+          "atLeast": 12075.0,
+          "base": 0.0,
+          "rate": 0.1
+        },
+        {
+          "atLeast": 20925.0,
+          "base": 885.0,
+          "rate": 0.12
+        },
+        {
+          "atLeast": 45800.0,
+          "base": 3870.0,
+          "rate": 0.22
+        },
+        {
+          "atLeast": 64925.0,
+          "base": 8077.5,
+          "rate": 0.24
+        },
+        {
+          "atLeast": 112950.0,
+          "base": 19603.5,
+          "rate": 0.32
+        },
+        {
+          "atLeast": 140175.0,
+          "base": 28315.5,
+          "rate": 0.35
+        },
+        {
+          "atLeast": 332375.0,
+          "base": 95585.5,
+          "rate": 0.37
+        }
+      ]
+    }
+  },
+  "states": [
+    {
+      "name": "Alabama",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.02
+        },
+        {
+          "above": 500.0,
+          "rate": 0.04
+        },
+        {
+          "above": 3000.0,
+          "rate": 0.05
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 3000.0,
+      "exemptionDeduction": 1500.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.02
+          },
+          {
+            "above": 1000.0,
+            "rate": 0.04
+          },
+          {
+            "above": 6000.0,
+            "rate": 0.05
+          }
+        ],
+        "standardDeduction": 8500.0,
+        "exemptionDeduction": 3000.0
+      }
+    },
+    {
+      "name": "Alaska",
+      "taxesWages": false,
+      "brackets": [],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": []
+    },
+    {
+      "name": "Arizona",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.025
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 8350.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "standardDeduction": 16700.0
+      }
+    },
+    {
+      "name": "Arkansas",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.02
+        },
+        {
+          "above": 4600.0,
+          "rate": 0.039
+        }
+      ],
+      "lowIncomeBrackets": [
+        {
+          "above": 5500.0,
+          "rate": 0.02
+        },
+        {
+          "above": 10900.0,
+          "rate": 0.03
+        },
+        {
+          "above": 15600.0,
+          "rate": 0.034
+        },
+        {
+          "above": 25700.0,
+          "rate": 0.039
+        }
+      ],
+      "lowIncomeThrough": 92300.0,
+      "standardDeduction": 2470.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 29.0,
+      "bracketWidthsAre2025": true,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "standardDeduction": 4940.0,
+        "taxCredit": 58.0
+      }
+    },
+    {
+      "name": "California",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.01
+        },
+        {
+          "above": 11456.0,
+          "rate": 0.02
+        },
+        {
+          "above": 27157.0,
+          "rate": 0.04
+        },
+        {
+          "above": 42861.0,
+          "rate": 0.06
+        },
+        {
+          "above": 59498.0,
+          "rate": 0.08
+        },
+        {
+          "above": 75197.0,
+          "rate": 0.093
+        },
+        {
+          "above": 384109.0,
+          "rate": 0.103
+        },
+        {
+          "above": 460927.0,
+          "rate": 0.113
+        },
+        {
+          "above": 768213.0,
+          "rate": 0.123
+        },
+        {
+          "above": 1000000.0,
+          "rate": 0.133
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 5900.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 158.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [
+        {
+          "label": "California SDI",
+          "helper": "1.3% of wages after a pre-tax health plan. No wage cap.",
+          "rate": 0.013,
+          "annualWageBase": null,
+          "annualMax": null,
+          "weeklyMax": null,
+          "excludePreTaxHealth": true
+        }
+      ],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.01
+          },
+          {
+            "above": 22912.0,
+            "rate": 0.02
+          },
+          {
+            "above": 54314.0,
+            "rate": 0.04
+          },
+          {
+            "above": 85722.0,
+            "rate": 0.06
+          },
+          {
+            "above": 118996.0,
+            "rate": 0.08
+          },
+          {
+            "above": 150394.0,
+            "rate": 0.093
+          },
+          {
+            "above": 768218.0,
+            "rate": 0.103
+          },
+          {
+            "above": 921854.0,
+            "rate": 0.113
+          },
+          {
+            "above": 1000000.0,
+            "rate": 0.123
+          },
+          {
+            "above": 1536426.0,
+            "rate": 0.133
+          }
+        ],
+        "standardDeduction": 11800.0,
+        "taxCredit": 316.0
+      },
+      "headOfHousehold": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.01
+          },
+          {
+            "above": 22927.0,
+            "rate": 0.02
+          },
+          {
+            "above": 54316.0,
+            "rate": 0.04
+          },
+          {
+            "above": 70018.0,
+            "rate": 0.06
+          },
+          {
+            "above": 86654.0,
+            "rate": 0.08
+          },
+          {
+            "above": 102356.0,
+            "rate": 0.093
+          },
+          {
+            "above": 522385.0,
+            "rate": 0.103
+          },
+          {
+            "above": 626864.0,
+            "rate": 0.113
+          },
+          {
+            "above": 1000000.0,
+            "rate": 0.123
+          },
+          {
+            "above": 1044771.0,
+            "rate": 0.133
+          }
+        ],
+        "standardDeduction": 11800.0,
+        "taxCredit": 158.0
+      }
+    },
+    {
+      "name": "Colorado",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.044
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 16100.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [
+        {
+          "label": "Colorado FAMLI",
+          "helper": "Up to 0.44% of wages, through the Social Security wage base.",
+          "rate": 0.0044,
+          "annualWageBase": 184500.0,
+          "annualMax": null,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        }
+      ],
+      "married": {
+        "standardDeduction": 32200.0
+      }
+    },
+    {
+      "name": "Connecticut",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.02
+        },
+        {
+          "above": 10000.0,
+          "rate": 0.045
+        },
+        {
+          "above": 50000.0,
+          "rate": 0.055
+        },
+        {
+          "above": 100000.0,
+          "rate": 0.06
+        },
+        {
+          "above": 200000.0,
+          "rate": 0.065
+        },
+        {
+          "above": 250000.0,
+          "rate": 0.069
+        },
+        {
+          "above": 500000.0,
+          "rate": 0.0699
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 15000.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [
+        {
+          "label": "Connecticut Paid Leave",
+          "helper": "0.5% of pay, through the Social Security wage base.",
+          "rate": 0.005,
+          "annualWageBase": 184500.0,
+          "annualMax": null,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        }
+      ],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.02
+          },
+          {
+            "above": 20000.0,
+            "rate": 0.045
+          },
+          {
+            "above": 100000.0,
+            "rate": 0.055
+          },
+          {
+            "above": 200000.0,
+            "rate": 0.06
+          },
+          {
+            "above": 400000.0,
+            "rate": 0.065
+          },
+          {
+            "above": 500000.0,
+            "rate": 0.069
+          },
+          {
+            "above": 1000000.0,
+            "rate": 0.0699
+          }
+        ],
+        "exemptionDeduction": 24000.0
+      }
+    },
+    {
+      "name": "Delaware",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 2000.0,
+          "rate": 0.022
+        },
+        {
+          "above": 5000.0,
+          "rate": 0.039
+        },
+        {
+          "above": 10000.0,
+          "rate": 0.048
+        },
+        {
+          "above": 20000.0,
+          "rate": 0.052
+        },
+        {
+          "above": 25000.0,
+          "rate": 0.0555
+        },
+        {
+          "above": 60000.0,
+          "rate": 0.066
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 3250.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 110.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": "Delaware paid leave is not estimated. The wage percent was not confirmed.",
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "standardDeduction": 6500.0,
+        "taxCredit": 220.0
+      }
+    },
+    {
+      "name": "Florida",
+      "taxesWages": false,
+      "brackets": [],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": []
+    },
+    {
+      "name": "Georgia",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.0519
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 12000.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "standardDeduction": 24000.0
+      }
+    },
+    {
+      "name": "Hawaii",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.014
+        },
+        {
+          "above": 9600.0,
+          "rate": 0.032
+        },
+        {
+          "above": 14400.0,
+          "rate": 0.055
+        },
+        {
+          "above": 19200.0,
+          "rate": 0.064
+        },
+        {
+          "above": 24000.0,
+          "rate": 0.068
+        },
+        {
+          "above": 36000.0,
+          "rate": 0.072
+        },
+        {
+          "above": 48000.0,
+          "rate": 0.076
+        },
+        {
+          "above": 125000.0,
+          "rate": 0.079
+        },
+        {
+          "above": 175000.0,
+          "rate": 0.0825
+        },
+        {
+          "above": 225000.0,
+          "rate": 0.09
+        },
+        {
+          "above": 275000.0,
+          "rate": 0.1
+        },
+        {
+          "above": 325000.0,
+          "rate": 0.11
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 4400.0,
+      "exemptionDeduction": 1144.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": "The health-care share is not a fixed rate, so it is not estimated.",
+      "section125ReducesStateWages": true,
+      "extras": [
+        {
+          "label": "Hawaii TDI",
+          "helper": "Up to 0.5% of weekly wages, and not more than $7.50 a week.",
+          "rate": 0.005,
+          "annualWageBase": null,
+          "annualMax": null,
+          "weeklyMax": 7.5,
+          "excludePreTaxHealth": false
+        }
+      ],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.014
+          },
+          {
+            "above": 19200.0,
+            "rate": 0.032
+          },
+          {
+            "above": 28800.0,
+            "rate": 0.055
+          },
+          {
+            "above": 38400.0,
+            "rate": 0.064
+          },
+          {
+            "above": 48000.0,
+            "rate": 0.068
+          },
+          {
+            "above": 72000.0,
+            "rate": 0.072
+          },
+          {
+            "above": 96000.0,
+            "rate": 0.076
+          },
+          {
+            "above": 250000.0,
+            "rate": 0.079
+          },
+          {
+            "above": 350000.0,
+            "rate": 0.0825
+          },
+          {
+            "above": 450000.0,
+            "rate": 0.09
+          },
+          {
+            "above": 550000.0,
+            "rate": 0.1
+          },
+          {
+            "above": 650000.0,
+            "rate": 0.11
+          }
+        ],
+        "standardDeduction": 8800.0,
+        "exemptionDeduction": 2288.0
+      }
+    },
+    {
+      "name": "Idaho",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 4811.0,
+          "rate": 0.053
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 16100.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": true,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "brackets": [
+          {
+            "above": 9622.0,
+            "rate": 0.053
+          }
+        ],
+        "standardDeduction": 32200.0
+      }
+    },
+    {
+      "name": "Illinois",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.0495
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 2925.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "exemptionDeduction": 5850.0
+      }
+    },
+    {
+      "name": "Indiana",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.0295
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 1000.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "exemptionDeduction": 2000.0
+      }
+    },
+    {
+      "name": "Iowa",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.038
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 16100.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 40.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "standardDeduction": 32200.0,
+        "taxCredit": 80.0
+      }
+    },
+    {
+      "name": "Kansas",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.052
+        },
+        {
+          "above": 23000.0,
+          "rate": 0.0558
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 3605.0,
+      "exemptionDeduction": 9160.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.052
+          },
+          {
+            "above": 46000.0,
+            "rate": 0.0558
+          }
+        ],
+        "standardDeduction": 8240.0,
+        "exemptionDeduction": 18320.0
+      }
+    },
+    {
+      "name": "Kentucky",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.035
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 3360.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {}
+    },
+    {
+      "name": "Louisiana",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.03
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 12875.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "standardDeduction": 25750.0
+      }
+    },
+    {
+      "name": "Maine",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.058
+        },
+        {
+          "above": 27399.0,
+          "rate": 0.0675
+        },
+        {
+          "above": 64849.0,
+          "rate": 0.0715
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 8350.0,
+      "exemptionDeduction": 5300.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [
+        {
+          "label": "Maine PFML",
+          "helper": "Up to 0.5% of wages, through the Social Security wage base.",
+          "rate": 0.005,
+          "annualWageBase": 184500.0,
+          "annualMax": null,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        }
+      ],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.058
+          },
+          {
+            "above": 54849.0,
+            "rate": 0.0675
+          },
+          {
+            "above": 129749.0,
+            "rate": 0.0715
+          }
+        ],
+        "standardDeduction": 16700.0,
+        "exemptionDeduction": 10600.0
+      }
+    },
+    {
+      "name": "Maryland",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.02
+        },
+        {
+          "above": 1000.0,
+          "rate": 0.03
+        },
+        {
+          "above": 2000.0,
+          "rate": 0.04
+        },
+        {
+          "above": 3000.0,
+          "rate": 0.0475
+        },
+        {
+          "above": 100000.0,
+          "rate": 0.05
+        },
+        {
+          "above": 125000.0,
+          "rate": 0.0525
+        },
+        {
+          "above": 150000.0,
+          "rate": 0.055
+        },
+        {
+          "above": 250000.0,
+          "rate": 0.0575
+        },
+        {
+          "above": 500000.0,
+          "rate": 0.0625
+        },
+        {
+          "above": 1000000.0,
+          "rate": 0.065
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 3350.0,
+      "exemptionDeduction": 3200.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": "Maryland paid leave has not started, so it is not estimated.",
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.02
+          },
+          {
+            "above": 1000.0,
+            "rate": 0.03
+          },
+          {
+            "above": 2000.0,
+            "rate": 0.04
+          },
+          {
+            "above": 3000.0,
+            "rate": 0.0475
+          },
+          {
+            "above": 150000.0,
+            "rate": 0.05
+          },
+          {
+            "above": 175000.0,
+            "rate": 0.0525
+          },
+          {
+            "above": 225000.0,
+            "rate": 0.055
+          },
+          {
+            "above": 300000.0,
+            "rate": 0.0575
+          },
+          {
+            "above": 600000.0,
+            "rate": 0.0625
+          },
+          {
+            "above": 1200000.0,
+            "rate": 0.065
+          }
+        ],
+        "standardDeduction": 6700.0,
+        "exemptionDeduction": 6400.0
+      }
+    },
+    {
+      "name": "Massachusetts",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.05
+        },
+        {
+          "above": 1083150.0,
+          "rate": 0.09
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 4400.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": true,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [
+        {
+          "label": "Massachusetts PFML",
+          "helper": "0.46% of wages, through the Social Security wage base.",
+          "rate": 0.0046,
+          "annualWageBase": 184500.0,
+          "annualMax": null,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        }
+      ],
+      "married": {
+        "exemptionDeduction": 8800.0
+      }
+    },
+    {
+      "name": "Michigan",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.0425
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 5900.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "exemptionDeduction": 11800.0
+      }
+    },
+    {
+      "name": "Minnesota",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.0535
+        },
+        {
+          "above": 33310.0,
+          "rate": 0.068
+        },
+        {
+          "above": 109430.0,
+          "rate": 0.0785
+        },
+        {
+          "above": 203150.0,
+          "rate": 0.0985
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 15300.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [
+        {
+          "label": "Minnesota Paid Leave",
+          "helper": "0.44% of wages. A small-employer reduction is not estimated.",
+          "rate": 0.0044,
+          "annualWageBase": null,
+          "annualMax": null,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        }
+      ],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.0535
+          },
+          {
+            "above": 48700.0,
+            "rate": 0.068
+          },
+          {
+            "above": 193480.0,
+            "rate": 0.0785
+          },
+          {
+            "above": 337930.0,
+            "rate": 0.0985
+          }
+        ],
+        "standardDeduction": 30600.0
+      }
+    },
+    {
+      "name": "Mississippi",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 10000.0,
+          "rate": 0.04
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 2300.0,
+      "exemptionDeduction": 6000.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "standardDeduction": 4600.0,
+        "exemptionDeduction": 12000.0
+      }
+    },
+    {
+      "name": "Missouri",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 1348.0,
+          "rate": 0.02
+        },
+        {
+          "above": 2696.0,
+          "rate": 0.025
+        },
+        {
+          "above": 4044.0,
+          "rate": 0.03
+        },
+        {
+          "above": 5392.0,
+          "rate": 0.035
+        },
+        {
+          "above": 6740.0,
+          "rate": 0.04
+        },
+        {
+          "above": 8088.0,
+          "rate": 0.045
+        },
+        {
+          "above": 9436.0,
+          "rate": 0.047
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 16100.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "standardDeduction": 32200.0
+      }
+    },
+    {
+      "name": "Montana",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.047
+        },
+        {
+          "above": 47500.0,
+          "rate": 0.0565
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 16100.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.047
+          },
+          {
+            "above": 95000.0,
+            "rate": 0.0565
+          }
+        ],
+        "standardDeduction": 32200.0
+      }
+    },
+    {
+      "name": "Nebraska",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.0246
+        },
+        {
+          "above": 4130.0,
+          "rate": 0.0351
+        },
+        {
+          "above": 24760.0,
+          "rate": 0.0455
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 8850.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 176.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.0246
+          },
+          {
+            "above": 8250.0,
+            "rate": 0.0351
+          },
+          {
+            "above": 49530.0,
+            "rate": 0.0455
+          }
+        ],
+        "standardDeduction": 17700.0,
+        "taxCredit": 352.0
+      }
+    },
+    {
+      "name": "Nevada",
+      "taxesWages": false,
+      "brackets": [],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": []
+    },
+    {
+      "name": "New Hampshire",
+      "taxesWages": false,
+      "brackets": [],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": []
+    },
+    {
+      "name": "New Jersey",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.014
+        },
+        {
+          "above": 20000.0,
+          "rate": 0.0175
+        },
+        {
+          "above": 35000.0,
+          "rate": 0.035
+        },
+        {
+          "above": 40000.0,
+          "rate": 0.0553
+        },
+        {
+          "above": 75000.0,
+          "rate": 0.0637
+        },
+        {
+          "above": 500000.0,
+          "rate": 0.0897
+        },
+        {
+          "above": 1000000.0,
+          "rate": 0.1075
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 1000.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": false,
+      "extras": [
+        {
+          "label": "New Jersey TDI",
+          "helper": "0.19% of the first $171,100.",
+          "rate": 0.0019,
+          "annualWageBase": 171100.0,
+          "annualMax": 325.09,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        },
+        {
+          "label": "New Jersey family leave",
+          "helper": "0.23% of the first $171,100.",
+          "rate": 0.0023,
+          "annualWageBase": 171100.0,
+          "annualMax": 393.53,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        }
+      ],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.014
+          },
+          {
+            "above": 20000.0,
+            "rate": 0.0175
+          },
+          {
+            "above": 50000.0,
+            "rate": 0.0245
+          },
+          {
+            "above": 70000.0,
+            "rate": 0.035
+          },
+          {
+            "above": 80000.0,
+            "rate": 0.0553
+          },
+          {
+            "above": 150000.0,
+            "rate": 0.0637
+          },
+          {
+            "above": 500000.0,
+            "rate": 0.0897
+          },
+          {
+            "above": 1000000.0,
+            "rate": 0.1075
+          }
+        ],
+        "exemptionDeduction": 2000.0
+      }
+    },
+    {
+      "name": "New Mexico",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.015
+        },
+        {
+          "above": 5500.0,
+          "rate": 0.032
+        },
+        {
+          "above": 16500.0,
+          "rate": 0.043
+        },
+        {
+          "above": 33500.0,
+          "rate": 0.047
+        },
+        {
+          "above": 66500.0,
+          "rate": 0.049
+        },
+        {
+          "above": 210000.0,
+          "rate": 0.059
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 16100.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.015
+          },
+          {
+            "above": 8000.0,
+            "rate": 0.032
+          },
+          {
+            "above": 25000.0,
+            "rate": 0.043
+          },
+          {
+            "above": 50000.0,
+            "rate": 0.047
+          },
+          {
+            "above": 100000.0,
+            "rate": 0.049
+          },
+          {
+            "above": 315000.0,
+            "rate": 0.059
+          }
+        ],
+        "standardDeduction": 32200.0
+      }
+    },
+    {
+      "name": "New York",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.039
+        },
+        {
+          "above": 8500.0,
+          "rate": 0.044
+        },
+        {
+          "above": 11700.0,
+          "rate": 0.0515
+        },
+        {
+          "above": 13900.0,
+          "rate": 0.054
+        },
+        {
+          "above": 80650.0,
+          "rate": 0.059
+        },
+        {
+          "above": 215400.0,
+          "rate": 0.0685
+        },
+        {
+          "above": 1077550.0,
+          "rate": 0.0965
+        },
+        {
+          "above": 5000000.0,
+          "rate": 0.103
+        },
+        {
+          "above": 25000000.0,
+          "rate": 0.109
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 8000.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [
+        {
+          "label": "New York disability",
+          "helper": "Up to 0.5% of wages, and not more than $0.60 a week.",
+          "rate": 0.005,
+          "annualWageBase": null,
+          "annualMax": null,
+          "weeklyMax": 0.6,
+          "excludePreTaxHealth": false
+        },
+        {
+          "label": "New York paid family leave",
+          "helper": "0.432% of wages, up to $411.91 a year.",
+          "rate": 0.00432,
+          "annualWageBase": null,
+          "annualMax": 411.91,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        }
+      ],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.039
+          },
+          {
+            "above": 17150.0,
+            "rate": 0.044
+          },
+          {
+            "above": 23600.0,
+            "rate": 0.0515
+          },
+          {
+            "above": 27900.0,
+            "rate": 0.054
+          },
+          {
+            "above": 161550.0,
+            "rate": 0.059
+          },
+          {
+            "above": 323200.0,
+            "rate": 0.0685
+          },
+          {
+            "above": 2155350.0,
+            "rate": 0.0965
+          },
+          {
+            "above": 5000000.0,
+            "rate": 0.103
+          },
+          {
+            "above": 25000000.0,
+            "rate": 0.109
+          }
+        ],
+        "standardDeduction": 16050.0
+      }
+    },
+    {
+      "name": "North Carolina",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.0399
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 12750.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "standardDeduction": 25500.0
+      }
+    },
+    {
+      "name": "North Dakota",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 48475.0,
+          "rate": 0.0195
+        },
+        {
+          "above": 244825.0,
+          "rate": 0.025
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 16100.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": true,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "brackets": [
+          {
+            "above": 80975.0,
+            "rate": 0.0195
+          },
+          {
+            "above": 298075.0,
+            "rate": 0.025
+          }
+        ],
+        "standardDeduction": 32200.0
+      }
+    },
+    {
+      "name": "Ohio",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 26050.0,
+          "rate": 0.0275
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 2400.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "exemptionDeduction": 4800.0
+      }
+    },
+    {
+      "name": "Oklahoma",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 3750.0,
+          "rate": 0.025
+        },
+        {
+          "above": 4900.0,
+          "rate": 0.035
+        },
+        {
+          "above": 7200.0,
+          "rate": 0.045
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 6350.0,
+      "exemptionDeduction": 1000.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "brackets": [
+          {
+            "above": 7500.0,
+            "rate": 0.025
+          },
+          {
+            "above": 9800.0,
+            "rate": 0.035
+          },
+          {
+            "above": 14400.0,
+            "rate": 0.045
+          }
+        ],
+        "standardDeduction": 12700.0,
+        "exemptionDeduction": 2000.0
+      }
+    },
+    {
+      "name": "Oregon",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.0475
+        },
+        {
+          "above": 4550.0,
+          "rate": 0.0675
+        },
+        {
+          "above": 11400.0,
+          "rate": 0.0875
+        },
+        {
+          "above": 125000.0,
+          "rate": 0.099
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 2910.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 256.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [
+        {
+          "label": "Oregon Paid Leave",
+          "helper": "0.6% of wages, through $184,500.",
+          "rate": 0.006,
+          "annualWageBase": 184500.0,
+          "annualMax": null,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        },
+        {
+          "label": "Oregon transit tax",
+          "helper": "0.1% of wages.",
+          "rate": 0.001,
+          "annualWageBase": null,
+          "annualMax": null,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        }
+      ],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.0475
+          },
+          {
+            "above": 9100.0,
+            "rate": 0.0675
+          },
+          {
+            "above": 22800.0,
+            "rate": 0.0875
+          },
+          {
+            "above": 250000.0,
+            "rate": 0.099
+          }
+        ],
+        "standardDeduction": 5820.0,
+        "taxCredit": 512.0
+      }
+    },
+    {
+      "name": "Pennsylvania",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.0307
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {}
+    },
+    {
+      "name": "Rhode Island",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.0375
+        },
+        {
+          "above": 82050.0,
+          "rate": 0.0475
+        },
+        {
+          "above": 186450.0,
+          "rate": 0.0599
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 11200.0,
+      "exemptionDeduction": 5250.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [
+        {
+          "label": "Rhode Island TDI",
+          "helper": "1.1% of the first $100,000. Includes caregiver insurance.",
+          "rate": 0.011,
+          "annualWageBase": 100000.0,
+          "annualMax": 1100.0,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        }
+      ],
+      "married": {
+        "standardDeduction": 22400.0,
+        "exemptionDeduction": 10500.0
+      }
+    },
+    {
+      "name": "South Carolina",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.0
+        },
+        {
+          "above": 3640.0,
+          "rate": 0.03
+        },
+        {
+          "above": 18230.0,
+          "rate": 0.06
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 8350.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": "The 6% top rate ends June 30, 2026.",
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "standardDeduction": 16700.0
+      }
+    },
+    {
+      "name": "South Dakota",
+      "taxesWages": false,
+      "brackets": [],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": []
+    },
+    {
+      "name": "Tennessee",
+      "taxesWages": false,
+      "brackets": [],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": []
+    },
+    {
+      "name": "Texas",
+      "taxesWages": false,
+      "brackets": [],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": []
+    },
+    {
+      "name": "Utah",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.045
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 966.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "taxCredit": 1932.0
+      }
+    },
+    {
+      "name": "Vermont",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.0335
+        },
+        {
+          "above": 49400.0,
+          "rate": 0.066
+        },
+        {
+          "above": 119700.0,
+          "rate": 0.076
+        },
+        {
+          "above": 249700.0,
+          "rate": 0.0875
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 7650.0,
+      "exemptionDeduction": 5300.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": true,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.0335
+          },
+          {
+            "above": 82500.0,
+            "rate": 0.066
+          },
+          {
+            "above": 199450.0,
+            "rate": 0.076
+          },
+          {
+            "above": 304000.0,
+            "rate": 0.0875
+          }
+        ],
+        "standardDeduction": 15300.0,
+        "exemptionDeduction": 10600.0
+      }
+    },
+    {
+      "name": "Virginia",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.02
+        },
+        {
+          "above": 3000.0,
+          "rate": 0.03
+        },
+        {
+          "above": 5000.0,
+          "rate": 0.05
+        },
+        {
+          "above": 17000.0,
+          "rate": 0.0575
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 8750.0,
+      "exemptionDeduction": 930.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "standardDeduction": 17500.0,
+        "exemptionDeduction": 1860.0
+      }
+    },
+    {
+      "name": "Washington",
+      "taxesWages": false,
+      "brackets": [],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [
+        {
+          "label": "WA Paid Family Leave",
+          "helper": "100% of the family-leave share of the 1.13% premium, on wages including reported cash tips, through the wage base.",
+          "rate": 0.00543078,
+          "annualWageBase": 184500.0,
+          "annualMax": null,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        },
+        {
+          "label": "WA Paid Medical Leave",
+          "helper": "45% of the medical-leave share of the 1.13% premium, on wages including reported cash tips, through the wage base.",
+          "rate": 0.0026411489999999998,
+          "annualWageBase": 184500.0,
+          "annualMax": null,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        },
+        {
+          "label": "WA Cares",
+          "helper": "0.58% of wages, including reported cash tips. No wage cap.",
+          "rate": 0.0058,
+          "annualWageBase": null,
+          "annualMax": null,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        }
+      ]
+    },
+    {
+      "name": "West Virginia",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.0222
+        },
+        {
+          "above": 10000.0,
+          "rate": 0.0296
+        },
+        {
+          "above": 25000.0,
+          "rate": 0.0333
+        },
+        {
+          "above": 40000.0,
+          "rate": 0.0444
+        },
+        {
+          "above": 60000.0,
+          "rate": 0.0482
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 2000.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": true,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "exemptionDeduction": 4000.0
+      }
+    },
+    {
+      "name": "Wisconsin",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.035
+        },
+        {
+          "above": 15110.0,
+          "rate": 0.044
+        },
+        {
+          "above": 51950.0,
+          "rate": 0.053
+        },
+        {
+          "above": 332720.0,
+          "rate": 0.0765
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 13960.0,
+      "exemptionDeduction": 700.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "brackets": [
+          {
+            "above": 0.0,
+            "rate": 0.035
+          },
+          {
+            "above": 20150.0,
+            "rate": 0.044
+          },
+          {
+            "above": 69260.0,
+            "rate": 0.053
+          },
+          {
+            "above": 443630.0,
+            "rate": 0.0765
+          }
+        ],
+        "standardDeduction": 25840.0,
+        "exemptionDeduction": 1400.0
+      }
+    },
+    {
+      "name": "Wyoming",
+      "taxesWages": false,
+      "brackets": [],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 0.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": null,
+      "section125ReducesStateWages": true,
+      "extras": []
+    }
+  ]
+}
