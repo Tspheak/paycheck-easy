@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PayCheck Easy — Know your paycheck before payday</title>
-<meta name="description" content="PayCheck Easy estimates your take-home pay with 2026 IRS tax tables, all 50 states, and multiple jobs." />
+<meta name="description" content="PayCheck Easy estimates your take-home pay for the US (2026 IRS tables, all 50 states) and Australia (2026–27 ATO tables), with multiple jobs." />
 <link rel="icon" type="image/png" href="assets/icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,12 +30,20 @@
   </header>
 
   <main>
+    <div class="hero-banner">
+      <picture>
+        <source media="(max-width: 700px)" type="image/webp" srcset="assets/hero-banner-1024x500.webp" />
+        <source media="(max-width: 700px)" srcset="assets/hero-banner-1024x500.png" />
+        <source type="image/webp" srcset="assets/hero-banner-1600x500.webp" />
+        <img src="assets/hero-banner-1600x500.png" width="1600" height="500" alt="PayCheck Easy by Tun Labs. Know your take-home pay before payday. US and Australia, 2026 tax tables, overtime, tips and penalties, 5 languages." />
+      </picture>
+    </div>
     <section class="hero">
       <div class="container hero-grid">
         <div>
           <div class="hero-eyebrow">Android · Tun Labs</div>
           <h1>Know your paycheck before payday.</h1>
-          <p class="hero-sub">Estimate your take-home pay in seconds. 2026 IRS tax tables, all 50 states, multiple jobs.</p>
+          <p class="hero-sub">Estimate your take-home pay in seconds. US 2026 IRS tables for all 50 states, Australia 2026–27 ATO tables, and multiple jobs.</p>
           <div class="hero-cta">
             <a class="play-btn" href="https://play.google.com/store/apps/details?id=com.tspheak.paycheckeasy.paycheck_easy" aria-label="Get it on Google Play">
               <span class="play-icon" aria-hidden="true">
@@ -46,27 +54,21 @@
                 <strong>Google Play</strong>
               </span>
             </a>
+            <span class="store-btn store-btn--soon" role="img" aria-label="Coming soon on iOS">
+              <span class="play-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-2.99-.79-1.54.02-2.96.9-3.75 2.27-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.38-.91-2.4-3.66zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"/></svg>
+              </span>
+              <span class="play-text">
+                <small>COMING SOON ON</small>
+                <strong>iOS</strong>
+              </span>
+            </span>
           </div>
+          <p class="cta-note">Save multiple jobs and remove ads. Android now, iOS coming soon.</p>
         </div>
         <div class="hero-visual">
-          <div class="phone" aria-hidden="true">
-            <div class="phone-status"><span>9:41</span><span>▮▮ Wi‑Fi</span></div>
-            <div class="phone-top">
-              <span class="name">PayCheck Easy</span>
-              <span class="up">Upgrade</span>
-            </div>
-            <div class="phone-body">
-              <div class="estimate">
-                <div class="info">i</div>
-                <div class="lbl">Estimated take-home</div>
-                <div class="amt">$1,507.71</div>
-                <div class="note">Estimate only, not exact.</div>
-              </div>
-              <div class="job-mini">
-                <strong>Company A</strong>
-                <span>Biweekly · $24.75/hr · 80 hrs</span>
-              </div>
-            </div>
+          <div class="phone-shot">
+            <img src="assets/app-screenshot.png" width="390" height="844" alt="PayCheck Easy calculator: Company A, biweekly, $24.75 an hour, 80 regular hours, estimated take-home $1,647.31" />
           </div>
           <span class="example-tag">Example numbers</span>
         </div>
