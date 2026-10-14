@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <!--
-    Replaced by `flutter build web --base-href`. Must start and end with /.
+    Replaced by `flutter build web --release --base-href /app/`.
+    paycheckpocket.com serves this app at /app/. Must start and end with /.
   -->
-  <base href="/paycheck-easy/app/">
+  <base href="/app/">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +19,7 @@
   <link rel="manifest" href="manifest.json">
   <title>Paycheck calculator — Paycheck Pocket</title>
 
-  <!-- Site styles live next to this app: /paycheck-easy/assets/style.css -->
+  <!-- Site styles live one level up, at /assets/style.css. -->
   <link rel="stylesheet" href="../assets/style.css">
   <style>
     /* The calculator view fills this host. Desktop height is set from Flutter
@@ -53,8 +54,8 @@
   <header>
     <div class="container header-inner">
       <a class="brand" href="../">
-        <img src="../assets/icon.png" alt="PayCheck Easy icon" width="40" height="40" />
-        <span>PayCheck Easy</span>
+        <img src="../assets/icon.png" alt="Paycheck Pocket icon" width="40" height="40" />
+        <span>Paycheck Pocket</span>
       </a>
       <nav>
         <a class="active" href="./" aria-current="page">Calculator</a>
@@ -78,7 +79,7 @@
         <a href="../privacy/">Privacy policy</a>
         <a href="mailto:support@paycheckpocket.com">Contact support@paycheckpocket.com</a>
       </div>
-      <div class="footer-copy">© 2026 Tun Labs. PayCheck Easy for Android.</div>
+      <div class="footer-copy">© 2026 Tun Labs. Paycheck Pocket for Android.</div>
     </div>
   </footer>
 
@@ -123,7 +124,7 @@ addEventListener("message", eventListener);
     if (!window._flutter) {
   window._flutter = {};
 }
-_flutter.buildConfig = {"engineRevision":"692136cb6582dbfc5af3fb33c2515a069f2f66d0","wasmHashes":{"chromium/canvaskit.wasm":"ae8ff1d858140f7b1300ced3fa89fb8c9dce0a400a0f4f1e11f6dcfb3315fdcf","webparagraph/canvaskit.wasm":"0ce1b05082efdc8529550e8a01f6ff0593972d55525035010e26f5600aa9f254","skwasm.wasm":"e540fd5e8303b7b68ec2718cb49e9c421f8ade3075b15e02a7059a62654df9a1","wimp.wasm":"e924eaafd801d41e017d178f3fd5cf8a417f641fe35c9ed34a4e1d7582283e0c","skwasm_heavy.wasm":"565f5cc1cca6ab120f11934b105f01fec4b58b480c82e0889dca93af8e6f8635","canvaskit.wasm":"fbed517a43e82452404446683f00f2e876d835aed84410695759e67b6bb01cd3"},"builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"},{}]};
+_flutter.buildConfig = {"engineRevision":"af7e796e161ae0bb1ff0758c71a7105418bd9ded","wasmHashes":{"wimp.wasm":"e924eaafd801d41e017d178f3fd5cf8a417f641fe35c9ed34a4e1d7582283e0c","webparagraph/canvaskit.wasm":"0ce1b05082efdc8529550e8a01f6ff0593972d55525035010e26f5600aa9f254","skwasm.wasm":"e540fd5e8303b7b68ec2718cb49e9c421f8ade3075b15e02a7059a62654df9a1","chromium/canvaskit.wasm":"ae8ff1d858140f7b1300ced3fa89fb8c9dce0a400a0f4f1e11f6dcfb3315fdcf","canvaskit.wasm":"fbed517a43e82452404446683f00f2e876d835aed84410695759e67b6bb01cd3","skwasm_heavy.wasm":"565f5cc1cca6ab120f11934b105f01fec4b58b480c82e0889dca93af8e6f8635"},"builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"},{}]};
 
 
     _flutter.loader.load({
