@@ -32,8 +32,8 @@
     html, body { margin: 0; background: #F3F7F5; }
     nav a.active {
       color: var(--teal, #0F766E);
-      text-decoration: underline;
-      text-underline-offset: 6px;
+      text-decoration: none;
+      box-shadow: inset 0 -2px 0 #E0A526;
     }
     /* Phone width feels like the app: no site header or footer. */
     @media (max-width: 899px) {
@@ -58,11 +58,12 @@
         <span>Paycheck Pocket</span>
       </a>
       <nav>
+        <a href="../">Home</a>
         <a class="active" href="./" aria-current="page">Calculator</a>
-        <a href="../#features">Features</a>
-        <a href="../#pricing">Pricing</a>
+        <a href="../features/">Features</a>
+        <a href="../pricing/">Pricing</a>
         <a href="../privacy/">Privacy</a>
-        <a href="mailto:support@paycheckpocket.com">Contact</a>
+        <a href="../contact/">Contact</a>
       </nav>
     </div>
   </header>
@@ -71,15 +72,13 @@
     <div id="flutter_host"></div>
   </main>
 
-  <footer id="contact">
+  <footer>
     <div class="container footer-inner">
-      <div class="footer-brand">Tun Labs</div>
+      <span>© 2026 Tun Labs</span>
       <div class="footer-links">
-        <a href="./">Web calculator</a>
-        <a href="../privacy/">Privacy policy</a>
-        <a href="mailto:support@paycheckpocket.com">Contact support@paycheckpocket.com</a>
+        <a href="../privacy/">Privacy</a>
+        <a href="../contact/">Contact</a>
       </div>
-      <div class="footer-copy">© 2026 Tun Labs. Paycheck Pocket for Android.</div>
     </div>
   </footer>
 
