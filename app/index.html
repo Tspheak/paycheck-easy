@@ -35,8 +35,10 @@
       overflow: hidden;
       position: relative;
     }
-    header { position: relative; z-index: 100; flex: none; }
-    main { flex: 1 1 auto; min-height: 0; display: flex; }
+    header { position: relative; z-index: 1000; flex: none; background: #fff; }
+    header .header-inner { flex-wrap: wrap; }
+    header nav { flex-wrap: wrap; row-gap: 8px; max-width: 100%; }
+    main { flex: 1 1 auto; min-height: 0; display: flex; justify-content: center; }
     #flutter_host {
       position: relative;
       flex: 1 1 auto;
@@ -46,6 +48,17 @@
       min-height: 0;
       margin: 0;
       overflow: hidden;
+    }
+    @media (min-width: 520px) {
+      #flutter_host {
+        flex: 0 0 auto;
+        width: 480px;
+        max-width: 480px;
+      }
+      body > flutter-view {
+        width: 480px !important;
+        left: calc(50% - 240px) !important;
+      }
     }
     #flutter_host flutter-view {
       position: absolute !important;
