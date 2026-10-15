@@ -41,7 +41,8 @@
       position: relative;
       flex: 1 1 auto;
       width: 100%;
-      height: calc(100dvh - var(--site-header-h, 69px));
+      height: var(--app-rest-h, calc(100dvh - var(--site-header-h, 69px))) !important;
+      max-height: var(--app-rest-h, calc(100dvh - var(--site-header-h, 69px))) !important;
       min-height: 0;
       margin: 0;
       overflow: hidden;
@@ -57,7 +58,7 @@
       top: var(--site-header-h, 69px) !important;
       left: 0 !important;
       width: 100% !important;
-      height: calc(100dvh - var(--site-header-h, 69px)) !important;
+      height: var(--app-rest-h, calc(100dvh - var(--site-header-h, 69px))) !important;
     }
     footer { display: none; }
     html.embed header,
@@ -147,16 +148,21 @@ addEventListener("message", eventListener);
 _flutter.buildConfig = {"engineRevision":"af7e796e161ae0bb1ff0758c71a7105418bd9ded","wasmHashes":{"wimp.wasm":"e924eaafd801d41e017d178f3fd5cf8a417f641fe35c9ed34a4e1d7582283e0c","webparagraph/canvaskit.wasm":"0ce1b05082efdc8529550e8a01f6ff0593972d55525035010e26f5600aa9f254","skwasm.wasm":"e540fd5e8303b7b68ec2718cb49e9c421f8ade3075b15e02a7059a62654df9a1","chromium/canvaskit.wasm":"ae8ff1d858140f7b1300ced3fa89fb8c9dce0a400a0f4f1e11f6dcfb3315fdcf","canvaskit.wasm":"fbed517a43e82452404446683f00f2e876d835aed84410695759e67b6bb01cd3","skwasm_heavy.wasm":"565f5cc1cca6ab120f11934b105f01fec4b58b480c82e0889dca93af8e6f8635"},"builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"},{}]};
 
 
-    (function sizeAppHost() {
+    function sizeAppHost() {
       var header = document.querySelector("header");
-      if (!header) return;
-      document.documentElement.style.setProperty("--site-header-h", header.offsetHeight + "px");
-    })();
-    window.addEventListener("resize", function () {
-      var header = document.querySelector("header");
-      if (!header) return;
-      document.documentElement.style.setProperty("--site-header-h", header.offsetHeight + "px");
-    });
+      var host = document.querySelector("#flutter_host");
+      if (!header || !host) return;
+      var headerH = header.offsetHeight;
+      var rest = Math.max(0, window.innerHeight - headerH);
+      document.documentElement.style.setProperty("--site-header-h", headerH + "px");
+      document.documentElement.style.setProperty("--app-rest-h", rest + "px");
+    }
+    sizeAppHost();
+    window.addEventListener("resize", sizeAppHost);
+    if (window.ResizeObserver) {
+      new ResizeObserver(sizeAppHost).observe(document.querySelector("header"));
+      new ResizeObserver(sizeAppHost).observe(document.querySelector("#flutter_host"));
+    }
 
     _flutter.loader.load({
       onEntrypointLoaded: async function (engineInitializer) {
