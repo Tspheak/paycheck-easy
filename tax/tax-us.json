@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "country": "us",
   "taxYear": "2026",
-  "effectiveFrom": "2026-01-01",
-  "generatedAt": "2026-10-11T08:59:00.770377Z",
+  "effectiveFrom": "2026-10-14",
+  "generatedAt": "2026-10-15T01:09:56.167306Z",
   "fica": {
     "socialSecurityRate": 0.062,
     "socialSecurityWageBase": 184500.0,
@@ -731,6 +731,57 @@
       "married": {
         "standardDeduction": 6500.0,
         "taxCredit": 220.0
+      }
+    },
+    {
+      "name": "District of Columbia",
+      "taxesWages": true,
+      "brackets": [
+        {
+          "above": 0.0,
+          "rate": 0.04
+        },
+        {
+          "above": 10000.0,
+          "rate": 0.06
+        },
+        {
+          "above": 40000.0,
+          "rate": 0.065
+        },
+        {
+          "above": 60000.0,
+          "rate": 0.085
+        },
+        {
+          "above": 250000.0,
+          "rate": 0.0925
+        },
+        {
+          "above": 500000.0,
+          "rate": 0.0975
+        },
+        {
+          "above": 1000000.0,
+          "rate": 0.1075
+        }
+      ],
+      "lowIncomeBrackets": null,
+      "lowIncomeThrough": null,
+      "standardDeduction": 16100.0,
+      "exemptionDeduction": 0.0,
+      "taxCredit": 0.0,
+      "bracketWidthsAre2025": false,
+      "localTaxesNotEstimated": false,
+      "incomeTaxNote": null,
+      "omittedDeductionNote": "PFL is employer-paid with no employee deduction.",
+      "section125ReducesStateWages": true,
+      "extras": [],
+      "married": {
+        "standardDeduction": 32200.0
+      },
+      "headOfHousehold": {
+        "standardDeduction": 24150.0
       }
     },
     {
