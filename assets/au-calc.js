@@ -1,5 +1,4 @@
 import {
-  columnPeriod,
   estimate,
   formatDollars,
   formatMoney,
@@ -27,7 +26,7 @@ function row(label, annual, period) {
   return `<tr><td>${label}</td><td class="n">${moneyCell(annual)}</td><td class="n">${moneyCell(period)}</td></tr>`;
 }
 
-function resultNote(est, data) {
+function resultNote(est, data, page) {
   const bits = [];
   bits.push(est.hasHelp ? "Includes a compulsory study-loan repayment." : "No HELP debt.");
   bits.push("Resident, tax-free threshold claimed.");
@@ -36,40 +35,45 @@ function resultNote(est, data) {
   } else if (est.lito > 0.004) {
     bits.push("Includes the low income tax offset.");
   }
-  if (est.medicareUsesUnconfirmedThreshold) {
-    const low = data.medicareLevy.lowIncomeThresholds;
-    bits.push(
-      `Medicare low-income thresholds (${formatDollars(low.singlesLower)} / ${formatDollars(low.singlesUpper)}, carried over from ${low.carriedOverFrom}) are to be confirmed.`
-    );
+  if (page !== "super") {
+    bits.push("Per-pay withholding is ATO Schedule 1 (tax and Medicare together) and Schedule 8 for HELP. It is not the yearly tax divided by the number of pays.");
   }
   if (est.superCapped) {
     bits.push(
       `Super guarantee uses the ${formatDollars(data.superAnnualCap)} maximum contribution base.`
     );
   }
-  if (est.helpCapped) bits.push("Repayment is limited to the loan balance entered.");
+  if (est.helpCapped) bits.push("The yearly repayment is limited to the loan balance entered.");
   return bits.join(" ");
 }
 
-function payTable(est, period) {
-  const div = period.divide;
-  const medLabel = est.medicareUsesUnconfirmedThreshold
-    ? "Medicare levy (reduced, thresholds to be confirmed)"
-    : "Medicare levy (2%)";
-  const rows = [row("Gross pay", est.cash, div(est.cash))];
+function moneyOrDash(value) {
+  return value == null ? "—" : moneyCell(value);
+}
+
+function mixedRow(label, annual, period) {
+  return `<tr><td>${label}</td><td class="n">${moneyOrDash(annual)}</td><td class="n">${moneyOrDash(period)}</td></tr>`;
+}
+
+function payTable(est) {
+  const pay = est.withholding;
+  const medLabel = est.medicareReduced ? "Medicare levy (low-income reduction)" : "Medicare levy (2%)";
+  const rows = [mixedRow("Gross pay", est.cash, pay.gross)];
   if (est.lito > 0.004) {
-    rows.push(row("Income tax (2026–27 resident rates)", -est.grossTax, div(-est.grossTax)));
-    rows.push(row("Low income tax offset", est.lito, div(est.lito)));
+    rows.push(mixedRow("Income tax (2026–27 resident rates)", -est.grossTax, null));
+    rows.push(mixedRow("Low income tax offset", est.lito, null));
   } else {
-    rows.push(row("Income tax (2026–27 resident rates)", -est.taxPayable, div(-est.taxPayable)));
+    rows.push(mixedRow("Income tax (2026–27 resident rates)", -est.taxPayable, null));
   }
-  rows.push(row(medLabel, -est.medicare, div(-est.medicare)));
-  if (est.hasHelp) rows.push(row("HELP compulsory repayment", -est.help, div(-est.help)));
+  rows.push(mixedRow(medLabel, -est.medicare, null));
+  rows.push(mixedRow("PAYG withholding (Schedule 1)", null, -pay.payg));
+  if (est.hasHelp) rows.push(mixedRow("HELP (year: repayment, pay: Schedule 8)", -est.help, -pay.help));
   const body = rows.join("");
   const superLabel = est.superOnTop
     ? "Employer super (12%, paid on top)"
     : "Employer super (12%, included in package)";
-  return `<table><tr><th></th><th class="n">Per year</th><th class="n">${period.label}</th></tr>${body}<tr class="tot"><td>Take-home pay</td><td class="n">${formatMoney(est.takeHome)}</td><td class="n">${formatMoney(div(est.takeHome))}</td></tr><tr><td>${superLabel}</td><td class="n">${formatMoney(est.superAmount)}</td><td class="n">${formatMoney(div(est.superAmount))}</td></tr></table>`;
+  const superPeriod = pay.gross > 0 && est.cash > 0 ? est.superAmount * (pay.gross / est.cash) : 0;
+  return `<table><tr><th></th><th class="n">Per year</th><th class="n">${pay.label}</th></tr>${body}<tr class="tot"><td>Take-home pay</td><td class="n">${formatMoney(est.takeHome)}</td><td class="n">${formatMoney(pay.takeHome)}</td></tr><tr><td>${superLabel}</td><td class="n">${formatMoney(est.superAmount)}</td><td class="n">${formatMoney(superPeriod)}</td></tr></table>`;
 }
 
 function heading(page, input, est) {
@@ -85,26 +89,23 @@ function heading(page, input, est) {
   return `${amt} salary`;
 }
 
-function subtitle(page, est, period) {
+function subtitle(page, est) {
   if (page === "help") return "compulsory repayment for 2026–27";
   if (page === "super") {
     return `employer super per year · ${formatMoney(perFortnight(est.superAmount))} per fortnight`;
   }
-  if (est.frequency === "weekly") return `take-home per week · ${formatMoney(est.takeHome)} per year`;
-  if (est.frequency === "fortnightly") return `take-home per fortnight · ${formatMoney(est.takeHome)} per year`;
-  if (est.frequency === "monthly") return `take-home per month · ${formatMoney(est.takeHome)} per year`;
-  if (est.frequency === "hourly") return `take-home per hour · ${formatMoney(est.takeHome)} per year`;
-  return `take-home per year · ${formatMoney(period.divide(est.takeHome))} per fortnight`;
+  const unit = { weekly: "week", fortnightly: "fortnight", monthly: "month", hourly: "hour" }[est.frequency];
+  if (unit) {
+    return `Schedule 1 take-home per ${unit} · ${formatMoney(est.takeHome)} assessed per year`;
+  }
+  return `take-home per year · ${formatMoney(est.withholding.takeHome)} per fortnight after Schedule 1`;
 }
 
-function bigAmount(page, est, period) {
+function bigAmount(page, est) {
   if (page === "help") return est.help;
   if (page === "super") return est.superAmount;
-  if (est.frequency === "weekly") return perWeek(est.takeHome);
-  if (est.frequency === "fortnightly") return perFortnight(est.takeHome);
-  if (est.frequency === "monthly") return perMonth(est.takeHome);
-  if (est.frequency === "hourly") return period.divide(est.takeHome);
-  return est.takeHome;
+  if (est.frequency === "annual") return est.takeHome;
+  return est.withholding.takeHome;
 }
 
 function extraNote(page, input, est, data) {
@@ -141,15 +142,14 @@ function superTable(est) {
 }
 
 function render(page, input, est, data) {
-  const period = columnPeriod(input.frequency, input.hoursPerWeek);
   const extra = extraNote(page, input, est, data);
-  const table = page === "super" ? superTable(est) : payTable(est, period);
+  const table = page === "super" ? superTable(est) : payTable(est);
   return `<span class="plan-pill">Estimate</span>
 <h2>${heading(page, input, est)}</h2>
-<div class="big">${formatMoney(bigAmount(page, est, period))}</div>
-<p class="small lead">${subtitle(page, est, period)}</p>
+<div class="big">${formatMoney(bigAmount(page, est))}</div>
+<p class="small lead">${subtitle(page, est)}</p>
 ${table}
-<p class="small">${extra ? extra + " " : ""}${resultNote(est, data)}</p>`;
+<p class="small">${extra ? extra + " " : ""}${resultNote(est, data, page)}</p>`;
 }
 
 function readInput(form) {

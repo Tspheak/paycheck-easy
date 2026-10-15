@@ -176,11 +176,8 @@
     "rate": 0.02,
     "shadeInRate": 0.1,
     "lowIncomeThresholds": {
-      "status": "to be confirmed",
-      "carriedOverFrom": "2025-26",
       "singlesLower": 28011,
-      "singlesUpper": 35013,
-      "note": "2026–27 legislated singles thresholds are not on the ATO reduction page. These are the 2025–26 figures, which Schedule 1 still uses. To be confirmed."
+      "singlesUpper": 35013
     }
   },
   "lito": {

@@ -1,8 +1,8 @@
 /**
  * 2026–27 Australian pay estimates driven by tax/tax-au.json.
- * Resident income tax, Medicare levy, HELP and super guarantee.
- * PAYG Schedule 1 scales in the same file are for the app; these
- * functions are the annual estimates the /au/ pages show.
+ * Yearly figures use resident income tax, the Medicare levy, HELP and super.
+ * Per-pay figures use Schedule 1 (scale 2, tax and Medicare together) and
+ * Schedule 8 (helpWithThreshold) from the same file.
  */
 
 export function roundMoney(n) {
@@ -63,11 +63,11 @@ export function medicareAmount(income, medicare) {
   const full = income * medicare.rate;
   const low = medicare.lowIncomeThresholds;
   if (income <= low.singlesLower) {
-    return { amount: 0, usedUnconfirmedThreshold: true };
+    return { amount: 0, reduced: true };
   }
   const shade = medicare.shadeInRate * (income - low.singlesLower);
   const amount = Math.min(full, shade);
-  return { amount, usedUnconfirmedThreshold: amount + 1e-6 < full };
+  return { amount, reduced: amount + 1e-6 < full };
 }
 
 export function helpAmount(income, help) {
@@ -166,7 +166,13 @@ export function estimate(data, input) {
     lito: offset,
     taxPayable,
     medicare: medicare.amount,
-    medicareUsesUnconfirmedThreshold: medicare.usedUnconfirmedThreshold,
+    medicareReduced: medicare.reduced,
+    withholding: payPeriodWithholding(data, {
+      cashAnnual: cash,
+      frequency: input.frequency,
+      hoursPerWeek: input.hoursPerWeek,
+      hasHelp: input.hasHelp,
+    }),
     help,
     helpCapped,
     takeHome,
@@ -178,20 +184,6 @@ export function estimate(data, input) {
     hoursPerWeek: input.hoursPerWeek,
     entered: input.amount,
   };
-}
-
-/** Second table column. Annual estimates also show a fortnight, matching the hub. */
-export function columnPeriod(frequency, hoursPerWeek) {
-  if (frequency === "monthly") return { label: "Per month", divide: (annual) => annual / 12 };
-  if (frequency === "weekly") return { label: "Per week", divide: (annual) => annual / 52 };
-  if (frequency === "hourly") {
-    const hours = hoursPerWeek > 0 ? hoursPerWeek : 0;
-    return {
-      label: "Per hour",
-      divide: (annual) => (hours > 0 ? annual / (hours * 52) : 0),
-    };
-  }
-  return { label: "Per fortnight", divide: (annual) => annual / 26 };
 }
 
 export function perWeek(annual) {
@@ -212,4 +204,83 @@ export function roundDollarHalfUp(amount) {
 
 export function withholding(a, b, x) {
   return a * x - b;
+}
+
+function moneyCents(amount) {
+  return Math.round(roundMoney(amount) * 100);
+}
+
+/** Weekly earnings factor x: whole dollars plus 99 cents. */
+export function weeklyFactor(weeklyEarnings) {
+  return Math.floor(moneyCents(weeklyEarnings) / 100) + 0.99;
+}
+
+function coefficientRow(scale, x) {
+  for (const row of scale) {
+    if (row.below == null || x < row.below) return row;
+  }
+  return scale[scale.length - 1];
+}
+
+/** Rounded weekly withholding from a Schedule 1 or Schedule 8 scale. */
+export function weeklyWithholding(scale, x) {
+  const row = coefficientRow(scale, x);
+  return roundDollarHalfUp(row.a * x - row.b);
+}
+
+/**
+ * PAYG withholding for one pay.
+ * Weekly: x = whole dollars + 0.99, y = a·x − b, nearest dollar.
+ * Fortnightly: half the pay, ignore cents, add 0.99, then double the rounded week.
+ * Monthly: if the pay ends in 33 cents, add one cent; × 3/13, ignore cents, add 0.99;
+ * then round(week × 13/3).
+ * Scale 2 already includes the Medicare levy. HELP is the Schedule 8 component.
+ */
+export function scheduleWithholding(periodGross, period, scales, hasHelp) {
+  const gross = roundMoney(periodGross);
+  let x;
+  let toPeriod;
+  if (period === "weekly") {
+    x = weeklyFactor(gross);
+    toPeriod = (week) => week;
+  } else if (period === "fortnightly") {
+    const halfDollars = Math.floor(moneyCents(gross) / 200);
+    x = halfDollars + 0.99;
+    toPeriod = (week) => week * 2;
+  } else if (period === "monthly") {
+    let cents = moneyCents(gross);
+    if (cents % 100 === 33) cents += 1;
+    const weeklyCents = (cents * 3) / 13;
+    x = Math.floor(weeklyCents / 100 + 1e-9) + 0.99;
+    toPeriod = (week) => roundDollarHalfUp((week * 13) / 3);
+  } else {
+    return null;
+  }
+  const payg = toPeriod(weeklyWithholding(scales.scale2, x));
+  const help = hasHelp ? toPeriod(weeklyWithholding(scales.helpWithThreshold, x)) : 0;
+  return { x, payg, help };
+}
+
+/** Column shown next to the yearly assessment. Hourly pays are withheld on the week, then spread across the hours. */
+export function payPeriodWithholding(data, { cashAnnual, frequency, hoursPerWeek, hasHelp }) {
+  const weeklyLike = frequency === "weekly" || frequency === "hourly";
+  const kind = frequency === "monthly" ? "monthly" : weeklyLike ? "weekly" : "fortnightly";
+  const labels = { weekly: "Per week", fortnightly: "Per fortnight", monthly: "Per month", hourly: "Per hour" };
+  const divisor = kind === "monthly" ? 12 : kind === "weekly" ? 52 : 26;
+  const hours = hoursPerWeek > 0 ? hoursPerWeek : 0;
+  const gross = frequency === "hourly"
+    ? roundMoney(cashAnnual / (hours * 52))
+    : roundMoney(cashAnnual / divisor);
+  const basis = frequency === "hourly" ? roundMoney(gross * hours) : gross;
+  const withheld = scheduleWithholding(basis, kind, data.scales, hasHelp);
+  const spread = frequency === "hourly" && hours > 0 ? hours : 1;
+  const payg = withheld.payg / spread;
+  const help = withheld.help / spread;
+  return {
+    label: labels[frequency === "hourly" ? "hourly" : kind],
+    gross,
+    payg,
+    help,
+    takeHome: roundMoney(gross - payg - help),
+  };
 }

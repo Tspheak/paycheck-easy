@@ -17,7 +17,9 @@ import {
   helpAmount,
   incomeTax,
   medicareAmount,
+  payPeriodWithholding,
   roundDollarHalfUp,
+  scheduleWithholding,
   superOnEarnings,
   withholding,
 } from "../assets/au-tax.js";
@@ -102,13 +104,12 @@ check("tax 72800", incomeTax(72800, brackets) === 12360);
 
 const med = data.medicareLevy;
 check("medicare rate", med.rate === 0.02);
-check("medicare thresholds to be confirmed", med.lowIncomeThresholds.status === "to be confirmed");
+check("medicare thresholds have no confirmation flag", med.lowIncomeThresholds.status == null && med.lowIncomeThresholds.carriedOverFrom == null);
 check("medicare lower", med.lowIncomeThresholds.singlesLower === 28011);
 check("medicare upper", med.lowIncomeThresholds.singlesUpper === 35013);
-check("medicare carried over", med.lowIncomeThresholds.carriedOverFrom === "2025-26");
-check("medicare below threshold", medicareAmount(20000, med).amount === 0 && medicareAmount(20000, med).usedUnconfirmedThreshold);
-check("medicare shade-in", close(medicareAmount(30000, med).amount, 0.1 * (30000 - 28011)) && medicareAmount(30000, med).usedUnconfirmedThreshold);
-check("medicare full 2%", medicareAmount(85000, med).amount === 1700 && !medicareAmount(85000, med).usedUnconfirmedThreshold);
+check("medicare below threshold", medicareAmount(20000, med).amount === 0 && medicareAmount(20000, med).reduced);
+check("medicare shade-in", close(medicareAmount(30000, med).amount, 0.1 * (30000 - 28011)) && medicareAmount(30000, med).reduced);
+check("medicare full 2%", medicareAmount(85000, med).amount === 1700 && !medicareAmount(85000, med).reduced);
 
 check("help 69528", helpAmount(69528, data.helpRepayment) === 0);
 check("help 90000", close(helpAmount(90000, data.helpRepayment), 3070.8));
@@ -118,7 +119,7 @@ check("help 186051", close(helpAmount(186051, data.helpRepayment), 18605.1));
 const baseInput = { hoursPerWeek: null, superOnTop: true, hasHelp: false, loanBalance: null };
 const hub = estimate(data, { ...baseInput, amount: 85000, frequency: "annual" });
 check("hub take-home", formatMoney(hub.takeHome) === "$67,280.00", formatMoney(hub.takeHome));
-check("hub fortnight", formatMoney(hub.takeHome / 26) === "$2,587.69");
+check("hub fortnight schedule", formatMoney(hub.withholding.takeHome) === "$2,587.23" && hub.withholding.payg === 682, JSON.stringify(hub.withholding));
 check("hub super", formatMoney(hub.superAmount) === "$10,200.00");
 check("hub super fortnight", formatMoney(hub.superAmount / 26) === "$392.31");
 
@@ -126,12 +127,18 @@ const weekly = estimate(data, { ...baseInput, amount: 1500, frequency: "weekly",
 check("weekly tax", weekly.grossTax === 13920);
 check("weekly medicare", weekly.medicare === 1560);
 check("weekly take-home year", formatMoney(weekly.takeHome) === "$62,520.00");
-check("weekly take-home week", formatMoney(weekly.takeHome / 52) === "$1,202.31");
+check("weekly take-home week", formatMoney(weekly.withholding.takeHome) === "$1,201.00" && weekly.withholding.payg === 299, JSON.stringify(weekly.withholding));
 check("weekly super week", formatMoney(weekly.superAmount / 52) === "$180.00");
 
 const fn = estimate(data, { ...baseInput, amount: 2800, frequency: "fortnightly" });
 check("fortnightly take-home year", formatMoney(fn.takeHome) === "$58,984.00");
-check("fortnightly take-home", formatMoney(fn.takeHome / 26) === "$2,268.62");
+check("fortnightly take-home", formatMoney(fn.withholding.takeHome) === "$2,266.00" && fn.withholding.payg === 534, JSON.stringify(fn.withholding));
+
+const monthly85 = scheduleWithholding(85000 / 12, "monthly", data.scales, true);
+check("schedule 1 monthly 85000 payg", monthly85.payg === 1478 && monthly85.x === 1634.99, JSON.stringify(monthly85));
+check("schedule 8 monthly 85000 help", monthly85.help === 195, JSON.stringify(monthly85));
+const monthlyColumn = payPeriodWithholding(data, { cashAnnual: 85000, frequency: "monthly", hoursPerWeek: null, hasHelp: true });
+check("monthly column matches schedule", monthlyColumn.payg === 1478 && monthlyColumn.help === 195, JSON.stringify(monthlyColumn));
 
 const help = estimate(data, { ...baseInput, amount: 90000, frequency: "annual", hasHelp: true, loanBalance: 28000 });
 check("help repayment", formatMoney(help.help) === "$3,070.80");
@@ -220,6 +227,9 @@ for (const [slug, meta] of Object.entries(expectedMeta)) {
   check(`${slug} play badge`, html.includes("google-play-badge.png"));
   check(`${slug} iOS coming soon`, html.includes('aria-label="iOS coming soon"'));
   check(`${slug} Tun Labs`, html.includes("Tun Labs"));
+  check(`${slug} support email`, html.includes("mailto:support@paycheckpocket.com") && html.includes("support@paycheckpocket.com"));
+  check(`${slug} no tunlabsapps`, !html.includes("tunlabsapps"));
+  check(`${slug} no to be confirmed`, !/to be confirmed|carried over|unconfirmed/i.test(html));
   check(`${slug} no exact`, !/\bexact\b/i.test(html));
   check(`${slug} no personal name`, !/tspheak|pheak|grok/i.test(html));
   check(`${slug} in sitemap`, sitemap.includes(`https://paycheckpocket.com/au/${slug}/`));
@@ -227,7 +237,8 @@ for (const [slug, meta] of Object.entries(expectedMeta)) {
 const payPages = ["pay-calculator", "weekly-pay-calculator", "fortnightly-pay-calculator", "hecs-help-repayment-calculator"];
 for (const slug of payPages) {
   const html = readFileSync(join(root, "au", slug, "index.html"), "utf8");
-  check(`${slug} thresholds to be confirmed`, html.includes("to be confirmed") && html.includes("$28,011") && html.includes("$35,013"));
+  check(`${slug} medicare thresholds stated`, html.includes("$28,011") && html.includes("$35,013"));
+  check(`${slug} names Schedule 1`, html.includes("Schedule 1"));
 }
 check("nav links Australia", readFileSync(join(root, "index.html"), "utf8").includes('href="au/pay-calculator/"'));
 check("no _inputs in au pages", !readdirSync(join(root, "au"), { recursive: true }).some((name) => String(name).includes("_inputs")));
