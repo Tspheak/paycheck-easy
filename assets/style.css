@@ -661,6 +661,31 @@
   }
   .play-badge-soon img { filter: grayscale(1); opacity: 0.72; }
   .au-cta .play-badge-soon img { opacity: 0.4; filter: grayscale(1); }
+  .app-store-badge {
+    height: var(--bh);
+    width: calc(var(--bh) * 646 / 250);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4B5563;
+    opacity: 0.72;
+  }
+  .app-store-badge strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 87%;
+    height: 67%;
+    box-sizing: border-box;
+    border: 2px solid currentColor;
+    border-radius: calc(var(--bh) * 0.14);
+    font-size: calc(var(--bh) * 0.24);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .au-cta .app-store-badge { opacity: 0.4; color: #E5E7EB; }
   .soon-pill {
     position: static;
     background: #fff;
