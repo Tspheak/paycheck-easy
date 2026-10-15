@@ -123,8 +123,24 @@
     transition: transform 0.15s ease;
   }
   .play-btn:hover { text-decoration: none; transform: translateY(-1px); }
-  .play-btn--soon { opacity: 0.55; cursor: default; user-select: none; box-shadow: none; filter: grayscale(1); }
-  .play-btn--soon:hover { transform: none; }
+  .play-btn.play-btn--soon,
+  .store-btn.store-btn--soon {
+    background: #4B5563;
+    color: #fff;
+    opacity: 1;
+    filter: none;
+    cursor: default;
+    user-select: none;
+    box-shadow: none;
+  }
+  .play-btn.play-btn--soon:hover,
+  .store-btn.store-btn--soon:hover { transform: none; text-decoration: none; }
+  .play-btn.play-btn--soon .play-text strong,
+  .store-btn.store-btn--soon .play-text strong {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
   .play-icon {
     width: 28px;
     height: 28px;
@@ -404,7 +420,7 @@
     border-radius: 12px;
     padding: 10px 18px 10px 14px;
   }
-  .store-btn--soon { opacity: 0.6; cursor: default; user-select: none; box-shadow: none; }
+  .store-btn { position: relative; }
   .cta-note { margin-top: 12px; font-size: 14px; color: var(--muted); }
 
   /* Real app screenshot */
@@ -617,39 +633,75 @@
   .faq details p { padding: 0 18px 16px; color: #374151; font-size: 15px; }
   .play-row { margin: 32px 0 8px; text-align: center; }
   .play-row p { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
-  .stores { --bh: 72px; display: flex; justify-content: center; align-items: center; flex-wrap: nowrap; }
+  .stores {
+    --bh: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 18px 22px;
+  }
   .stores img { height: var(--bh); width: auto; display: block; }
-  .play-badge-soon {
+  .play-badge-soon,
+  .ios-soon {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    margin: 0 calc(var(--bh) * 0.164) 0 0;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+    min-width: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
     cursor: default;
     user-select: none;
   }
-  .play-badge-soon img { filter: grayscale(1); opacity: 0.55; }
-  .play-badge-soon small { font-size: 12px; font-weight: 700; color: #6B7280; line-height: 1.2; }
-  .ios-soon {
-    height: calc(var(--bh) * 0.672);
-    width: calc(var(--bh) * 2.256);
-    margin: 0 calc(var(--bh) * 0.164) 0 0;
-    border-radius: calc(var(--bh) * 0.12);
-    background: #E5E7EB;
-    border: 1px solid #D1D5DB;
-    color: #6B7280;
-    opacity: 0.7;
-    cursor: default;
-    user-select: none;
+  .play-badge-soon img { filter: grayscale(1); opacity: 0.72; }
+  .au-cta .play-badge-soon img { opacity: 0.4; filter: grayscale(1); }
+  .app-store-badge {
+    height: var(--bh);
+    width: calc(var(--bh) * 646 / 250);
+    box-sizing: border-box;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    line-height: 1.1;
-    flex: none;
+    color: #4B5563;
+    opacity: 0.72;
   }
-  .ios-soon small { font-size: calc(var(--bh) * 0.14); font-weight: 500; letter-spacing: 0.02em; }
-  .ios-soon b { font-size: calc(var(--bh) * 0.25); font-weight: 700; }
+  .app-store-badge strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 87%;
+    height: 67%;
+    box-sizing: border-box;
+    border: 2px solid currentColor;
+    border-radius: calc(var(--bh) * 0.14);
+    font-size: calc(var(--bh) * 0.24);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .au-cta .app-store-badge { opacity: 0.4; color: #E5E7EB; }
+  .soon-pill {
+    position: static;
+    background: #fff;
+    color: #0B1220;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid #D1D5DB;
+    box-shadow: none;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .au-cta .soon-pill { border-color: transparent; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28); }
   .feature-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
   .fcard { padding: 24px; }
   .ficon {
@@ -768,7 +820,8 @@
     .site-page .fcard { padding: 28px; }
   }
   @media (max-width: 719px) {
-    .stores { --bh: 60px; }
+    .stores { --bh: 60px; flex-wrap: wrap; row-gap: 12px; }
+    .soon-pill { font-size: 14px; padding: 7px 12px; }
   }
 
 /* ==== Pricing page fix (append to END of assets/style.css) ====

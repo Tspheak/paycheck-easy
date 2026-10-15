@@ -223,10 +223,10 @@ for (const [slug, meta] of Object.entries(expectedMeta)) {
   check(`${slug} title`, html.includes(`<title>${meta.title}</title>`));
   check(`${slug} description`, html.includes(`content="${meta.description}"`));
   check(`${slug} canonical`, html.includes(`https://paycheckpocket.com/au/${slug}/`));
-  check(`${slug} play coming soon`, html.includes('class="play-badge-soon"') && html.includes('aria-label="Coming soon to Google Play"') && html.includes("Coming soon to Google Play"));
+  check(`${slug} play coming soon`, html.includes('class="play-badge-soon"') && html.includes('aria-label="Google Play, coming soon"') && html.includes("Google Play · Coming soon"));
   check(`${slug} play badge`, html.includes("google-play-badge.png"));
   check(`${slug} no live play link`, !html.includes("play.google.com"));
-  check(`${slug} iOS coming soon`, html.includes('aria-label="iOS coming soon"'));
+  check(`${slug} iOS coming soon`, html.includes('aria-label="App Store, coming soon"') && html.includes("App Store · Coming soon"));
   check(`${slug} Tun Labs`, html.includes("Tun Labs"));
   check(`${slug} support email`, html.includes("mailto:support@paycheckpocket.com") && html.includes("support@paycheckpocket.com"));
   check(`${slug} no tunlabsapps`, !html.includes("tunlabsapps"));
