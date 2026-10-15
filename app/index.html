@@ -6,7 +6,6 @@
     paycheckpocket.com serves this app at /app/. Must start and end with /.
   -->
   <base href="/app/">
-  <link rel="canonical" href="https://paycheckpocket.com/app/" />
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,10 +18,14 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="manifest" href="manifest.json">
   <title>Paycheck calculator — Paycheck Pocket</title>
+  <script>
+    if (new URLSearchParams(location.search).get('embed') === '1') {
+      document.documentElement.classList.add('embed');
+    }
+  </script>
 
   <!-- Site styles live one level up, at /assets/style.css. -->
   <link rel="stylesheet" href="../assets/style.css">
-  <script>if (/[?&]embed=1(?:&|$)/.test(location.search)) document.documentElement.classList.add("is-embed");</script>
   <style>
     /* The calculator view fills this host. Desktop height is set from Flutter
        so the site header, page, and footer scroll as one document. */
@@ -34,11 +37,17 @@
     html, body { margin: 0; background: #F3F7F5; }
     nav a.active {
       color: var(--teal, #0F766E);
-      text-decoration: none;
-      box-shadow: inset 0 -2px 0 #E0A526;
+      text-decoration: underline;
+      text-underline-offset: 6px;
     }
-    html.is-embed header, html.is-embed footer { display: none !important; }
-    html.is-embed #flutter_host { width: 100%; margin: 0; min-height: 640px; }
+    /* ?embed=1 is an iframe on an SEO page. Hide this page's header and
+       footer so they are not shown twice. The calculator keeps its own bar. */
+    html.embed header,
+    html.embed footer { display: none !important; }
+    html.embed #flutter_host {
+      width: 100%;
+      margin: 0;
+    }
     /* Phone width feels like the app: no site header or footer. */
     @media (max-width: 899px) {
       header, footer { display: none !important; }
@@ -52,7 +61,6 @@
       }
     }
   </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8283820510832216" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
@@ -62,13 +70,11 @@
         <span>Paycheck Pocket</span>
       </a>
       <nav>
-        <a href="../">Home</a>
         <a class="active" href="./" aria-current="page">Calculator</a>
-        <a href="../au/">Australia</a>
-        <a href="../features/">Features</a>
-        <a href="../pricing/">Pricing</a>
+        <a href="../#features">Features</a>
+        <a href="../#pricing">Pricing</a>
         <a href="../privacy/">Privacy</a>
-        <a href="../contact/">Contact</a>
+        <a href="mailto:support@paycheckpocket.com">Contact</a>
       </nav>
     </div>
   </header>
@@ -77,18 +83,15 @@
     <div id="flutter_host"></div>
   </main>
 
-  <footer>
+  <footer id="contact">
     <div class="container footer-inner">
-      <span>© 2026 Tun Labs</span>
+      <div class="footer-brand">Tun Labs</div>
       <div class="footer-links">
-        <a href="../au/pay-calculator/">AU pay</a>
-        <a href="../au/weekly-pay-calculator/">Weekly</a>
-        <a href="../au/fortnightly-pay-calculator/">Fortnightly</a>
-        <a href="../au/hecs-help-repayment-calculator/">HECS/HELP</a>
-        <a href="../au/super-calculator/">Super</a>
-        <a href="../privacy/">Privacy</a>
-        <a href="../contact/">Contact</a>
+        <a href="./">Web calculator</a>
+        <a href="../privacy/">Privacy policy</a>
+        <a href="mailto:support@paycheckpocket.com">Contact support@paycheckpocket.com</a>
       </div>
+      <div class="footer-copy">© 2026 Tun Labs. Paycheck Pocket for Android.</div>
     </div>
   </footer>
 
