@@ -36,7 +36,7 @@ function resultNote(est, data, page) {
     bits.push("Includes the low income tax offset.");
   }
   if (page !== "super") {
-    bits.push("Per-pay withholding is ATO Schedule 1 (tax and Medicare together) and Schedule 8 for HELP. It is not the yearly tax divided by the number of pays.");
+    bits.push("Income tax taken out of each pay includes Medicare. A study loan is taken out on its own. It is not the yearly tax divided by the number of pays.");
   }
   if (est.superCapped) {
     bits.push(
@@ -66,8 +66,8 @@ function payTable(est) {
     rows.push(mixedRow("Income tax (2026–27 resident rates)", -est.taxPayable, null));
   }
   rows.push(mixedRow(medLabel, -est.medicare, null));
-  rows.push(mixedRow("PAYG withholding (Schedule 1)", null, -pay.payg));
-  if (est.hasHelp) rows.push(mixedRow("HELP (year: repayment, pay: Schedule 8)", -est.help, -pay.help));
+  rows.push(mixedRow("Income tax taken out", null, -pay.payg));
+  if (est.hasHelp) rows.push(mixedRow("Study loan (year: repayment, each pay: taken out)", -est.help, -pay.help));
   const body = rows.join("");
   const superLabel = est.superOnTop
     ? "Employer super (12%, paid on top)"
@@ -96,9 +96,9 @@ function subtitle(page, est) {
   }
   const unit = { weekly: "week", fortnightly: "fortnight", monthly: "month", hourly: "hour" }[est.frequency];
   if (unit) {
-    return `Schedule 1 take-home per ${unit} · ${formatMoney(est.takeHome)} assessed per year`;
+    return `Take-home per ${unit} after income tax taken out · ${formatMoney(est.takeHome)} assessed per year`;
   }
-  return `take-home per year · ${formatMoney(est.withholding.takeHome)} per fortnight after Schedule 1`;
+  return `take-home per year · ${formatMoney(est.withholding.takeHome)} per fortnight after income tax taken out`;
 }
 
 function bigAmount(page, est) {

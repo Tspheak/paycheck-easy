@@ -239,7 +239,7 @@ const payPages = ["pay-calculator", "weekly-pay-calculator", "fortnightly-pay-ca
 for (const slug of payPages) {
   const html = readFileSync(join(root, "au", slug, "index.html"), "utf8");
   check(`${slug} medicare thresholds stated`, html.includes("$28,011") && html.includes("$35,013"));
-  check(`${slug} names Schedule 1`, html.includes("Schedule 1"));
+  check(`${slug} names income tax taken out`, html.includes("Income tax taken out"));
 }
 check("nav links Australia", readFileSync(join(root, "index.html"), "utf8").includes('href="au/pay-calculator/"'));
 check("no _inputs in au pages", !readdirSync(join(root, "au"), { recursive: true }).some((name) => String(name).includes("_inputs")));
