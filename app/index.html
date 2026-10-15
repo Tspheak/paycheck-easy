@@ -27,38 +27,46 @@
   <!-- Site styles live one level up, at /assets/style.css. -->
   <link rel="stylesheet" href="../assets/style.css">
   <style>
-    /* The calculator view fills this host. Desktop height is set from Flutter
-       so the site header, page, and footer scroll as one document. */
+    html, body { margin: 0; height: 100%; background: #F3F7F5; }
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100dvh;
+      overflow: hidden;
+      position: relative;
+    }
+    header { position: relative; z-index: 100; flex: none; }
+    main { flex: 1 1 auto; min-height: 0; display: flex; }
     #flutter_host {
-      width: min(1120px, calc(100% - 40px));
-      margin: 8px auto;
-      min-height: 960px;
+      position: relative;
+      flex: 1 1 auto;
+      width: 100%;
+      height: var(--app-rest-h, calc(100dvh - var(--site-header-h, 69px))) !important;
+      max-height: var(--app-rest-h, calc(100dvh - var(--site-header-h, 69px))) !important;
+      min-height: 0;
+      margin: 0;
+      overflow: hidden;
     }
-    html, body { margin: 0; background: #F3F7F5; }
-    nav a.active {
-      color: var(--teal, #0F766E);
-      text-decoration: underline;
-      text-underline-offset: 6px;
+    #flutter_host flutter-view {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
     }
-    /* ?embed=1 is an iframe on an SEO page. Hide this page's header and
-       footer so they are not shown twice. The calculator keeps its own bar. */
+    body > flutter-view {
+      position: absolute !important;
+      top: var(--site-header-h, 69px) !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: var(--app-rest-h, calc(100dvh - var(--site-header-h, 69px))) !important;
+    }
+    footer { display: none; }
     html.embed header,
     html.embed footer { display: none !important; }
-    html.embed #flutter_host {
-      width: 100%;
-      margin: 0;
-    }
-    /* Phone width feels like the app: no site header or footer. */
-    @media (max-width: 899px) {
-      header, footer { display: none !important; }
-      html, body { height: 100%; overflow: hidden; }
-      #flutter_host {
-        width: 100%;
-        margin: 0;
-        height: 100vh;
-        height: 100dvh;
-        min-height: 0;
-      }
+    html.embed #flutter_host,
+    html.embed body > flutter-view {
+      top: 0 !important;
+      height: 100dvh !important;
     }
   </style>
 </head>
@@ -70,11 +78,12 @@
         <span>Paycheck Pocket</span>
       </a>
       <nav>
-        <a class="active" href="./" aria-current="page">Calculator</a>
-        <a href="../#features">Features</a>
-        <a href="../#pricing">Pricing</a>
+        <a href="../">Home</a>
+        <a href="./" aria-current="page">Calculator</a>
+        <a href="../features/">Features</a>
+        <a href="../pricing/">Pricing</a>
         <a href="../privacy/">Privacy</a>
-        <a href="mailto:support@paycheckpocket.com">Contact</a>
+        <a href="../contact/">Contact</a>
       </nav>
     </div>
   </header>
@@ -138,6 +147,22 @@ addEventListener("message", eventListener);
 }
 _flutter.buildConfig = {"engineRevision":"af7e796e161ae0bb1ff0758c71a7105418bd9ded","wasmHashes":{"wimp.wasm":"e924eaafd801d41e017d178f3fd5cf8a417f641fe35c9ed34a4e1d7582283e0c","webparagraph/canvaskit.wasm":"0ce1b05082efdc8529550e8a01f6ff0593972d55525035010e26f5600aa9f254","skwasm.wasm":"e540fd5e8303b7b68ec2718cb49e9c421f8ade3075b15e02a7059a62654df9a1","chromium/canvaskit.wasm":"ae8ff1d858140f7b1300ced3fa89fb8c9dce0a400a0f4f1e11f6dcfb3315fdcf","canvaskit.wasm":"fbed517a43e82452404446683f00f2e876d835aed84410695759e67b6bb01cd3","skwasm_heavy.wasm":"565f5cc1cca6ab120f11934b105f01fec4b58b480c82e0889dca93af8e6f8635"},"builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"},{}]};
 
+
+    function sizeAppHost() {
+      var header = document.querySelector("header");
+      var host = document.querySelector("#flutter_host");
+      if (!header || !host) return;
+      var headerH = header.offsetHeight;
+      var rest = Math.max(0, window.innerHeight - headerH);
+      document.documentElement.style.setProperty("--site-header-h", headerH + "px");
+      document.documentElement.style.setProperty("--app-rest-h", rest + "px");
+    }
+    sizeAppHost();
+    window.addEventListener("resize", sizeAppHost);
+    if (window.ResizeObserver) {
+      new ResizeObserver(sizeAppHost).observe(document.querySelector("header"));
+      new ResizeObserver(sizeAppHost).observe(document.querySelector("#flutter_host"));
+    }
 
     _flutter.loader.load({
       onEntrypointLoaded: async function (engineInitializer) {
