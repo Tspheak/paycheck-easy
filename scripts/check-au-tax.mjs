@@ -223,8 +223,9 @@ for (const [slug, meta] of Object.entries(expectedMeta)) {
   check(`${slug} title`, html.includes(`<title>${meta.title}</title>`));
   check(`${slug} description`, html.includes(`content="${meta.description}"`));
   check(`${slug} canonical`, html.includes(`https://paycheckpocket.com/au/${slug}/`));
-  check(`${slug} play link`, html.includes("https://play.google.com/store/apps/details?id=com.tunlabs.paycheckpocket"));
+  check(`${slug} play coming soon`, html.includes('class="play-badge-soon"') && html.includes('aria-label="Coming soon to Google Play"') && html.includes("Coming soon to Google Play"));
   check(`${slug} play badge`, html.includes("google-play-badge.png"));
+  check(`${slug} no live play link`, !html.includes("play.google.com"));
   check(`${slug} iOS coming soon`, html.includes('aria-label="iOS coming soon"'));
   check(`${slug} Tun Labs`, html.includes("Tun Labs"));
   check(`${slug} support email`, html.includes("mailto:support@paycheckpocket.com") && html.includes("support@paycheckpocket.com"));
