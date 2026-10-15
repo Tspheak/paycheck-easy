@@ -804,6 +804,148 @@
 
 /* BEST VALUE pill centered on the card's top border.
    #0B2E2A on #E0A526 = ~7.6:1 (AA/AAA). */
+@media (max-width: 900px) {
+  nav { flex-wrap: wrap; row-gap: 8px; }
+}
+
+/* Australian SEO calculators (/au/) */
+.au-page > section { margin-top: 28px; }
+.au-page > .hero { margin-top: 0; padding-bottom: 16px; }
+.au-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
+.au-nav a {
+  font-size: 14px;
+  font-weight: 600;
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 999px;
+  padding: 6px 14px;
+  color: #374151;
+}
+.au-nav a:hover { text-decoration: none; color: var(--teal); }
+.au-nav a[aria-current="page"] { background: var(--teal); border-color: var(--teal); color: #fff; }
+.au-page .grid2 { display: grid; gap: 20px; }
+@media (min-width: 900px) { .au-page .grid2 { grid-template-columns: 1fr 1fr; } }
+.au-page .card h2, .au-page section > h2 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+.au-page label { display: block; font-size: 14px; font-weight: 700; margin: 14px 0 6px; }
+.au-page .field, .au-page select.field {
+  width: 100%;
+  border: 1px solid #D1D5DB;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font: inherit;
+  background: #fff;
+  color: var(--text);
+}
+.au-page .seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.au-page .seg button {
+  font: inherit;
+  cursor: pointer;
+  background: #fff;
+  color: var(--text);
+  border: 1px solid #D1D5DB;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+.au-page .seg button[aria-checked="true"] {
+  background: var(--teal-soft);
+  border-color: var(--teal);
+  color: var(--teal-dark);
+  font-weight: 700;
+}
+.au-page .check {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+.au-page .check input { width: 18px; height: 18px; accent-color: var(--teal); flex: none; }
+.au-page .au-calc-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  border: 0;
+  cursor: pointer;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 8px 20px rgba(15, 118, 110, 0.25);
+}
+.au-page .au-calc-btn:hover { background: var(--teal-dark); }
+.au-page .result { border-top: 4px solid var(--gold); }
+.au-page .result .plan-pill {
+  position: static;
+  transform: none;
+  display: inline-block;
+  box-shadow: none;
+  top: auto;
+  left: auto;
+}
+.au-page .result h2 { margin-top: 10px; }
+.au-page .big {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--teal-dark);
+  letter-spacing: -0.02em;
+}
+.au-page .small.lead { margin-top: 0; }
+.au-page table { width: 100%; border-collapse: collapse; font-size: 15px; margin-top: 10px; }
+.au-page td, .au-page th { padding: 9px 6px; border-bottom: 1px solid #E5E7EB; text-align: left; }
+.au-page td.n, .au-page th.n { white-space: nowrap; text-align: right; font-variant-numeric: tabular-nums; }
+.au-page tr.tot td { font-weight: 800; border-bottom: none; }
+.au-page .small { font-size: 13px; color: var(--muted); margin-top: 10px; }
+.au-page .prose h2 { margin-top: 20px; }
+.au-page .prose h2:first-child { margin-top: 0; }
+.au-page .prose p, .au-page .prose li { color: #374151; margin-top: 10px; }
+.au-page .prose ul { margin-left: 20px; }
+.au-page .pill-tbc {
+  position: static;
+  transform: none;
+  display: inline-block;
+  box-shadow: none;
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FCD34D;
+  font-variant-caps: normal;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 13px;
+  vertical-align: 1px;
+}
+.au-page .au-links { display: grid; gap: 12px; }
+@media (min-width: 720px) { .au-page .au-links { grid-template-columns: repeat(2, 1fr); } }
+.au-page .au-links a {
+  display: block;
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
+  padding: 16px 18px;
+  font-weight: 700;
+}
+.au-page .au-links a:hover { text-decoration: none; border-color: var(--teal); }
+.au-page .au-links a span { display: block; font-weight: 400; color: var(--muted); font-size: 14px; }
+.au-page .au-cta {
+  background: #0B3D3A;
+  color: #ECFDF5;
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  text-align: center;
+}
+.au-page .au-cta h2 { color: #fff; }
+.au-page .au-cta p { color: #A7F3D0; margin-bottom: 16px; }
+@media (max-width: 719px) {
+  .au-page table { font-size: 13px; }
+  .au-page td, .au-page th { padding: 8px 4px; }
+  .au-page .big { font-size: 34px; }
+}
+
 .plan-pill {
   position: absolute;
   top: 0; left: 50%;

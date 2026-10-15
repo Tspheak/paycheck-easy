@@ -2,8 +2,10 @@
   "schemaVersion": 1,
   "country": "au",
   "taxYear": "2026–27",
-  "effectiveFrom": "2026-07-01",
-  "generatedAt": "2026-10-11T08:59:00.770377Z",
+  "effectiveFrom": "2026-10-15",
+  "incomeYearStart": "2026-07-01",
+  "incomeYearEnd": "2027-06-30",
+  "generatedAt": "2026-10-15T09:01:14Z",
   "superRate": 0.12,
   "superAnnualCap": 270830.0,
   "ordinaryHoursCaps": {
@@ -156,6 +158,47 @@
         "a": 0.1,
         "b": 0.0
       }
+    ]
+  },
+  "payPeriods": {
+    "weekly": 52,
+    "fortnightly": 26,
+    "monthly": 12
+  },
+  "residentBrackets": [
+    { "upTo": 18200, "base": 0, "excessOver": 0, "rate": 0 },
+    { "upTo": 45000, "base": 0, "excessOver": 18200, "rate": 0.15 },
+    { "upTo": 135000, "base": 4020, "excessOver": 45000, "rate": 0.3 },
+    { "upTo": 190000, "base": 31020, "excessOver": 135000, "rate": 0.37 },
+    { "upTo": null, "base": 51370, "excessOver": 190000, "rate": 0.45 }
+  ],
+  "medicareLevy": {
+    "rate": 0.02,
+    "shadeInRate": 0.1,
+    "lowIncomeThresholds": {
+      "status": "to be confirmed",
+      "carriedOverFrom": "2025-26",
+      "singlesLower": 28011,
+      "singlesUpper": 35013,
+      "note": "2026–27 legislated singles thresholds are not on the ATO reduction page. These are the 2025–26 figures, which Schedule 1 still uses. To be confirmed."
+    }
+  },
+  "lito": {
+    "maximum": 700,
+    "cutsOutAt": 66667,
+    "tiers": [
+      { "upTo": 37500, "base": 700, "excessOver": 0, "reduction": 0 },
+      { "upTo": 45000, "base": 700, "excessOver": 37500, "reduction": 0.05 },
+      { "upTo": 66667, "base": 325, "excessOver": 45000, "reduction": 0.015 }
+    ],
+    "sourceNote": "ATO low income tax offset page is not labelled with an income year."
+  },
+  "helpRepayment": {
+    "bands": [
+      { "upTo": 69528, "method": "nil" },
+      { "upTo": 129717, "method": "marginal", "excessOver": 69528, "base": 0, "rate": 0.15 },
+      { "upTo": 186050, "method": "marginal", "excessOver": 129717, "base": 9028, "rate": 0.17 },
+      { "upTo": null, "method": "total", "rate": 0.1 }
     ]
   }
 }
