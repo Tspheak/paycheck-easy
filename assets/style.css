@@ -757,3 +757,48 @@
   @media (max-width: 719px) {
     .stores { --bh: 60px; }
   }
+
+/* ==== Pricing page fix (append to END of assets/style.css) ====
+   Root cause: the live markup used class "best" on .plan-option, which also
+   matches the homepage badge rule `.best { position:absolute; top:-11px;
+   left:50%; transform:translateX(-50%); color:#fff; ... }`. The Lifetime row
+   was pulled out of flow over the Premium <h2>, and inherited white text on
+   #FFFBEB. The .best-tag pill was white on gold (#E0A526, ~2.2:1, fails AA).
+   New markup drops .best / .plan-option / .best-tag entirely.             */
+
+/* Three-card grid: stacked on phone, 3 columns on laptop. */
+.plans.plans-3 { max-width: 1080px; row-gap: 32px; } /* row gap leaves room for the pill */
+@media (min-width: 900px) {
+  .plans.plans-3 { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+}
+@media (min-width: 720px) and (max-width: 899px) {
+  .plans.plans-3 { grid-template-columns: 1fr; max-width: 560px; } /* overrides 2-col rule */
+}
+
+/* Supporting copy under each price: dark gray on white, 7:1+ contrast. */
+.plan-note { font-size: 15px; color: #4B5563; margin-top: 4px; }
+.plan-price small { margin-left: 2px; }
+
+/* Featured (Lifetime) card: 2px teal border already from .plan-premium.
+   Extra padding-top so the pill never touches the title. */
+.plan-featured { background: #F0FDFA; }
+.site-page .card.plan-featured { padding-top: 40px; }
+
+/* BEST VALUE pill centered on the card's top border.
+   #0B2E2A on #E0A526 = ~7.6:1 (AA/AAA). */
+.plan-pill {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #E0A526;
+  color: #0B2E2A;
+  font-weight: 800;
+  font-size: 13px;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  padding: 6px 14px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(11, 46, 42, 0.18);
+}
