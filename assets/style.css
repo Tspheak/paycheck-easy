@@ -643,7 +643,7 @@
     user-select: none;
   }
   .play-badge-soon img { filter: grayscale(1); opacity: 0.38; }
-  .au-cta .play-badge-soon img { opacity: 0.28; }
+  .au-cta .play-badge-soon img { opacity: 0.16; filter: grayscale(1) brightness(1.8); }
   .ios-soon {
     position: relative;
     height: calc(var(--bh) * 0.72);
