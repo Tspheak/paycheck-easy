@@ -123,6 +123,8 @@
     transition: transform 0.15s ease;
   }
   .play-btn:hover { text-decoration: none; transform: translateY(-1px); }
+  .play-btn--soon { opacity: 0.55; cursor: default; user-select: none; box-shadow: none; filter: grayscale(1); }
+  .play-btn--soon:hover { transform: none; }
   .play-icon {
     width: 28px;
     height: 28px;
@@ -263,7 +265,7 @@
   /* Pricing */
   .pricing {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 18px;
     align-items: stretch;
   }
@@ -617,6 +619,17 @@
   .play-row p { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
   .stores { --bh: 72px; display: flex; justify-content: center; align-items: center; flex-wrap: nowrap; }
   .stores img { height: var(--bh); width: auto; display: block; }
+  .play-badge-soon {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin: 0 calc(var(--bh) * 0.164) 0 0;
+    cursor: default;
+    user-select: none;
+  }
+  .play-badge-soon img { filter: grayscale(1); opacity: 0.55; }
+  .play-badge-soon small { font-size: 12px; font-weight: 700; color: #6B7280; line-height: 1.2; }
   .ios-soon {
     height: calc(var(--bh) * 0.672);
     width: calc(var(--bh) * 2.256);
@@ -769,7 +782,12 @@
 /* Three-card grid: stacked on phone, 3 columns on laptop. */
 .plans.plans-3 { max-width: 1080px; row-gap: 32px; } /* row gap leaves room for the pill */
 @media (min-width: 900px) {
-  .plans.plans-3 { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+  .plans.plans-3 { grid-template-columns: 1fr 1fr; align-items: stretch; }
+  .pricing { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1200px) {
+  .plans.plans-3 { grid-template-columns: repeat(4, 1fr); max-width: 1200px; }
+  .pricing { grid-template-columns: repeat(4, 1fr); }
 }
 @media (min-width: 720px) and (max-width: 899px) {
   .plans.plans-3 { grid-template-columns: 1fr; max-width: 560px; } /* overrides 2-col rule */

@@ -31052,9 +31052,9 @@ case"Monthly":return a.gAy()
 case"Yearly":return a.gDG()
 case"Manage subscription":return a.gAa()
 case u.gj:return a.gCe()
-case"$0.99/month":return a.gyD()
-case"$2.99/year":return a.gyE()
-case"$4.99":return a.gyC()
+case"$0.99/month":case"$3.99/mo":return a.gyD()
+case"$2.99/year":case"$29.99/yr":return a.gyE()
+case"$4.99":case"$49.99":case"$49.99 lifetime":return a.gyC()
 case"Restore purchases":return a.gCz()
 case"Not now":return a.gAP()
 case"Purchases restored.":return a.gCg()
@@ -98149,11 +98149,11 @@ gAy(){return"Monthly"},
 gDG(){return"Yearly"},
 gAa(){return"Manage subscription"},
 gCe(){return u.gj},
-gyD(){return"$3.99/month"},
-gyE(){return"$29.99/year"},
-gyC(){return"$49.99"},
-C_(a){return a+"/month"},
-C0(a){return a+"/year"},
+gyD(){return"$3.99/mo"},
+gyE(){return"$29.99/yr"},
+gyC(){return"$49.99 lifetime"},
+C_(a){return a+"/mo"},
+C0(a){return a+"/yr"},
 ui(a){return"Save "+a+"%"},
 gCz(){return"Restore purchases"},
 gAP(){return"Not now"},
@@ -98556,7 +98556,7 @@ gAa(){return"Administrar suscripci\xf3n"},
 gCe(){return"Las compras a\xfan no est\xe1n disponibles. Int\xe9ntalo m\xe1s tarde."},
 gyD(){return"$3.99/mes"},
 gyE(){return"$29.99/a\xf1o"},
-gyC(){return"$49.99"},
+gyC(){return"$49.99 de por vida"},
 C_(a){return a+"/mes"},
 C0(a){return a+"/a\xf1o"},
 ui(a){return"Ahorra un "+a+"%"},
@@ -98961,7 +98961,7 @@ gAa(){return"\u1782\u17d2\u179a\u1794\u17cb\u1782\u17d2\u179a\u1784\u1780\u17b6\
 gCe(){return"\u1780\u17b6\u179a\u1791\u17b7\u1789\u1798\u17b7\u1793\u1791\u17b6\u1793\u17cb\u1798\u17b6\u1793\u1793\u17c5\u17a1\u17be\u1799\u1791\u17c1\u17d4 \u179f\u17bc\u1798\u1796\u17d2\u1799\u17b6\u1799\u17b6\u1798\u1798\u17d2\u178a\u1784\u1791\u17c0\u178f\u1793\u17c5\u1796\u17c1\u179b\u1780\u17d2\u179a\u17c4\u1799\u17d4"},
 gyD(){return"$3.99/\u1781\u17c2"},
 gyE(){return"$29.99/\u1786\u17d2\u1793\u17b6\u17c6"},
-gyC(){return"$49.99"},
+gyC(){return"$49.99 \u17a2\u179f\u17cb\u1798\u17bd\u1799\u1787\u17b8\u179c\u17b7\u178f"},
 C_(a){return a+"/\u1781\u17c2"},
 C0(a){return a+"/\u1786\u17d2\u1793\u17b6\u17c6"},
 ui(a){return"\u179f\u1793\u17d2\u179f\u17c6 "+a+"%"},
@@ -99366,7 +99366,7 @@ gAa(){return"Qu\u1ea3n l\xfd g\xf3i \u0111\u0103ng k\xfd"},
 gCe(){return"Giao d\u1ecbch mua ch\u01b0a s\u1eb5n s\xe0ng. H\xe3y th\u1eed l\u1ea1i sau."},
 gyD(){return"$3.99/th\xe1ng"},
 gyE(){return"$29.99/n\u0103m"},
-gyC(){return"$49.99"},
+gyC(){return"$49.99 tr\u1ecdn \u0111\u1eddi"},
 C_(a){return a+"/th\xe1ng"},
 C0(a){return a+"/n\u0103m"},
 ui(a){return"Ti\u1ebft ki\u1ec7m "+a+"%"},
@@ -99771,7 +99771,7 @@ gAa(){return"\u7ba1\u7406\u8ba2\u9605"},
 gCe(){return"\u6682\u65f6\u65e0\u6cd5\u8d2d\u4e70\u3002\u8bf7\u7a0d\u540e\u518d\u8bd5\u3002"},
 gyD(){return"$3.99/\u6708"},
 gyE(){return"$29.99/\u5e74"},
-gyC(){return"$49.99"},
+gyC(){return"$49.99 \u7ec8\u8eab"},
 C_(a){return a+"/\u6708"},
 C0(a){return a+"/\u5e74"},
 ui(a){return"\u7701 "+a+"%"},
