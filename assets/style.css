@@ -123,8 +123,22 @@
     transition: transform 0.15s ease;
   }
   .play-btn:hover { text-decoration: none; transform: translateY(-1px); }
-  .play-btn--soon { opacity: 0.55; cursor: default; user-select: none; box-shadow: none; filter: grayscale(1); }
-  .play-btn--soon:hover { transform: none; }
+  .play-btn--soon,
+  .store-btn--soon {
+    position: relative;
+    background: #4B5563;
+    opacity: 1;
+    filter: none;
+    cursor: default;
+    user-select: none;
+    box-shadow: none;
+  }
+  .play-btn--soon:hover,
+  .store-btn--soon:hover { transform: none; text-decoration: none; }
+  .play-btn--soon .play-icon,
+  .play-btn--soon .play-text,
+  .store-btn--soon .play-icon,
+  .store-btn--soon .play-text { opacity: 0.38; }
   .play-icon {
     width: 28px;
     height: 28px;
@@ -404,7 +418,7 @@
     border-radius: 12px;
     padding: 10px 18px 10px 14px;
   }
-  .store-btn--soon { opacity: 0.6; cursor: default; user-select: none; box-shadow: none; }
+  .store-btn { position: relative; }
   .cta-note { margin-top: 12px; font-size: 14px; color: var(--muted); }
 
   /* Real app screenshot */
@@ -620,36 +634,65 @@
   .stores { --bh: 72px; display: flex; justify-content: center; align-items: center; flex-wrap: nowrap; }
   .stores img { height: var(--bh); width: auto; display: block; }
   .play-badge-soon {
+    position: relative;
     display: inline-flex;
-    flex-direction: column;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
     margin: 0 calc(var(--bh) * 0.164) 0 0;
     cursor: default;
     user-select: none;
   }
-  .play-badge-soon img { filter: grayscale(1); opacity: 0.55; }
-  .play-badge-soon small { font-size: 12px; font-weight: 700; color: #6B7280; line-height: 1.2; }
+  .play-badge-soon img { filter: grayscale(1); opacity: 0.38; }
+  .au-cta .play-badge-soon img { opacity: 0.28; }
   .ios-soon {
-    height: calc(var(--bh) * 0.672);
-    width: calc(var(--bh) * 2.256);
-    margin: 0 calc(var(--bh) * 0.164) 0 0;
+    position: relative;
+    height: calc(var(--bh) * 0.72);
+    width: auto;
+    min-width: calc(var(--bh) * 2.4);
+    margin: 0;
+    padding: 0 10px 0 14px;
+    gap: 8px;
     border-radius: calc(var(--bh) * 0.12);
     background: #E5E7EB;
     border: 1px solid #D1D5DB;
-    color: #6B7280;
-    opacity: 0.7;
+    color: #9CA3AF;
     cursor: default;
     user-select: none;
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    line-height: 1.1;
     flex: none;
   }
-  .ios-soon small { font-size: calc(var(--bh) * 0.14); font-weight: 500; letter-spacing: 0.02em; }
-  .ios-soon b { font-size: calc(var(--bh) * 0.25); font-weight: 700; }
+  .au-cta .ios-soon {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.32);
+  }
+  .ios-soon b {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    opacity: 0.45;
+  }
+  .au-cta .ios-soon b { color: #D1FAE5; opacity: 0.7; }
+  .ios-soon .soon-pill { position: static; transform: none; }
+  .soon-pill {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    color: #0B1220;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    padding: 8px 14px;
+    border-radius: 999px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(11, 18, 32, 0.06);
+    white-space: nowrap;
+    pointer-events: none;
+  }
   .feature-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
   .fcard { padding: 24px; }
   .ficon {
@@ -768,7 +811,8 @@
     .site-page .fcard { padding: 28px; }
   }
   @media (max-width: 719px) {
-    .stores { --bh: 60px; }
+    .stores { --bh: 60px; flex-wrap: wrap; row-gap: 12px; }
+    .soon-pill { font-size: 14px; padding: 7px 12px; }
   }
 
 /* ==== Pricing page fix (append to END of assets/style.css) ====
