@@ -705,25 +705,41 @@
     text-align: center;
   }
   .get-cta p { color: var(--muted); margin: -14px 0 16px; }
-  /* Pricing page cards stay in normal flow. The pill is centered on the
-     top border with a negative margin, not position:absolute. */
-  .site-page .pricing { margin-top: 20px; padding-top: 8px; gap: 28px; overflow: visible; }
-  .site-page .price-card { overflow: visible; }
-  .site-page .price-card.featured { transform: none; }
-  .value-pill {
-    position: static;
-    display: block;
-    width: max-content;
-    margin: -40px auto 16px;
-    background: var(--teal);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    line-height: 1.2;
-    padding: 4px 12px;
-    border-radius: 999px;
+  .plans { display: grid; gap: 20px; grid-template-columns: 1fr; max-width: 880px; margin: 0 auto; }
+  .plan { position: relative; display: flex; flex-direction: column; }
+  .plan h2 { font-size: 22px; font-weight: 800; }
+  .plan-price { font-size: 40px; font-weight: 800; letter-spacing: -0.02em; margin: 8px 0 2px; }
+  .plan-price small { font-size: 16px; color: var(--muted); font-weight: 600; }
+  .plan ul { list-style: none; margin: 18px 0 0; display: grid; gap: 10px; }
+  .plan li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+  .plan li svg { flex: none; margin-top: 3px; }
+  .plan-premium { border: 2px solid var(--teal); box-shadow: 0 12px 30px rgba(15, 118, 110, 0.15); }
+  .plan-options { display: grid; gap: 10px; margin-top: 12px; }
+  .plan-option {
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
   }
+  .plan-option.best { border-color: var(--gold); background: #FFFBEB; }
+  .plan-option b { font-size: 16px; }
+  .plan-option .amount { font-size: 22px; font-weight: 800; }
+  .plan-option .amount small { font-size: 13px; color: var(--muted); font-weight: 600; }
+  .best-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    color: #fff;
+    background: var(--gold);
+    border-radius: 999px;
+    padding: 2px 9px;
+    margin-left: 6px;
+    vertical-align: 2px;
+  }
+  .plan-option .detail { font-size: 13px; color: var(--muted); }
   .restore-note { max-width: 880px; margin: 24px auto 0; }
   .fine-print { font-size: 13px; color: var(--muted); text-align: center; margin-top: 14px; }
   .faq-wrap { max-width: 760px; margin: 0 auto; }
@@ -732,6 +748,7 @@
     .site-page .card { padding: 32px; }
     .mail-btn { display: inline-flex; font-size: 17px; padding: 16px 26px; }
     .feature-grid { grid-template-columns: repeat(2, 1fr); }
+    .plans { grid-template-columns: 1fr 1fr; align-items: stretch; }
   }
   @media (min-width: 1000px) {
     .feature-grid { grid-template-columns: repeat(3, 1fr); }
@@ -740,3 +757,48 @@
   @media (max-width: 719px) {
     .stores { --bh: 60px; }
   }
+
+/* ==== Pricing page fix (append to END of assets/style.css) ====
+   Root cause: the live markup used class "best" on .plan-option, which also
+   matches the homepage badge rule `.best { position:absolute; top:-11px;
+   left:50%; transform:translateX(-50%); color:#fff; ... }`. The Lifetime row
+   was pulled out of flow over the Premium <h2>, and inherited white text on
+   #FFFBEB. The .best-tag pill was white on gold (#E0A526, ~2.2:1, fails AA).
+   New markup drops .best / .plan-option / .best-tag entirely.             */
+
+/* Three-card grid: stacked on phone, 3 columns on laptop. */
+.plans.plans-3 { max-width: 1080px; row-gap: 32px; } /* row gap leaves room for the pill */
+@media (min-width: 900px) {
+  .plans.plans-3 { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+}
+@media (min-width: 720px) and (max-width: 899px) {
+  .plans.plans-3 { grid-template-columns: 1fr; max-width: 560px; } /* overrides 2-col rule */
+}
+
+/* Supporting copy under each price: dark gray on white, 7:1+ contrast. */
+.plan-note { font-size: 15px; color: #4B5563; margin-top: 4px; }
+.plan-price small { margin-left: 2px; }
+
+/* Featured (Lifetime) card: 2px teal border already from .plan-premium.
+   Extra padding-top so the pill never touches the title. */
+.plan-featured { background: #F0FDFA; }
+.site-page .card.plan-featured { padding-top: 40px; }
+
+/* BEST VALUE pill centered on the card's top border.
+   #0B2E2A on #E0A526 = ~7.6:1 (AA/AAA). */
+.plan-pill {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #E0A526;
+  color: #0B2E2A;
+  font-weight: 800;
+  font-size: 13px;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  padding: 6px 14px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(11, 46, 42, 0.18);
+}
