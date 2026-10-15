@@ -27,53 +27,50 @@
   <!-- Site styles live one level up, at /assets/style.css. -->
   <link rel="stylesheet" href="../assets/style.css">
   <style>
-    html, body { margin: 0; height: 100%; background: #F3F7F5; }
-    body {
-      display: flex;
-      flex-direction: column;
-      height: 100dvh;
-      overflow: hidden;
-      position: relative;
-    }
-    header { position: relative; z-index: 1000; flex: none; background: #fff; }
+    html, body { margin: 0; background: #F3F7F5; }
+    header { position: relative; z-index: 1000; background: #fff; }
     header .header-inner { flex-wrap: wrap; }
     header nav { flex-wrap: wrap; row-gap: 8px; max-width: 100%; }
-    main { flex: 1 1 auto; min-height: 0; display: flex; justify-content: center; }
+    /* The calculator view fills this host. Desktop height is set from Flutter
+       so the site header and page scroll as one document. */
     #flutter_host {
-      position: relative;
-      flex: 1 1 auto;
-      width: 100%;
-      height: var(--app-rest-h, calc(100dvh - var(--site-header-h, 69px))) !important;
-      max-height: var(--app-rest-h, calc(100dvh - var(--site-header-h, 69px))) !important;
-      min-height: 0;
-      margin: 0;
-      overflow: hidden;
-    }
-    @media (min-width: 520px) {
-      #flutter_host {
-        flex: 0 0 auto;
-        width: 480px;
-        max-width: 480px;
-      }
-      body > flutter-view {
-        width: 480px !important;
-        left: calc(50% - 240px) !important;
-      }
-    }
-    #flutter_host flutter-view {
-      position: absolute !important;
-      inset: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-    }
-    body > flutter-view {
-      position: absolute !important;
-      top: var(--site-header-h, 69px) !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: var(--app-rest-h, calc(100dvh - var(--site-header-h, 69px))) !important;
+      width: min(1120px, calc(100% - 40px));
+      margin: 8px auto;
+      min-height: 960px;
     }
     footer { display: none; }
+    @media (max-width: 899px) {
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100dvh;
+        overflow: hidden;
+      }
+      header { flex: none; }
+      main { flex: 1 1 auto; min-height: 0; display: flex; }
+      #flutter_host {
+        position: relative;
+        flex: 1 1 auto;
+        width: 100%;
+        height: var(--app-rest-h, calc(100dvh - var(--site-header-h, 69px))) !important;
+        max-height: var(--app-rest-h, calc(100dvh - var(--site-header-h, 69px))) !important;
+        min-height: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+      #flutter_host flutter-view,
+      body > flutter-view {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+      body > flutter-view {
+        top: var(--site-header-h, 69px) !important;
+        height: var(--app-rest-h, calc(100dvh - var(--site-header-h, 69px))) !important;
+      }
+    }
     html.embed header,
     html.embed footer { display: none !important; }
     html.embed #flutter_host,
