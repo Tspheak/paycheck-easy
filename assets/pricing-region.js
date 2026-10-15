@@ -1,12 +1,17 @@
 (function () {
   var KEY = "pp-price-region";
 
+  function tagIsAU(tag) {
+    return /(^|-)AU$/i.test(String(tag || "").replace(/_/g, "-"));
+  }
+
   function isAustralianLocale() {
     var list = navigator.languages && navigator.languages.length
-      ? navigator.languages
+      ? Array.prototype.slice.call(navigator.languages)
       : [navigator.language || ""];
+    try { list.push(Intl.DateTimeFormat().resolvedOptions().locale || ""); } catch (e) {}
     for (var i = 0; i < list.length; i++) {
-      if (/(^|-)AU$/i.test(String(list[i]).replace(/_/g, "-"))) return true;
+      if (tagIsAU(list[i])) return true;
     }
     return false;
   }
