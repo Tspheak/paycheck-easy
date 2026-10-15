@@ -22,6 +22,7 @@
 
   <!-- Site styles live one level up, at /assets/style.css. -->
   <link rel="stylesheet" href="../assets/style.css">
+  <script>if (/[?&]embed=1(?:&|$)/.test(location.search)) document.documentElement.classList.add("is-embed");</script>
   <style>
     /* The calculator view fills this host. Desktop height is set from Flutter
        so the site header, page, and footer scroll as one document. */
@@ -36,6 +37,8 @@
       text-decoration: none;
       box-shadow: inset 0 -2px 0 #E0A526;
     }
+    html.is-embed header, html.is-embed footer { display: none !important; }
+    html.is-embed #flutter_host { width: 100%; margin: 0; min-height: 640px; }
     /* Phone width feels like the app: no site header or footer. */
     @media (max-width: 899px) {
       header, footer { display: none !important; }
@@ -61,7 +64,7 @@
       <nav>
         <a href="../">Home</a>
         <a class="active" href="./" aria-current="page">Calculator</a>
-        <a href="../au/pay-calculator/">Australia</a>
+        <a href="../au/">Australia</a>
         <a href="../features/">Features</a>
         <a href="../pricing/">Pricing</a>
         <a href="../privacy/">Privacy</a>

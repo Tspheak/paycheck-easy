@@ -972,7 +972,11 @@
   font-size: 13px;
   vertical-align: 1px;
 }
+.au-embed { display: block; width: 100%; height: 720px; border: 0; border-radius: 16px; background: var(--bg); margin: 4px 0 12px; }
+.au-page > h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; margin: 8px 0 12px; }
 .au-page .au-links { display: grid; gap: 12px; }
+.au-page .au-links.au-hub { grid-template-columns: 1fr; max-width: 720px; }
+.au-page .au-links.au-hub a { font-size: 22px; padding: 22px 20px; }
 @media (min-width: 720px) { .au-page .au-links { grid-template-columns: repeat(2, 1fr); } }
 .au-page .au-links a {
   display: block;
