@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../assets/style.css" />
+<script src="../assets/pricing-region.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8283820510832216" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -37,12 +38,20 @@
       <p class="sub">Free to use. Upgrade to Premium: no ads, 20+ jobs.</p>
     </section>
 
+    <div class="region-bar">
+      <div class="region-switch" role="radiogroup" aria-label="US or AU prices">
+        <button type="button" role="radio" data-region-choice="us" aria-checked="true">US</button>
+        <button type="button" role="radio" data-region-choice="au" aria-checked="false" tabindex="-1">AU</button>
+      </div>
+      <p class="region-gst price-au">AUD, GST included</p>
+    </div>
+
     <section class="plans plans-3">
       <article class="card plan plan-premium plan-featured">
         <span class="plan-pill">Best value</span>
         <h2>Yearly</h2>
-        <p class="plan-price">$29.99<small>/yr</small></p>
-        <p class="plan-note">Save 37%. Renews yearly. Cancel anytime in Google Play.</p>
+        <p class="plan-price"><span class="price-us">$29.99</span><span class="price-au">A$47.99</span><small>/yr</small></p>
+        <p class="plan-note"><span class="price-us">Save 37%. </span><span class="price-au">Save 38%. </span>Renews yearly. Cancel anytime in Google Play.</p>
         <ul>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Everything in Free</span></li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>No ads</span></li>
@@ -52,7 +61,7 @@
       </article>
       <article class="card plan">
         <h2>Monthly</h2>
-        <p class="plan-price">$3.99<small>/mo</small></p>
+        <p class="plan-price"><span class="price-us">$3.99</span><span class="price-au">A$6.49</span><small>/mo</small></p>
         <p class="plan-note">Renews monthly. Cancel anytime in Google Play.</p>
         <ul>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Everything in Free</span></li>
@@ -63,7 +72,7 @@
       </article>
       <article class="card plan">
         <h2>Lifetime</h2>
-        <p class="plan-price">$49.99 <small>one-time</small></p>
+        <p class="plan-price"><span class="price-us">$49.99</span><span class="price-au">A$78.99</span> <small>one-time</small></p>
         <p class="plan-note">Pay once. Keep Premium forever.</p>
         <ul>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>Everything in Free</span></li>
@@ -76,7 +85,7 @@
 
     <div class="restore-note">
       <div class="tip"><strong>Already bought Premium?</strong> Open <strong>Settings › Restore purchases</strong> while signed in to the same Google account you bought it with.</div>
-      <p class="fine-print">Prices are in USD and may vary by country in Google Play.</p>
+      <p class="fine-print">Prices shown in USD or AUD; Google Play shows the final price in your currency.</p>
     </div>
 
     <section class="faq faq-wrap">

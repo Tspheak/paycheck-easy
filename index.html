@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/style.css" />
+<script src="assets/pricing-region.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8283820510832216" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -115,12 +116,19 @@
           <h2>Simple pricing</h2>
           <p>Start free. Go Premium: no ads, 20+ jobs.</p>
         </div>
+        <div class="region-bar">
+          <div class="region-switch" role="radiogroup" aria-label="US or AU prices">
+            <button type="button" role="radio" data-region-choice="us" aria-checked="true">US</button>
+            <button type="button" role="radio" data-region-choice="au" aria-checked="false" tabindex="-1">AU</button>
+          </div>
+          <p class="region-gst price-au">AUD, GST included</p>
+        </div>
         <div class="pricing">
           <div class="price-card featured">
             <span class="best">Best value</span>
             <h3>Yearly</h3>
-            <div class="price">$29.99<small>/yr</small></div>
-            <div class="price-note">Save 37%. Auto-renews. Cancel anytime.</div>
+            <div class="price"><span class="price-us">$29.99</span><span class="price-au">A$47.99</span><small>/yr</small></div>
+            <div class="price-note"><span class="price-us">Save 37%. </span><span class="price-au">Save 38%. </span>Auto-renews. Cancel anytime.</div>
             <ul>
               <li>No ads</li>
               <li>20+ jobs</li>
@@ -129,7 +137,7 @@
           </div>
           <div class="price-card">
             <h3>Monthly</h3>
-            <div class="price">$3.99<small>/mo</small></div>
+            <div class="price"><span class="price-us">$3.99</span><span class="price-au">A$6.49</span><small>/mo</small></div>
             <div class="price-note">Auto-renews. Cancel anytime.</div>
             <ul>
               <li>No ads</li>
@@ -139,7 +147,7 @@
           </div>
           <div class="price-card">
             <h3>Lifetime</h3>
-            <div class="price">$49.99</div>
+            <div class="price"><span class="price-us">$49.99</span><span class="price-au">A$78.99</span></div>
             <div class="price-note">One-time purchase</div>
             <ul>
               <li>No ads</li>
@@ -148,7 +156,7 @@
             </ul>
           </div>
         </div>
-        <p class="fine-print">Prices are in USD and may vary by country in Google Play.</p>
+        <p class="fine-print">Prices shown in USD or AUD; Google Play shows the final price in your currency.</p>
       </div>
     </section>
 
