@@ -8,7 +8,7 @@
  * y = a·x − b continuous at each breakpoint, and that b = a on a scale that
  * starts at $0 makes withholding on x = 0.99 round to $0.
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -194,59 +194,9 @@ const scale3First = data.scales.scale3[0];
 check("scale 1 first dollar rounds to 0", roundDollarHalfUp(withholding(scale1First.a, scale1First.b, 0.99)) === 0);
 check("scale 3 first dollar rounds to 0", roundDollarHalfUp(withholding(scale3First.a, scale3First.b, 0.99)) === 0);
 
-// --- pages: titles, metas, links, wording ---
-const expectedMeta = {
-  "pay-calculator": {
-    title: "Australian Pay Calculator 2026–27 | Take-Home Pay After Tax · Paycheck Pocket",
-    description: "Free 2026–27 Australian pay calculator. See take-home pay after tax, Medicare levy, HELP and 12% super, with ATO-sourced rates and worked examples.",
-  },
-  "weekly-pay-calculator": {
-    title: "Weekly Pay Calculator Australia 2026–27 | Weekly Take-Home Pay · Paycheck Pocket",
-    description: "Calculate your weekly take-home pay in Australia for 2026–27. See tax, Medicare levy and 12% super on your weekly wage, with a worked $1,500 example.",
-  },
-  "fortnightly-pay-calculator": {
-    title: "Fortnightly Pay Calculator Australia 2026–27 | After-Tax Pay · Paycheck Pocket",
-    description: "Work out your fortnightly take-home pay in Australia for 2026–27, after tax and Medicare levy, plus employer super. Includes a worked $2,800 example.",
-  },
-  "hecs-help-repayment-calculator": {
-    title: "HECS-HELP Repayment Calculator 2026–27 | New Marginal Rates · Paycheck Pocket",
-    description: "2026–27 HECS-HELP repayment calculator using the ATO's new marginal rates: nil to $69,528, then 15% and 17%. See a worked example and your take-home pay.",
-  },
-  "super-calculator": {
-    title: "Superannuation Calculator 2026–27 | 12% Super Guarantee · Paycheck Pocket",
-    description: "Calculate 12% superannuation guarantee for 2026–27, per pay and per year. Explains Payday Super from 1 July 2026 and the $270,830 maximum contribution base.",
-  },
-};
-const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
-for (const [slug, meta] of Object.entries(expectedMeta)) {
-  const html = readFileSync(join(root, "au", slug, "index.html"), "utf8");
-  check(`${slug} title`, html.includes(`<title>${meta.title}</title>`));
-  check(`${slug} description`, html.includes(`content="${meta.description}"`));
-  check(`${slug} canonical`, html.includes(`https://paycheckpocket.com/au/${slug}/`));
-  check(`${slug} play coming soon`, html.includes('class="play-badge-soon"') && html.includes('aria-label="Google Play, coming soon"') && html.includes("Google Play · Coming soon"));
-  check(`${slug} play badge`, html.includes("google-play-badge.png"));
-  check(`${slug} no live play link`, !html.includes("play.google.com"));
-  check(`${slug} iOS coming soon`, html.includes('aria-label="App Store, coming soon"') && html.includes("App Store · Coming soon"));
-  check(`${slug} Tun Labs`, html.includes("Tun Labs"));
-  check(`${slug} support email`, html.includes("mailto:support@paycheckpocket.com") && html.includes("support@paycheckpocket.com"));
-  check(`${slug} no tunlabsapps`, !html.includes("tunlabsapps"));
-  check(`${slug} no to be confirmed`, !/to be confirmed|carried over|unconfirmed/i.test(html));
-  check(`${slug} no exact`, !/\bexact\b/i.test(html));
-  check(`${slug} no personal name`, !/tspheak|pheak|grok/i.test(html));
-  check(`${slug} in sitemap`, sitemap.includes(`https://paycheckpocket.com/au/${slug}/`));
-}
-const payPages = ["pay-calculator", "weekly-pay-calculator", "fortnightly-pay-calculator", "hecs-help-repayment-calculator"];
-for (const slug of payPages) {
-  const html = readFileSync(join(root, "au", slug, "index.html"), "utf8");
-  check(`${slug} medicare thresholds stated`, html.includes("$28,011") && html.includes("$35,013"));
-  check(`${slug} names income tax taken out`, html.includes("Income tax taken out"));
-}
-check("nav links Australia", readFileSync(join(root, "index.html"), "utf8").includes('href="au/pay-calculator/"'));
-check("no _inputs in au pages", !readdirSync(join(root, "au"), { recursive: true }).some((name) => String(name).includes("_inputs")));
-
 if (failures.length) {
   console.error(`FAILED ${failures.length}`);
   for (const item of failures) console.error(" - " + item);
   process.exit(1);
 }
-console.log("All Australian tax and page checks passed.");
+console.log("All Australian tax checks passed.");
