@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/style.css" />
+<script src="assets/pricing-region.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8283820510832216" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -38,15 +39,15 @@
           <h1>Know your paycheck before payday.</h1>
           <p class="hero-sub">Estimate your take-home pay in seconds. US 2026 IRS tables for 50 states + DC, Australia 2026–27 ATO tables, and multiple jobs.</p>
           <div class="hero-cta">
-            <a class="play-btn" href="https://play.google.com/store/apps/details?id=com.tunlabs.paycheckpocket" aria-label="Get it on Google Play">
+            <span class="play-btn play-btn--soon" role="img" aria-label="Coming soon to Google Play">
               <span class="play-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.6 2.3c-.3.2-.5.6-.5 1.1v17.2c0 .5.2.9.5 1.1l.1.1 9.6-9.6v-.3L3.7 2.2l-.1.1zm12.1 7L13 6.6 4.9 1.9l9.3 9.3 1.5-1.9zm1.7 1.1l-1.9 1.1 1.9 1.1 4.3-2.5c.6-.4.6-1 0-1.3l-4.3 1.6zM13 17.4l2.7-2.7-1.5-1.9L4.9 22.1 13 17.4z"/></svg>
               </span>
               <span class="play-text">
-                <small>GET IT ON</small>
+                <small>COMING SOON TO</small>
                 <strong>Google Play</strong>
               </span>
-            </a>
+            </span>
             <span class="store-btn store-btn--soon" role="img" aria-label="Coming soon on iOS">
               <span class="play-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-2.99-.79-1.54.02-2.96.9-3.75 2.27-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.38-.91-2.4-3.66zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"/></svg>
@@ -57,7 +58,7 @@
               </span>
             </span>
           </div>
-          <p class="cta-note">Save multiple jobs and remove ads. Android now, iOS coming soon.</p>
+          <p class="cta-note">Save multiple jobs and remove ads. Coming soon to Google Play. iOS coming soon.</p>
         </div>
         <div class="hero-visual">
           <div class="phone-shot">
@@ -113,41 +114,59 @@
       <div class="container">
         <div class="section-head">
           <h2>Simple pricing</h2>
-          <p>Start free. Go Premium when you want no ads and unlimited jobs.</p>
+          <p>Start free. Go Premium: no ads, 20+ jobs.</p>
+        </div>
+        <div class="region-bar">
+          <div class="region-switch" role="radiogroup" aria-label="US or AU prices">
+            <button type="button" role="radio" data-region-choice="us" aria-checked="true">US</button>
+            <button type="button" role="radio" data-region-choice="au" aria-checked="false" tabindex="-1">AU</button>
+          </div>
+          <p class="region-gst price-au">AUD, GST included</p>
         </div>
         <div class="pricing">
           <div class="price-card">
             <h3>Free</h3>
             <div class="price">$0</div>
-            <div class="price-note">Full calculator with ads</div>
+            <div class="price-note">Full calculator</div>
             <ul>
-              <li>Full paycheck calculator</li>
-              <li>One job</li>
+              <li>Full calculator</li>
+              <li>1 job</li>
               <li>With ads</li>
             </ul>
           </div>
           <div class="price-card featured">
             <span class="best">Best value</span>
-            <h3>Premium Lifetime</h3>
-            <div class="price">$4.99</div>
-            <div class="price-note">One-time purchase</div>
+            <h3>Yearly</h3>
+            <div class="price"><span class="price-us">$29.99</span><span class="price-au">A$47.99</span><small>/yr</small></div>
+            <div class="price-note"><span class="price-us">Save 37% vs monthly. </span><span class="price-au">Save 38% vs monthly. </span>Cancel anytime in Google Play.</div>
             <ul>
               <li>No ads</li>
-              <li>Unlimited jobs</li>
-              <li>Pay once, keep forever</li>
+              <li>20+ jobs</li>
+              <li>Cancel anytime in Google Play.</li>
             </ul>
           </div>
           <div class="price-card">
-            <h3>Yearly</h3>
-            <div class="price">$2.99<small>/year</small></div>
-            <div class="price-note">Auto-renews. Cancel anytime.</div>
+            <h3>Monthly</h3>
+            <div class="price"><span class="price-us">$3.99</span><span class="price-au">A$6.49</span><small>/mo</small></div>
+            <div class="price-note">Cancel anytime in Google Play.</div>
             <ul>
               <li>No ads</li>
-              <li>Unlimited jobs</li>
-              <li>Cancel in Google Play</li>
+              <li>20+ jobs</li>
+              <li>Cancel anytime in Google Play.</li>
+            </ul>
+          </div>
+          <div class="price-card">
+            <h3>Lifetime</h3>
+            <div class="price"><span class="price-us">$49.99</span><span class="price-au">A$78.99</span></div>
+            <div class="price-note">One-time purchase</div>
+            <ul>
+              <li>No ads</li>
+              <li>20+ jobs</li>
+              <li>Pay once, keep forever</li>
             </ul>
           </div>
         </div>
+        <p class="fine-print">Prices shown in USD or AUD; Google Play shows the final price in your currency; taxes may apply.</p>
       </div>
     </section>
 
