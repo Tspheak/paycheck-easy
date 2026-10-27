@@ -755,7 +755,7 @@
   .shot-phone img {
     display: block;
     width: 100%;
-    aspect-ratio: 540 / 1100;
+    aspect-ratio: 410 / 864; /* real phone ~390×844 */
     object-fit: cover;
     object-position: top;
     border-radius: 28px;

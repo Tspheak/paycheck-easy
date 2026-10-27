@@ -1,0 +1,263 @@
+/* site-v2 polish 2026-10-26 — apple-clean rhythm, teal tokens, press feedback */
+:root{
+  --teal:#0F766E;
+  --teal-dark:#0B5F58;
+  --teal-soft:#CCFBF1;
+  --mint:#CCFBF1;
+}
+
+/* Outdoor / outdoor-sun contrast: darker muted, stronger body ink */
+body{color:#0B1220}
+.hero-sub,.section-head p,.cta-note,.cta-sub,.fine-print,.price-note,.region-gst{color:#374151}
+.est-note{color:#1F2937}
+.feature p,.fsec p{color:#1F2937}
+
+/* Section rhythm */
+.hero{padding:64px 0 56px}
+section.alt{padding:64px 0}
+#pricing{padding:64px 0 56px}
+.section-head{margin-bottom:36px}
+.section-head h2{letter-spacing:-.025em}
+.features{gap:20px}
+.feature{padding:22px 20px;border-radius:18px;border:1px solid #E5E7EB}
+section.alt .feature{background:#F8FAF9;border-color:#E2E8E6}
+.feature-icon{
+  width:40px;height:40px;border-radius:12px;
+  background:var(--mint);color:var(--teal-dark);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:18px;margin-bottom:12px;
+}
+.feature h3{font-size:18px;font-weight:800;letter-spacing:-.015em;margin-bottom:6px;color:#0B1220}
+.feature p{font-size:15.5px;line-height:1.55}
+.features-foot{text-align:center;margin-top:28px}
+
+/* Hero shot */
+.app-shot img{
+  width:272px;height:auto;
+  filter:drop-shadow(0 20px 40px rgba(15,23,42,.20));
+}
+.example-tag{
+  background:#ECFDF5;border-color:#99F6E4;color:var(--teal-dark);
+  font-size:12px;font-weight:700;letter-spacing:.01em;
+  padding:4px 12px;
+}
+.hero-eyebrow{
+  background:var(--mint);border-color:#99F6E4;color:var(--teal-dark);
+}
+.hero h1{color:#0B1220}
+
+/* Features page sections */
+.fsec{padding:44px 0;gap:28px;border-top-color:#E8EEEC}
+.fsec h2{font-size:28px;letter-spacing:-.025em;color:#0B1220}
+.fsec .eyebrow-n{color:var(--teal-dark);letter-spacing:.07em}
+.quiet-line{
+  margin-top:12px;font-size:14px;color:#4B5563;max-width:520px;line-height:1.5;
+}
+.mock-note{font-size:14px;color:#4B5563;margin-top:8px}
+.langs span{border-color:#D1D5DB;background:#fff;color:#111827}
+
+/* CTAs — solid teal only (no money/CTA gradients on marketing chrome either) */
+.cta-primary{
+  background:var(--teal);
+  box-shadow:0 4px 14px rgba(11,95,88,.22);
+  transition:transform 100ms ease-out, background-color 100ms ease-out, box-shadow 100ms ease-out;
+}
+.cta-primary:hover{background:var(--teal-dark);text-decoration:none}
+.cta-primary:active{
+  transform:scale(0.97);
+  box-shadow:0 2px 8px rgba(11,95,88,.18);
+}
+.pricing-v1 .plan-btn{
+  transition:transform 100ms ease-out, background-color 100ms ease-out, color 100ms ease-out;
+}
+.pricing-v1 .plan-btn:active{transform:scale(0.97)}
+.pricing-v1 .plan-btn.primary{background:var(--teal);border-color:var(--teal)}
+.pricing-v1 .plan-btn.primary:hover{background:var(--teal-dark)}
+
+/* Play coming-soon stays muted */
+.play-soon img{filter:grayscale(1);opacity:.72}
+.play-soon span{color:#4B5563}
+
+/* Disclaimer outdoor contrast */
+.disclaimer-box{color:#1F2937}
+.disclaimer-box strong{color:#0B1220}
+
+@media (min-width:900px){
+  .fsec{gap:64px;padding:56px 24px}
+  .app-shot img{width:280px}
+  .hero .cta-row{gap:20px}
+}
+@media (max-width:480px){
+  .app-shot img{width:248px}
+  .hero{padding:40px 0 36px}
+  .fsec h2{font-size:24px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .cta-primary,.pricing-v1 .plan-btn{transition:none}
+  .cta-primary:active,.pricing-v1 .plan-btn:active{transform:none}
+}
+
+/* === User-friendly pass (Laws of UX + HIG light) · 2026-10-26 === */
+
+/* Features page outdoor contrast (was --muted #6B7280) */
+.site-page .sub,
+.get-cta p,
+.mock-note{color:#374151}
+.est-note-left{text-align:left}
+
+/* Calm Estimates disclaimer — visible, not scary (was amber warning) */
+.disclaimer-box{
+  background:#F0FDFA;
+  border:1px solid #99F6E4;
+  color:#1F2937;
+}
+.disclaimer-box strong{color:var(--teal-dark);display:inline}
+.support-line{
+  margin:14px 0 0;
+  text-align:center;
+  font-size:15px;
+  color:#374151;
+}
+.support-line .inline-link{min-height:48px}
+
+/* Region switch: plain "Prices for" label; clear US/AU */
+.region-label{
+  margin:0;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:#374151;
+}
+.pricing-v1 .region-bar{gap:10px}
+.pricing-v1 .region-switch{
+  border:1.5px solid #CBD5E1;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);
+}
+.pricing-v1 .region-switch button{min-width:72px}
+
+/* Pricing scan: Free + Yearly stand out; Monthly/Lifetime step back slightly */
+.pricing-v1 .price-card:not(.featured){opacity:1}
+.pricing-v1 .pricing .price-card:nth-child(3),
+.pricing-v1 .pricing .price-card:nth-child(4){
+  border-color:#E5E7EB;
+}
+.pricing-v1 .pricing .price-card:nth-child(3) .plan-btn,
+.pricing-v1 .pricing .price-card:nth-child(4) .plan-btn{
+  border-width:1.5px;
+  color:#0B5F58;
+}
+
+/* One primary above the fold: Play coming-soon clearly secondary (Hick / Von Restorff) */
+.hero .cta-row .cta-primary{order:0}
+.hero .cta-row .play-soon{
+  order:1;
+  opacity:.9;
+  padding:4px 0;
+}
+.play-soon{
+  max-width:100%;
+}
+.play-soon img{
+  height:44px;
+  width:auto;
+  filter:grayscale(1);
+  opacity:.65;
+}
+.play-soon span{
+  font-size:13px;
+  font-weight:600;
+  color:#6B7280;
+}
+
+/* Footer support mail easy to find */
+.footer-mail{
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+/* Nav tap targets ≥48×44; Privacy was ~42px wide */
+nav a{
+  min-width:48px;
+  justify-content:center;
+  padding-left:10px;
+  padding-right:10px;
+  box-sizing:border-box;
+}
+
+/* Mobile sticky: keep one compact row (was ~145px wrapped sticky) */
+@media (max-width:900px){
+  header{/* stay sticky but compact */}
+  .header-inner{
+    flex-wrap:nowrap;
+    gap:10px;
+    padding:8px 0;
+    align-items:center;
+  }
+  .brand{flex:none;gap:8px;font-size:16px}
+  .brand img{width:36px;height:36px}
+  nav{
+    flex:1 1 0;
+    min-width:0; /* allow shrink so overflow-x scrolls instead of clipping */
+    width:auto !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start;
+    gap:2px;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    overscroll-behavior-x:contain;
+  }
+  nav::-webkit-scrollbar{display:none}
+  nav a{
+    flex:none;
+    font-size:14px !important;
+    padding-left:10px;
+    padding-right:10px;
+  }
+  /* Kill page-level horizontal scroll from nav chrome */
+  body{overflow-x:hidden}
+}
+
+@media (max-width:480px){
+  .header-inner{padding:6px 0}
+  .brand span{max-width:42vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .hero .cta-row{align-items:center}
+  .cta-primary{width:100%;max-width:320px}
+  .play-soon{justify-content:center}
+  .support-line{font-size:14px;padding:0 8px}
+  /* Pricing cards full width, no side bleed */
+  .pricing-v1 .price-card{max-width:100%}
+}
+
+/* Focus rings readable outdoors (3:1+) */
+.cta-primary:focus-visible{
+  outline:3px solid #0B2E2A;
+  outline-offset:3px;
+}
+.region-switch button:focus-visible{
+  outline:3px solid #0B2E2A;
+  outline-offset:2px;
+}
+
+
+/* Phone mocks ~390×844 (chrome outer 410×864) */
+.app-shot img{
+  aspect-ratio: 410 / 864;
+  object-fit: cover;
+  object-position: top;
+  max-height: calc(280px * 864 / 410);
+}
+@media (min-width:900px){
+  .app-shot img{max-height: calc(280px * 864 / 410)}
+}
+@media (max-width:480px){
+  .app-shot img{max-height: calc(248px * 864 / 410)}
+}
+.shot-phone img{
+  aspect-ratio: 410 / 864; /* was 540/1100 skyscraper */
+  object-fit: cover;
+  object-position: top;
+}

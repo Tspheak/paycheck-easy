@@ -1,0 +1,37 @@
+/* Pricing v1 (dropdown-pricing-v1). Scoped to #pricing.
+   Type: 5 sizes on a 1.25 ratio from 16px; weights 400/600 only. */
+.pricing-v1{--t1:.8rem;--t2:1rem;--t3:1.25rem;--t4:1.5625rem;--t5:1.953rem;font-variant-numeric:tabular-nums}
+.pricing-v1 .section-head h2{font-size:var(--t5);line-height:1.1;letter-spacing:-.02em;font-weight:600}
+.pricing-v1 .section-head p{font-size:var(--t2);font-weight:400;color:#4B5563}
+.pricing-v1 .region-switch button{font-size:var(--t1);font-weight:600;letter-spacing:.05em}
+.pricing-v1 .region-gst{font-size:var(--t1);color:#4B5563}
+.pricing-v1 .pricing{gap:20px}
+.pricing-v1 .price-card{border:1.5px solid #D1D5DB;box-shadow:none;padding:24px 20px 20px;gap:0;background:#fff}
+.pricing-v1 .price-card.featured{border:2px solid var(--teal);background:#F0FDFA;box-shadow:0 12px 32px rgba(15,118,110,.14);transform:translateY(-8px);padding-top:32px}
+.pricing-v1 .best{font-size:var(--t1);font-weight:600;letter-spacing:0;text-transform:none;padding:4px 12px;top:-14px;background:var(--teal-dark)}
+.pricing-v1 .price-card h3{font-size:var(--t3);font-weight:600;margin-bottom:4px;color:#111827}
+.pricing-v1 .price{font-size:var(--t5);font-weight:600;letter-spacing:-.02em;color:#111827;line-height:1.1;margin:0 0 4px}
+.pricing-v1 .featured .price{color:var(--teal-dark)}
+.pricing-v1 .price small{font-size:var(--t2);font-weight:400;color:#4B5563;margin-left:2px}
+.pricing-v1 .per-month{font-size:var(--t2);color:#374151;margin-bottom:4px}
+.pricing-v1 .per-month s{color:#4B5563;margin-right:4px;text-decoration-thickness:1.5px}
+.pricing-v1 .plus{font-size:var(--t2);font-weight:600;color:#111827;margin:12px 0 4px}
+.pricing-v1 .price-card ul{margin-top:4px;margin-bottom:16px}
+.pricing-v1 .price-card li{font-size:var(--t2);padding:6px 0;border-top:0;color:#111827}
+.pricing-v1 .price-card li::before{content:"✓";display:inline-block;width:1.5em;color:var(--teal-dark);font-weight:600}
+.pricing-v1 .price-card li.minus{color:#4B5563}
+.pricing-v1 .price-card li.minus::before{content:"–";color:#4B5563}
+.pricing-v1 .price-note{font-size:var(--t1);color:#4B5563;margin:8px 0 0;text-align:center}
+.pricing-v1 .plan-foot{margin-top:auto;min-height:84px}
+.pricing-v1 .plan-btn{display:flex;align-items:center;justify-content:center;min-height:48px;padding:0 16px;border-radius:999px;border:2px solid var(--teal);color:var(--teal-dark);background:#fff;font-size:var(--t2);font-weight:600;text-decoration:none;text-align:center}
+.pricing-v1 .price-card .plus{margin-bottom:16px}.pricing-v1 .price-card .plus:has(+ul){margin-bottom:4px}
+.pricing-v1 .plan-btn:hover{background:#F0FDFA;text-decoration:none}
+.pricing-v1 .plan-btn.primary{background:var(--teal);color:#fff;border-color:var(--teal)}
+.pricing-v1 .plan-btn.primary:hover{background:var(--teal-dark)}
+.pricing-v1 .plan-btn:focus-visible{outline:3px solid #0B2E2A;outline-offset:3px}
+.pricing-v1 .fine-print{font-size:var(--t1);color:#4B5563;max-width:66ch;margin:24px auto 0;text-align:center}
+@media (max-width:900px){
+  .pricing-v1 .pricing{gap:28px}
+  .pricing-v1 .price-card.featured{transform:none}
+}
+@media (max-width:900px){.pricing-v1 .plan-foot{min-height:0}}
