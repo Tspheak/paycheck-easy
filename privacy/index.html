@@ -8,31 +8,31 @@
 <link rel="canonical" href="https://paycheckpocket.com/privacy/" />
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
 <link rel="icon" type="image/png" href="../assets/icon.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/style.css" />
+<link rel="stylesheet" href="../assets/apple.css" />
 </head>
 <body>
-  <header>
-    <div class="container header-inner">
+  <header class="nav">
+    <div class="nav-inner">
       <a class="brand" href="../">
-        <img src="../assets/icon.png" alt="Paycheck Pocket icon" width="40" height="40" />
+        <img src="../assets/icon.png" alt="" width="28" height="28" />
         <span>Paycheck Pocket</span>
       </a>
-      <nav>
+      <nav class="nav-links" aria-label="Primary">
         <a href="../">Home</a>
         <a href="../app/">Calculator</a>
         <a href="../features/">Features</a>
         <a href="../pricing/">Pricing</a>
-        <a href="../privacy/" aria-current="page">Privacy</a>
-        <a href="../contact/">Contact</a>
       </nav>
+      <div class="nav-actions">
+        <a class="btn-ghost" href="../app/">Open calculator</a>
+        <a class="btn-primary sm" href="../app/">Try free</a>
+        <button class="nav-burger" type="button" aria-label="Menu" tabindex="-1"><span></span></button>
+      </div>
     </div>
   </header>
 
   <main class="policy-col">
-    <article class="card policy">
+    <article class="policy">
       <h1>Privacy Policy</h1>
       <p class="effective">Effective date: October 15, 2026</p>
       <nav class="toc" aria-label="On this page">
@@ -51,7 +51,7 @@
       </nav>
 
       <p>Paycheck Pocket is a paycheck estimator made by Tun Labs for the United States and Australia, available as an Android app and on this website. This policy explains what Paycheck Pocket does with information.</p>
-      <p style="background:#FEF3C7;border-left:4px solid #D97706;padding:12px 14px;border-radius:8px;"><strong>Paycheck Pocket gives estimates only. It is not tax, legal, or financial advice.</strong></p>
+      <div class="policy-callout"><strong>Paycheck Pocket gives estimates only. It is not tax, legal, or financial advice.</strong></div>
 
       <h2 id="no-account-and-no-data-on-our-servers">No account, and no data on our servers</h2>
       <p>You do not create an account and you do not sign in. Tun Labs does not run a server that collects your name, email address, pay details, or other personal information.</p>
@@ -93,12 +93,13 @@
     </article>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
+  <footer class="footer">
+    <div class="wrap footer-inner">
       <span>© 2026 Tun Labs</span>
       <div class="footer-links">
         <a href="../privacy/">Privacy</a>
         <a href="../contact/">Contact</a>
+        <a class="footer-mail" href="mailto:support@paycheckpocket.com">support@paycheckpocket.com</a>
       </div>
     </div>
   </footer>

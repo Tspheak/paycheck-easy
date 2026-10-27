@@ -8,45 +8,45 @@
 <link rel="canonical" href="https://paycheckpocket.com/contact/" />
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
 <link rel="icon" type="image/png" href="../assets/icon.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../assets/style.css" />
+<link rel="stylesheet" href="../assets/apple.css" />
 </head>
 <body>
-  <header>
-    <div class="container header-inner">
+  <header class="nav">
+    <div class="nav-inner">
       <a class="brand" href="../">
-        <img src="../assets/icon.png" alt="Paycheck Pocket icon" width="40" height="40" />
+        <img src="../assets/icon.png" alt="" width="28" height="28" />
         <span>Paycheck Pocket</span>
       </a>
-      <nav>
+      <nav class="nav-links" aria-label="Primary">
         <a href="../">Home</a>
         <a href="../app/">Calculator</a>
         <a href="../features/">Features</a>
         <a href="../pricing/">Pricing</a>
-        <a href="../privacy/">Privacy</a>
-        <a href="../contact/" aria-current="page">Contact</a>
       </nav>
+      <div class="nav-actions">
+        <a class="btn-ghost" href="../app/">Open calculator</a>
+        <a class="btn-primary sm" href="../app/">Try free</a>
+        <button class="nav-burger" type="button" aria-label="Menu" tabindex="-1"><span></span></button>
+      </div>
     </div>
   </header>
 
-  <main class="site-page page-narrow">
-    <section class="hero">
-      <span class="eyebrow">Support</span>
-      <h1>Contact us</h1>
-      <p class="sub">Questions, bugs or ideas? We read every email.</p>
+  <main class="page-narrow">
+    <section class="page-intro compact" style="text-align:left;padding-left:0;padding-right:0;">
+      <div class="hero-eyebrow">Support</div>
+      <h1 style="max-width:none;margin-left:0;">Contact us</h1>
+      <p style="margin-left:0;">Questions, bugs or ideas? We read every email.</p>
     </section>
 
-    <section class="card email-card">
+    <section class="card-panel">
       <h2>Email us</h2>
-      <p class="sub" style="font-size:15px">The fastest way to reach the Paycheck Pocket team.</p>
+      <p class="sub-sm">The fastest way to reach the Paycheck Pocket team.</p>
       <a class="mail-btn" href="mailto:support@paycheckpocket.com?subject=Paycheck%20Pocket%20support">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
         Email support@paycheckpocket.com
       </a>
       <p class="reply"><span class="reply-dot"></span>Usually replies within 1–2 business days</p>
-      <div class="tip">
+      <div class="tip-box">
         <strong>Tip: help us help you faster.</strong> Please include:
         <ul>
           <li>Your phone model</li>
@@ -86,12 +86,13 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
+  <footer class="footer">
+    <div class="wrap footer-inner">
       <span>© 2026 Tun Labs</span>
       <div class="footer-links">
         <a href="../privacy/">Privacy</a>
         <a href="../contact/">Contact</a>
+        <a class="footer-mail" href="mailto:support@paycheckpocket.com">support@paycheckpocket.com</a>
       </div>
     </div>
   </footer>
