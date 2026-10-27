@@ -1,6 +1,5 @@
 /* === site-v2 additions (reuses style.css + cta.css tokens) === */
-nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 6px}
-.brand{min-height:48px}
+/* header/nav: uses style.css only (matches Privacy/Pricing) */
 .footer-links a{display:inline-flex;align-items:center;min-height:48px}
 .cta-primary{min-height:52px;font-size:18px}
 .hero .cta-row{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:24px}
@@ -36,7 +35,6 @@ nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 6px}
   .fsec .app-shot{order:-1}
 }
 @media (max-width:480px){
-  nav{gap:0;overflow-x:auto}
   .app-shot img{width:240px}
   .fsec h2{font-size:23px}
 }
