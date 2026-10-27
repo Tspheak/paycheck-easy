@@ -178,52 +178,9 @@ section.alt .feature{background:#F8FAF9;border-color:#E2E8E6}
   text-underline-offset:3px;
 }
 
-/* Nav tap targets ≥48×44; Privacy was ~42px wide */
-nav a{
-  min-width:48px;
-  justify-content:center;
-  padding-left:10px;
-  padding-right:10px;
-  box-sizing:border-box;
-}
-
-/* Mobile sticky: keep one compact row (was ~145px wrapped sticky) */
-@media (max-width:900px){
-  header{/* stay sticky but compact */}
-  .header-inner{
-    flex-wrap:nowrap;
-    gap:10px;
-    padding:8px 0;
-    align-items:center;
-  }
-  .brand{flex:none;gap:8px;font-size:16px}
-  .brand img{width:36px;height:36px}
-  nav{
-    flex:1 1 0;
-    min-width:0; /* allow shrink so overflow-x scrolls instead of clipping */
-    width:auto !important;
-    flex-wrap:nowrap !important;
-    justify-content:flex-start;
-    gap:2px;
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-    overscroll-behavior-x:contain;
-  }
-  nav::-webkit-scrollbar{display:none}
-  nav a{
-    flex:none;
-    font-size:14px !important;
-    padding-left:10px;
-    padding-right:10px;
-  }
-  /* Kill page-level horizontal scroll from nav chrome */
-  body{overflow-x:hidden}
-}
+/* header/nav overrides removed: all pages use style.css header (matches Privacy/Pricing) */
 
 @media (max-width:480px){
-  .header-inner{padding:6px 0}
-  .brand span{max-width:42vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .hero .cta-row{align-items:center}
   .cta-primary{width:100%;max-width:320px}
   .play-soon{justify-content:center}
