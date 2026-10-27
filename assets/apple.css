@@ -1,4 +1,4 @@
-/* Paycheck Pocket · site-apple-v1 · Apple marketing language (original pages) */
+/* Paycheck Pocket · site-apple-v1 Direction A + Pixel device chrome */
 :root {
   --bg: #f5f5f7;
   --bg-white: #ffffff;
@@ -150,8 +150,9 @@ button { font-family: inherit; }
 
 /* —— Hero A (calm light) —— */
 .hero {
-  padding: 56px 0 40px;
+  padding: 56px 0 0;
   text-align: center;
+  overflow: hidden;
 }
 .hero-eyebrow {
   display: inline-block;
@@ -204,22 +205,83 @@ button { font-family: inherit; }
 .play-soon img { height: 40px; width: auto; }
 .play-soon span { font-size: 11px; color: var(--muted); letter-spacing: 0.02em; }
 
+/* —— Pixel device chrome (one intentional frame · not iPhone Island) —— */
+.phone {
+  position: relative;
+  width: 280px;
+  margin: 0 auto;
+  border-radius: 44px; /* Pixel-like even radius ~40–48 */
+  padding: 10px; /* thin even graphite bezel */
+  background: linear-gradient(160deg, #3a3a3c 0%, #1c1c1e 42%, #0a0a0b 100%);
+  box-shadow:
+    0 0 0 1.5px #5c5c5e inset,
+    0 0 0 1px rgba(0, 0, 0, 0.55),
+    0 40px 80px rgba(0, 0, 0, 0.18),
+    0 12px 28px rgba(0, 0, 0, 0.10);
+}
+/* Pixel 8–family centered circular punch-hole (not Dynamic Island) */
+.phone::before {
+  content: "";
+  position: absolute;
+  top: 18px; /* sits in top bezel / screen edge */
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  margin-left: -5.5px;
+  background: radial-gradient(circle at 35% 30%, #2a2a2c 0%, #000 55%, #000 100%);
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow:
+    0 0 0 1.5px rgba(80, 80, 82, 0.55),
+    0 0 0 3px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+.phone .screen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 19.5;
+  border-radius: 34px; /* matched inner — even with outer */
+  overflow: hidden;
+  background: #fff;
+  z-index: 1;
+}
+.phone .screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  border-radius: 0; /* clip via .screen — no second radius shell */
+  box-shadow: none;
+}
+
+/* Hero: bottom-aligned bleed (Tun Labs band craft, Pixel chrome) */
+.phone-bleed {
+  border-radius: 44px 44px 0 0;
+  padding: 10px 10px 0;
+  height: 480px;
+  box-shadow:
+    0 0 0 1.5px #5c5c5e inset,
+    0 0 0 1px rgba(0, 0, 0, 0.55),
+    0 40px 80px rgba(0, 0, 0, 0.18);
+}
+.phone-bleed .screen {
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: 34px 34px 0 0;
+}
+.phone-bleed::before { top: 17px; }
+
 .hero-shot {
-  margin: 8px auto 0;
+  margin: 24px auto 0;
   width: min(280px, 72vw);
   position: relative;
 }
-.hero-shot img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-shot);
-  box-shadow: var(--shadow-shot);
-  background: #fff;
-}
+.hero-shot .phone { width: 100%; }
 .hero-shot .tag {
   position: absolute;
   left: 50%;
-  bottom: -14px;
+  top: 12px;
   transform: translateX(-50%);
   background: rgba(255,255,255,0.92);
   border: 1px solid var(--hairline);
@@ -230,11 +292,25 @@ button { font-family: inherit; }
   border-radius: var(--radius-pill);
   white-space: nowrap;
   backdrop-filter: blur(8px);
+  z-index: 4;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+@media (min-width: 960px) {
+  .hero-shot .tag {
+    left: auto;
+    right: calc(100% + 12px);
+    top: 28%;
+    transform: none;
+  }
 }
 .est-caption {
-  margin: 28px auto 0;
+  margin: 20px auto 0;
   font-size: 12px;
   color: var(--muted);
+}
+.hero .est-caption { margin-top: 16px; margin-bottom: 8px; }
+@media (min-width: 960px) {
+  .hero .est-caption { margin-left: 0; text-align: left; }
 }
 
 @media (min-width: 960px) {
@@ -252,7 +328,12 @@ button { font-family: inherit; }
   .hero-sub { margin-left: 0; }
   .hero-cta { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 16px; }
   .hero-note { margin-left: 0; text-align: left; }
-  .hero-shot { width: min(340px, 100%); margin: 0 auto; }
+  .hero-shot { width: min(320px, 100%); margin: 0 auto; align-self: end; }
+  .phone-bleed { height: 560px; border-radius: 46px 46px 0 0; padding: 11px 11px 0; }
+  .phone-bleed::before { top: 18px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; }
+  .phone-bleed .screen { border-radius: 36px 36px 0 0; }
+  .hero { padding-bottom: 0; overflow: hidden; }
+  .hero-grid { align-items: end; }
   .play-soon { align-items: flex-start; }
 }
 
@@ -335,11 +416,21 @@ button { font-family: inherit; }
   width: min(260px, 70vw);
   margin-inline: auto;
 }
-.spot-shot img {
-  width: 100%;
-  border-radius: var(--radius-shot);
-  box-shadow: var(--shadow-shot-soft);
-  background: #fff;
+.spot-shot .phone { width: 100%; }
+/* Full floating phone on spotlights (complete device, not bottom-clipped) */
+.phone-full {
+  border-radius: 44px;
+  padding: 10px;
+}
+.phone-full .screen {
+  aspect-ratio: 9 / 19.5;
+  border-radius: 34px;
+}
+@media (max-width: 734px) {
+  .phone-bleed { height: 420px; }
+  .phone-full { border-radius: 40px; padding: 9px; }
+  .phone-full .screen { border-radius: 31px; }
+  .phone-full::before { width: 10px; height: 10px; margin-left: -5px; top: 16px; border-radius: 50%; }
 }
 @media (min-width: 900px) {
   .spot-grid {
@@ -351,6 +442,9 @@ button { font-family: inherit; }
   .spot-shot { width: min(300px, 100%); margin: 0; }
   .spotlight:not(.flip) .spot-shot { margin-left: auto; }
   .spotlight.flip .spot-shot { margin-right: auto; }
+  .phone-full { border-radius: 46px; padding: 11px; }
+  .phone-full .screen { border-radius: 36px; }
+  .phone-full::before { top: 18px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; }
 }
 
 /* —— Section intro (features page) —— */
