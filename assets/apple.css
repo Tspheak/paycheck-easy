@@ -426,7 +426,7 @@ button { font-family: inherit; }
 /* show full shot incl. app bottom nav */
 .phone-full .screen img { object-fit: contain; }
 .phone-full .screen {
-  aspect-ratio: 820 / 1728; /* match shot assets so bottom nav isn't cropped */
+  aspect-ratio: 820 / 1798; /* match shot assets so bottom nav isn't cropped */
   border-radius: 34px;
 }
 @media (max-width: 734px) {
