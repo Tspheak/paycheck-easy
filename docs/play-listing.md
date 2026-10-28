@@ -6,11 +6,11 @@ No Play Store listing file lived in `paycheck-easy`, and none turned up in the p
 
 Publisher name in this copy: **Tun Labs** only. Support email stays `support@paycheckpocket.com` and is not part of this listing.
 
-Google Play’s short description field allows 80 characters. The short copy below is stored verbatim and is longer than that limit, so it needs a shorter line before anyone submits it.
+Google Play’s short description field allows 80 characters. The short copy below is 62 characters, within that limit.
 
 ## Short description
 
-Know your take-home before payday. Enter hours and pay — see what’s left after tax so you can plan rent, bills, and groceries without Excel or guessing.
+Know your take-home before payday — no Excel, no tax guessing.
 
 ## Full description
 
