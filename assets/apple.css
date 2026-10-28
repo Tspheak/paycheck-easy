@@ -1,4 +1,4 @@
-/* Paycheck Pocket · site-apple-v1 Direction A + Pixel device chrome */
+/* Paycheck Pocket · site-apple-device-v1 · Direction A page + Pixel device chrome */
 :root {
   --bg: #f5f5f7;
   --bg-white: #ffffff;
@@ -219,11 +219,12 @@ button { font-family: inherit; }
     0 40px 80px rgba(0, 0, 0, 0.18),
     0 12px 28px rgba(0, 0, 0, 0.10);
 }
-/* Pixel 8–family centered circular punch-hole (not Dynamic Island) */
+/* Pixel 8–family centered circular punch-hole (not Dynamic Island) —
+   overlays top-center of real Android status bar; time/Wi-Fi/cellular/battery stay readable L/R */
 .phone::before {
   content: "";
   position: absolute;
-  top: 18px; /* sits in top bezel / screen edge */
+  top: 17px; /* bezel + into status-bar band center */
   left: 50%;
   width: 11px;
   height: 11px;
