@@ -423,8 +423,10 @@ button { font-family: inherit; }
   border-radius: 44px;
   padding: 10px;
 }
+/* show full shot incl. app bottom nav */
+.phone-full .screen img { object-fit: contain; }
 .phone-full .screen {
-  aspect-ratio: 9 / 19.5;
+  aspect-ratio: 820 / 1728; /* match shot assets so bottom nav isn't cropped */
   border-radius: 34px;
 }
 @media (max-width: 734px) {
@@ -991,5 +993,13 @@ html:not([data-region="au"]) .region-gst { display: none; }
 .restore-note .tip-box { text-align: left; }
 .faq-wrap { max-width: 720px; margin: 36px auto 0; }
 
-/* Phone-nav redesign is parked: burger is non-interactive visual only */
-.nav-burger { pointer-events: none; opacity: 0.85; }
+/* Mobile menu (<860px): burger toggles .nav-links as a dropdown (assets/nav.js) */
+@media (max-width: 859px) {
+  .nav.nav-open .nav-links {
+    display: flex; flex-direction: column; align-items: stretch; gap: 0;
+    position: absolute; top: var(--nav-h); left: 0; right: 0;
+    background: #fff; border-bottom: 1px solid var(--hairline);
+    padding: 8px 16px 12px; z-index: 50;
+  }
+  .nav.nav-open .nav-links a { font-size: 17px; padding: 12px 0; color: var(--ink); }
+}
