@@ -5,169 +5,200 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Paycheck Pocket — Know your paycheck before payday</title>
 <link rel="canonical" href="https://paycheckpocket.com/" />
-<meta name="description" content="Estimate your take-home pay for every job: hourly or salary, overtime, add-ons, and offers side by side. US (all 50 states) and Australia." />
+<meta name="description" content="Estimate your take-home pay for every job: hourly or salary, overtime, add-ons. US (all 50 states) and Australia. By Tun Labs." />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="icon" type="image/png" href="assets/icon.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/style.css" />
+<link rel="stylesheet" href="assets/apple.css" />
 <script src="assets/pricing-region.js"></script>
-<link rel="stylesheet" href="assets/cta.css" />
-<link rel="stylesheet" href="assets/v2.css" />
-<link rel="stylesheet" href="assets/pricing-v1.css" />
-<link rel="stylesheet" href="assets/polish.css" />
 </head>
 <body>
-  <header>
-    <div class="container header-inner">
+  <header class="nav">
+    <div class="nav-inner">
       <a class="brand" href="./">
-        <img src="assets/icon.png" alt="Paycheck Pocket icon" width="40" height="40" />
+        <img src="assets/icon.png" alt="" width="28" height="28" />
         <span>Paycheck Pocket</span>
       </a>
-      <nav>
+      <nav class="nav-links" aria-label="Primary">
         <a href="./" aria-current="page">Home</a>
         <a href="app/">Calculator</a>
         <a href="features/">Features</a>
         <a href="pricing/">Pricing</a>
-        <a href="privacy/">Privacy</a>
-        <a href="contact/">Contact</a>
       </nav>
+      <div class="nav-actions">
+        <a class="btn-ghost" href="app/">Open calculator</a>
+        <a class="btn-primary sm" href="app/">Try free</a>
+        <button class="nav-burger" type="button" aria-label="Menu" tabindex="-1"><span></span></button>
+      </div>
     </div>
   </header>
+
   <main>
     <section class="hero">
-      <div class="container hero-grid">
+      <div class="wrap-wide hero-grid">
         <div>
           <div class="hero-eyebrow">Android · Tun Labs</div>
           <h1>Know your paycheck before payday.</h1>
-          <p class="hero-sub">Estimate your take-home pay for every job you work: hourly or salary, overtime, tips and bonuses. Switch jobs in one tap, or compare a new offer in seconds. US (all 50 states) and Australia.</p>
-          <div class="cta-row">
-            <a class="cta-primary" href="app/">Try the free calculator</a>
-            <div class="play-soon" role="img" aria-label="Google Play, coming soon"><img src="assets/google-play-badge.png" alt="" width="161" height="48"><span>Android app coming soon</span></div>
+          <p class="hero-sub">Estimate take-home for every job you work — hourly or salary, overtime, tips and bonuses. US (all 50 states) and Australia.</p>
+          <div class="hero-cta">
+            <a class="btn-primary lg" href="app/">Try the free calculator</a>
+            <div class="play-soon" role="img" aria-label="Google Play, coming soon">
+              <img src="assets/google-play-badge.png" alt="" width="135" height="40" />
+              <span>Android app coming soon</span>
+            </div>
           </div>
-          <p class="cta-note">Works in your browser today. The Android app (coming soon) adds My pay, Jobs, Compare, and Settings.</p>
+          <p class="hero-note">Works in your browser today. The Android app adds My pay, Jobs, Compare, and Settings.</p>
         </div>
-        <div class="hero-visual app-shot">
-          <img src="assets/shot-mypay-a.png" width="410" height="864" alt="My pay : All jobs selected, combined estimated take-home across five jobs, with a job list and See breakdown button" />
-          <span class="example-tag">Example numbers</span>
-          <p class="est-note">Estimates only. Check your pay stub.</p>
+        <div class="hero-shot">
+          <div class="phone phone-bleed"><div class="screen"><img src="assets/shot-mypay-a.png" width="410" height="864" alt="My pay: All jobs combined estimated take-home across five jobs" /></div></div>
+          <span class="tag">Example numbers</span>
+        </div>
+      </div>
+      <p class="est-caption">Estimates only. Check your pay stub.</p>
+    </section>
+
+    <section class="spotlight alt">
+      <div class="wrap-wide spot-grid">
+        <div class="spot-copy">
+          <div class="eyebrow">My pay</div>
+          <h2>One total. Every job.</h2>
+          <p>Save each job with its own pay, schedule, and state. Open All jobs for a combined take-home per paycheck — or pick a single job in one tap.</p>
+        </div>
+        <div class="spot-shot">
+          <div class="phone phone-full"><div class="screen"><img src="assets/shot-mypay-a.png" width="410" height="864" alt="My pay All jobs screen" /></div></div>
         </div>
       </div>
     </section>
 
-    <section class="alt" id="features">
-      <div class="container">
-        <div class="section-head">
-          <h2>Built around how you get paid</h2>
-          <p>Everything you need to estimate take-home pay, without the spreadsheet.</p>
+    <section class="spotlight flip">
+      <div class="wrap-wide spot-grid">
+        <div class="spot-shot">
+          <div class="phone phone-full"><div class="screen"><img src="assets/shot-breakdown.png" width="410" height="864" alt="Breakdown sheet with gross, taxes, and estimated take-home" /></div></div>
         </div>
-        <div class="features">
-          <article class="feature">
-            <div class="feature-icon">＋</div>
-            <h3>Multiple jobs, one total</h3>
-            <p>Save each job with its own pay, schedule and state. Open All jobs for one combined total per paycheck, or pick a single job.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-icon">⏱</div>
-            <h3>Hours and overtime</h3>
-            <p>Enter Week 1 and Week 2 hours. Overtime counts each week after 40 hours. Add a shift bonus, PTO, or tips when you need them.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-icon">$</div>
+        <div class="spot-copy">
+          <div class="eyebrow">Breakdown</div>
+          <h2>See where every dollar goes.</h2>
+          <p>Open See breakdown for pay line by line, then taxes and deductions — including your state — ending with estimated take-home. Tips and extras are taxed with the rest.</p>
+          <p class="quiet">Estimates only. Check your pay stub.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="spotlight alt">
+      <div class="wrap-wide spot-grid">
+        <div class="spot-copy">
+          <div class="eyebrow">Hours &amp; overtime</div>
+          <h2>Week by week. OT counted right.</h2>
+          <p>Enter Week 1 and Week 2 hours. Overtime counts each week after 40 hours. Add a shift bonus, PTO, or tips when you need them.</p>
+        </div>
+        <div class="spot-shot">
+          <div class="phone phone-full"><div class="screen"><img src="assets/shot-mypay-b.png" width="410" height="864" alt="My pay Cafe Riviera hours and overtime" /></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pillars">
+      <div class="wrap">
+        <h2>Built around how you get paid</h2>
+        <p class="lead">A few essentials — not a wall of feature cards.</p>
+        <div class="pillar-row">
+          <article class="pillar">
+            <div class="pillar-mark">$</div>
             <h3>Salary jobs</h3>
-            <p>Enter a yearly salary, then add a bonus or tips on My pay. US salary jobs can be paid twice a month.</p>
+            <p>Yearly salary, bonus or tips on My pay, and Twice a month for US salary jobs.</p>
           </article>
-          <article class="feature">
-            <div class="feature-icon">⇄</div>
+          <article class="pillar">
+            <div class="pillar-mark">文</div>
+            <h3>5 languages</h3>
+            <p>English, Español, Tiếng Việt, ខ្មែរ and 中文. US and Australia.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-mark">⇄</div>
             <h3>Compare offers</h3>
             <p>Put two jobs or a new offer side by side and see which pays more per paycheck.</p>
           </article>
-          <article class="feature">
-            <div class="feature-icon">≡</div>
-            <h3>Clear breakdown</h3>
-            <p>See pay line by line, then taxes and deductions (including your state), then your estimated take-home. Tips and extras are taxed with the rest.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-icon">文</div>
-            <h3>5 languages, 2 countries</h3>
-            <p>English, Español, Tiếng Việt, <span lang="km">ខ្មែរ</span> and 中文. US (all 50 states) and Australia.</p>
-          </article>
         </div>
-        <p class="cta-note features-foot"><a class="inline-link" href="features/">See all features ›</a></p>
+        <p style="margin-top:28px;font-size:14px;"><a href="features/">See all features ›</a></p>
       </div>
     </section>
 
-    <section id="pricing" class="pricing-v1">
-      <div class="container">
-        <div class="section-head">
+    <section class="pricing" id="pricing">
+      <div class="wrap">
+        <div class="head">
           <h2>Simple pricing</h2>
           <p>Start free. Upgrade to Yearly for no ads and 20+ jobs.</p>
         </div>
-        <div class="region-bar">
-          <p class="region-label" id="price-region-label">Prices for</p>
-          <div class="region-switch" role="radiogroup" aria-labelledby="price-region-label">
+        <div class="region">
+          <span>Prices for</span>
+          <div class="region-switch" role="radiogroup" aria-label="Prices for">
             <button type="button" role="radio" data-region-choice="us" aria-checked="true">US</button>
             <button type="button" role="radio" data-region-choice="au" aria-checked="false" tabindex="-1">AU</button>
           </div>
           <p class="region-gst price-au">AUD, GST included</p>
         </div>
-        <div class="pricing">
+        <div class="price-grid">
           <div class="price-card">
             <h3>Free</h3>
-            <div class="price">$0</div>
+            <div class="amount">$0</div>
             <ul>
               <li>Full calculator</li>
               <li>1 job</li>
               <li class="minus">With ads</li>
             </ul>
-            <div class="plan-foot"><a class="plan-btn" href="app/">Try the free calculator</a></div>
+            <div class="foot"><a class="plan" href="app/">Try free</a></div>
           </div>
           <div class="price-card featured">
-            <span class="best"><span class="price-us">Save $17.89 a year</span><span class="price-au">Save A$29.89 a year</span></span>
+            <span class="badge"><span class="price-us">Save $17.89 a year</span><span class="price-au">Save A$29.89 a year</span></span>
             <h3>Yearly</h3>
-            <div class="price"><span class="price-us">$29.99</span><span class="price-au">A$47.99</span><small>/yr</small></div>
-            <div class="per-month"><span class="price-us"><s aria-label="Monthly plan: $3.99 a month">$3.99</s> $2.50/mo</span><span class="price-au"><s aria-label="Monthly plan: A$6.49 a month">A$6.49</s> A$4.00/mo</span>, billed yearly</div>
-            <p class="plus">Everything in Free, plus:</p>
+            <div class="amount"><span class="price-us">$29.99</span><span class="price-au">A$47.99</span><small>/yr</small></div>
+            <div class="per"><span class="price-us"><s>$3.99</s> $2.50/mo</span><span class="price-au"><s>A$6.49</s> A$4.00/mo</span>, billed yearly</div>
             <ul>
               <li>No ads</li>
               <li>20+ jobs</li>
             </ul>
-            <div class="plan-foot"><a class="plan-btn primary" href="#get-premium">Get Yearly</a>
-            <div class="price-note">Cancel anytime in Google Play.</div></div>
+            <div class="foot">
+              <a class="plan primary" href="pricing/#get-premium">Get Yearly</a>
+              <div class="note">Cancel anytime in Google Play.</div>
+            </div>
           </div>
           <div class="price-card">
             <h3>Monthly</h3>
-            <div class="price"><span class="price-us">$3.99</span><span class="price-au">A$6.49</span><small>/mo</small></div>
-            <p class="plus">Same Premium as Yearly, billed monthly.</p>
-            <div class="plan-foot"><a class="plan-btn" href="#get-premium">Get Monthly</a>
-            <div class="price-note">Cancel anytime in Google Play.</div></div>
+            <div class="amount"><span class="price-us">$3.99</span><span class="price-au">A$6.49</span><small>/mo</small></div>
+            <ul>
+              <li>Same Premium as Yearly</li>
+              <li>Billed monthly</li>
+            </ul>
+            <div class="foot">
+              <a class="plan" href="pricing/#get-premium">Get Monthly</a>
+              <div class="note">Cancel anytime in Google Play.</div>
+            </div>
           </div>
           <div class="price-card">
             <h3>Lifetime</h3>
-            <div class="price"><span class="price-us">$49.99</span><span class="price-au">A$78.99</span></div>
-            <p class="plus">Same Premium as Yearly.</p>
+            <div class="amount"><span class="price-us">$49.99</span><span class="price-au">A$78.99</span></div>
             <ul>
+              <li>Same Premium as Yearly</li>
               <li>Pay once, keep forever</li>
             </ul>
-            <div class="plan-foot"><a class="plan-btn" href="#get-premium">Get Lifetime</a>
-            <div class="price-note">One-time purchase</div></div>
+            <div class="foot">
+              <a class="plan" href="pricing/#get-premium">Get Lifetime</a>
+              <div class="note">One-time purchase</div>
+            </div>
           </div>
         </div>
-        <p class="fine-print">Premium is bought in the Android app (coming soon) through Google Play. Prices shown in USD or AUD; Google Play shows the final price in your currency; taxes may apply.</p>
+        <p class="price-fine">Premium is bought in the Android app (coming soon) through Google Play. Prices shown in USD or AUD; Google Play shows the final price in your currency; taxes may apply.</p>
       </div>
     </section>
 
     <div class="disclaimer">
-      <div class="container">
+      <div class="wrap">
         <div class="disclaimer-box"><strong>Estimates only. Check your pay stub.</strong> Not tax advice.</div>
-        <p class="support-line">Questions? <a class="inline-link" href="mailto:support@paycheckpocket.com">support@paycheckpocket.com</a></p>
+        <p class="support-line">Questions? <a href="mailto:support@paycheckpocket.com">support@paycheckpocket.com</a></p>
       </div>
     </div>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
+  <footer class="footer">
+    <div class="wrap footer-inner">
       <span>© 2026 Tun Labs</span>
       <div class="footer-links">
         <a href="privacy/">Privacy</a>
