@@ -107352,7 +107352,7 @@ case 3:s="extras-muse-holiday"
 break
 default:s=null}return s},
 C(a){var s=this,r=null,q=A.aX(a,r,t.l).w,p=s.gaIi(),o=A.dV(A.dm(r,r,B.q,r,r,new A.b4(B.eo,r,r,A.ai(99),r,r,B.H),r,4,r,r,r,r,r,36),r,r),n=t.p,m=A.b([A.o(s.gaJq(),r,r,r,r,r,B.dH,r,r),B.bm,A.o(s.gawG(),r,r,r,r,r,B.dG,r,r)],n),l=s.a
-if(l.c===B.pR)B.b.F(m,A.b([B.bm,A.o(l.cn("Holiday and PTO excluded."),r,r,r,r,r,B.dG,r,r)],n))
+if(l.c===B.pR)B.b.F(m,A.b([B.bm,A.o(l.cn("Don't include these in Hours worked."),r,r,r,r,r,B.dG,r,r)],n))
 m=A.b([A.aU(A.a5(m,B.D,r,B.h,B.i),1)],n)
 if(s.gaBG())m.push(new A.be(A.kP(r,r,B.ZQ,r,B.az8,s.gawB(s),r,r,s.a.cn("Clear")),r))
 m.push(new A.be(A.kP(r,r,B.p8,r,B.az7,new A.aPj(a),r,r,s.a.cn("Close")),r))
@@ -108748,7 +108748,7 @@ gJ6(){return"Overtime on top of holiday pay?"},
 gJ5(){return u.f},
 gGY(){return"Keep it on"},
 gLA(){return"Turn off"},
-gve(){return"Holiday and PTO excluded."},
+gve(){return"Don't include these in Hours worked."},
 gMh(){return"Holiday and PTO excluded."},
 gLL(){return"HOLIDAY \xb7 NOT IN THE HOURS ABOVE"},
 gLR(){return"PTO \xb7 NOT IN THE HOURS ABOVE"},
@@ -109565,7 +109565,7 @@ gJ6(){return"\xbfHoras extra encima de la paga festiva?"},
 gJ5(){return"Las horas festivas que pasen de 40 se pagar\xe1n a tu tarifa festiva por la de horas extra (p. ej. 2.5\xd7 \xd7 1.5 = 3.75\xd7). La mayor\xeda de los empleadores no lo hacen. Act\xedvalo solo si tu contrato o recibo de pago lo indica."},
 gGY(){return"Dejarlo activado"},
 gLA(){return"Desactivar"},
-gve(){return"Festivo y PTO excluidos."},
+gve(){return"No incluyas estas horas en Horas trabajadas."},
 gMh(){return"Festivo y PTO excluidos."},
 gLL(){return"FESTIVO \xb7 NO INCLUIDO EN LAS HORAS DE ARRIBA"},
 gLR(){return"PTO \xb7 NO INCLUIDO EN LAS HORAS DE ARRIBA"},
@@ -110382,7 +110382,7 @@ gJ6(){return"\u1798\u17c9\u17c4\u1784\u1794\u1793\u17d2\u1790\u17c2\u1798\u179b\
 gJ5(){return"\u1798\u17c9\u17c4\u1784\u1790\u17d2\u1784\u17c3\u1788\u1794\u17cb\u179f\u1798\u17d2\u179a\u17b6\u1780\u178a\u17c2\u179b\u179b\u17be\u179f 40 \u1793\u17b9\u1784\u178f\u17d2\u179a\u17bc\u179c\u1794\u17b6\u1793\u1794\u17be\u1780\u178f\u17b6\u1798\u17a2\u178f\u17d2\u179a\u17b6\u1790\u17d2\u1784\u17c3\u1788\u1794\u17cb\u179f\u1798\u17d2\u179a\u17b6\u1780\u1782\u17bb\u178e\u1793\u17b9\u1784\u17a2\u178f\u17d2\u179a\u17b6\u1798\u17c9\u17c4\u1784\u1794\u1793\u17d2\u1790\u17c2\u1798 (\u17a7. 2.5\xd7 \xd7 1.5 = 3.75\xd7)\u17d4 \u1793\u17b7\u1799\u17c4\u1787\u1780\u1797\u17b6\u1782\u1785\u17d2\u179a\u17be\u1793\u1798\u17b7\u1793\u1792\u17d2\u179c\u17be\u178a\u17bc\u1785\u1793\u17c1\u17c7\u1791\u17c1\u17d4 \u1794\u17be\u1780\u178f\u17c2\u1796\u17c1\u179b\u1780\u17b7\u1785\u17d2\u1785\u179f\u1793\u17d2\u1799\u17b6 \u17ac\u179f\u1793\u17d2\u179b\u17b9\u1780\u1794\u17d2\u179a\u17b6\u1780\u17cb\u1781\u17c2\u179a\u1794\u179f\u17cb\u17a2\u17d2\u1793\u1780\u1798\u17b6\u1793\u1785\u17c2\u1784\u17d4"},
 gGY(){return"\u1791\u17bb\u1780\u17b1\u17d2\u1799\u1794\u17be\u1780"},
 gLA(){return"\u1794\u17b7\u1791"},
-gve(){return"\u1798\u17b7\u1793\u179a\u17b6\u1794\u17cb\u1790\u17d2\u1784\u17c3\u1794\u17bb\u178e\u17d2\u1799 \u1793\u17b7\u1784 PTO\u17d4"},
+gve(){return"\u1780\u17bb\u17c6\u1794\u1789\u17d2\u1785\u17bc\u179b\u1798\u17c9\u17c4\u1784\u1791\u17b6\u17c6\u1784\u1793\u17c1\u17c7\u1780\u17d2\u1793\u17bb\u1784\u1798\u17c9\u17c4\u1784\u1792\u17d2\u179c\u17be\u1780\u17b6\u179a\u17d4"},
 gMh(){return"\u1798\u17b7\u1793\u179a\u17b6\u1794\u17cb\u1790\u17d2\u1784\u17c3\u1794\u17bb\u178e\u17d2\u1799 \u1793\u17b7\u1784 PTO\u17d4"},
 gLL(){return"\u1790\u17d2\u1784\u17c3\u1794\u17bb\u178e\u17d2\u1799 \xb7 \u1798\u17b7\u1793\u179f\u17d2\u1790\u17b7\u178f\u1780\u17d2\u1793\u17bb\u1784\u1798\u17c9\u17c4\u1784\u1781\u17b6\u1784\u179b\u17be"},
 gLR(){return"PTO \xb7 \u1798\u17b7\u1793\u179f\u17d2\u1790\u17b7\u178f\u1780\u17d2\u1793\u17bb\u1784\u1798\u17c9\u17c4\u1784\u1781\u17b6\u1784\u179b\u17be"},
@@ -111199,7 +111199,7 @@ gJ6(){return"T\u0103ng ca tr\xean l\u01b0\u01a1ng ng\xe0y l\u1ec5?"},
 gJ5(){return"S\u1ed1 gi\u1edd ng\xe0y l\u1ec5 v\u01b0\u1ee3t qu\xe1 40 s\u1ebd \u0111\u01b0\u1ee3c tr\u1ea3 b\u1eb1ng h\u1ec7 s\u1ed1 ng\xe0y l\u1ec5 nh\xe2n h\u1ec7 s\u1ed1 t\u0103ng ca (v\xed d\u1ee5 2.5\xd7 \xd7 1.5 = 3.75\xd7). H\u1ea7u h\u1ebft nh\xe0 tuy\u1ec3n d\u1ee5ng kh\xf4ng l\xe0m v\u1eady. Ch\u1ec9 b\u1eadt n\u1ebfu h\u1ee3p \u0111\u1ed3ng ho\u1eb7c phi\u1ebfu l\u01b0\u01a1ng c\u1ee7a b\u1ea1n ghi nh\u01b0 th\u1ebf."},
 gGY(){return"Gi\u1eef b\u1eadt"},
 gLA(){return"T\u1eaft"},
-gve(){return"Kh\xf4ng g\u1ed3m ng\xe0y l\u1ec5 v\xe0 PTO."},
+gve(){return"\u0110\u1eebng t\xednh c\xe1c gi\u1edd n\xe0y v\xe0o Gi\u1edd \u0111\xe3 l\xe0m."},
 gMh(){return"Kh\xf4ng g\u1ed3m ng\xe0y l\u1ec5 v\xe0 PTO."},
 gLL(){return"NG\xc0Y L\u1ec4 \xb7 KH\xd4NG T\xcdNH TRONG S\u1ed0 GI\u1edc TR\xcaN"},
 gLR(){return"NGH\u1ec8 PH\xc9P \xb7 KH\xd4NG T\xcdNH TRONG S\u1ed0 GI\u1edc TR\xcaN"},
@@ -112016,7 +112016,7 @@ gJ6(){return"\u8282\u5047\u65e5\u8d39\u7387\u4e4b\u4e0a\u518d\u8ba1\u52a0\u73ed\
 gJ5(){return"\u8d85\u8fc7 40 \u5c0f\u65f6\u7684\u8282\u5047\u65e5\u5de5\u65f6\u5c06\u6309\u8282\u5047\u65e5\u8d39\u7387\u4e58\u4ee5\u52a0\u73ed\u500d\u7387\u8ba1\u7b97\uff08\u4f8b\u5982 2.5\xd7 \xd7 1.5 = 3.75\xd7\uff09\u3002\u5927\u591a\u6570\u96c7\u4e3b\u4e0d\u4f1a\u8fd9\u6837\u505a\u3002\u4ec5\u5728\u5408\u540c\u6216\u5de5\u8d44\u5355\u5199\u660e\u65f6\u624d\u6253\u5f00\u3002"},
 gGY(){return"\u4fdd\u6301\u5f00\u542f"},
 gLA(){return"\u5173\u95ed"},
-gve(){return"\u4e0d\u542b\u5047\u65e5\u548c\u5e26\u85aa\u5047\u3002"},
+gve(){return"\u4e0d\u8981\u628a\u8fd9\u4e9b\u5c0f\u65f6\u7b97\u8fdb\u201c\u5de5\u4f5c\u5de5\u65f6\u201d\u3002"},
 gMh(){return"\u4e0d\u542b\u5047\u65e5\u548c\u5e26\u85aa\u5047\u3002"},
 gLL(){return"\u5047\u671f \xb7 \u4e0d\u542b\u5728\u4e0a\u65b9\u5de5\u65f6\u5185"},
 gLR(){return"\u5e26\u85aa\u5047 \xb7 \u4e0d\u542b\u5728\u4e0a\u65b9\u5de5\u65f6\u5185"},
