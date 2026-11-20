@@ -3,13 +3,15 @@
 GitHub Pages at paycheckpocket.com. The calculator at `/app/` is a rebuilt Flutter web host.
 
 ## Marketing pages
-- `index.html` — Home (hero, product shots, pricing)
-- `features/index.html`, `pricing/index.html`, `about/index.html`, `privacy/index.html`, `contact/index.html`
+- `index.html` — Home (hero, product shots including salary form and language picker, Compare offers, `#pricing` free-for-a-limited-time note)
+- `about/index.html`, `privacy/index.html`, `contact/index.html`
+- `features/index.html` — redirect stub to `/` (old links)
+- `pricing/index.html` — redirect stub to `/#pricing` (old links)
 - `assets/apple.css` — locked site-apple-v1 tokens, frosted nav, Pixel phone frames, footer
 - `assets/nav.js` — phone hamburger (<860px)
-- `assets/pricing-region.js` — US/AU price switch
-- `assets/shot-mypay-a.png`, `shot-mypay-b.png`, `shot-breakdown.png` — current-app captures @ 820×1798 (Pixel status, ads off). Other `shot-*.png` unchanged.
-- Nav everywhere: Home, Calculator, Features, Pricing, About + CTA **Get the app** → Play. Footer labels: About, Privacy, Contact, Get the app, support email. Pricing keeps only **Try free** (Yearly/Monthly/Lifetime CTAs removed; plan cards/text stay).
+- `assets/pricing-region.js` — unused after the paid price grid was removed
+- `assets/shot-mypay-a.png`, `shot-mypay-b.png`, `shot-breakdown.png`, `shot-salary-form.png`, `shot-welcome.png` — current-app captures @ 820×1798 (Pixel status, ads off). Other `shot-*.png` unchanged.
+- Nav everywhere: Home, Calculator, About + CTA **Get the app** → Play. Footer labels: About, Privacy, Contact, Get the app, support email.
 
 ## Calculator host
 - `app/index.html` — apple.css header + `#flutter_host`. Phone: hamburger visible, footer hidden, host height `calc(100dvh - nav)`. `?embed=1` hides site chrome. Unregisters a leftover Flutter service worker from older builds and reloads once. Do not pass `serviceWorkerSettings` into `_flutter.loader.load`.
