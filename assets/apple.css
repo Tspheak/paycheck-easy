@@ -472,61 +472,17 @@ button { font-family: inherit; }
   line-height: 1.42;
 }
 
-/* —— Quiet feature chips (home, sparse — not 8-card grid) —— */
-.pillars {
-  padding: 56px 0 24px;
-  text-align: center;
-}
-.pillars h2 {
-  margin: 0 auto 8px;
-  font-size: clamp(28px, 4vw, 40px);
-  letter-spacing: -0.025em;
-  font-weight: 700;
-  color: var(--ink);
-}
-.pillars .lead {
-  margin: 0 auto 40px;
-  color: var(--muted-strong);
-  font-size: 17px;
-  max-width: 32em;
-}
-.pillar-row {
-  display: grid;
-  gap: 28px;
-  text-align: left;
-}
-@media (min-width: 760px) {
-  .pillar-row { grid-template-columns: repeat(3, 1fr); gap: 36px; }
-}
-.pillar h3 {
-  margin: 0 0 8px;
-  font-size: 21px;
-  letter-spacing: -0.02em;
-  font-weight: 600;
-  color: var(--ink);
-}
-.pillar p {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.47;
-  color: var(--muted-strong);
-}
-.pillar-mark {
-  width: 36px; height: 36px;
-  border-radius: 10px;
-  background: var(--mint);
-  color: var(--teal-deep);
-  display: grid; place-items: center;
-  font-size: 16px; font-weight: 700;
-  margin-bottom: 14px;
-}
-
 /* —— Pricing quiet —— */
 .pricing {
   padding: 80px 0 64px;
   background: var(--bg-white);
 }
-.pricing .head { text-align: center; margin-bottom: 40px; }
+.pricing .head { text-align: center; margin-bottom: 0; }
+.pricing-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
 .pricing .head h2 {
   margin: 0 0 8px;
   font-size: clamp(28px, 4vw, 40px);
