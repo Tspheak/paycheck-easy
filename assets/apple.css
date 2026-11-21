@@ -154,15 +154,6 @@ button { font-family: inherit; }
   text-align: center;
   overflow: hidden;
 }
-.hero-eyebrow {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 16px;
-}
 .hero h1 {
   margin: 0 auto 18px;
   max-width: 16ch;
@@ -357,7 +348,6 @@ button { font-family: inherit; }
   padding: 64px 0 72px;
   text-align: center;
 }
-.hero-dark .hero-eyebrow { color: var(--mint); }
 .hero-dark h1 { color: #f5f5f7; }
 .hero-dark .hero-sub { color: rgba(245,245,247,0.72); }
 .hero-dark .hero-note { color: rgba(245,245,247,0.5); }
@@ -803,14 +793,6 @@ html:not([data-region="au"]) .region-gst { display: none; }
   padding: 16px 18px;
   margin: 0 0 24px;
   border: 1px solid var(--hairline);
-}
-.policy .toc-title {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 8px;
 }
 .policy .toc ol { margin: 0 0 0 18px; padding: 0; font-size: 14px; line-height: 1.85; }
 .policy .toc a { color: var(--teal); font-weight: 600; text-decoration: none; }
