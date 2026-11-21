@@ -10,7 +10,7 @@ GitHub Pages at paycheckpocket.com. The calculator at `/app/` is a rebuilt Flutt
 - `assets/apple.css` — locked site-apple-v1 tokens, frosted nav, Pixel phone frames, footer
 - `assets/nav.js` — phone hamburger (<860px)
 - `assets/pricing-region.js` — unused after the paid price grid was removed
-- `assets/shot-mypay-a.png`, `shot-mypay-b.png`, `shot-breakdown.png`, `shot-salary-form.png`, `shot-welcome.png` — current-app captures @ 820×1798 (Pixel status, ads off). Other `shot-*.png` unchanged.
+- `assets/shot-mypay-a.png`, `shot-mypay-b.png`, `shot-breakdown.png`, `shot-salary-form.png`, `shot-language.png` — current-app captures @ 820×1798 (Pixel status, ads off). Other `shot-*.png` unchanged.
 - Nav everywhere: Home, Calculator, About + CTA **Get the app** → Play. Footer labels: About, Privacy, Contact, Get the app, support email.
 
 ## Calculator host
