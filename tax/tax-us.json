@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "country": "us",
   "taxYear": "2026",
-  "effectiveFrom": "2026-10-14",
-  "generatedAt": "2026-10-15T01:09:56.167306Z",
+  "effectiveFrom": "2026-11-21",
+  "generatedAt": "2026-11-21T09:42:36.841251Z",
   "fica": {
     "socialSecurityRate": 0.062,
     "socialSecurityWageBase": 184500.0,
@@ -301,6 +301,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "brackets": [
@@ -335,7 +336,18 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
-      "extras": []
+      "retirementReducesStateWages": true,
+      "extras": [
+        {
+          "label": "Alaska unemployment",
+          "helper": "0.5% of the first $54,200.",
+          "rate": 0.005,
+          "annualWageBase": 54200.0,
+          "annualMax": 271.0,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        }
+      ]
     },
     {
       "name": "Arizona",
@@ -356,6 +368,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "standardDeduction": 16700.0
@@ -401,6 +414,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "standardDeduction": 4940.0,
@@ -462,6 +476,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [
         {
           "label": "California SDI",
@@ -585,6 +600,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [
         {
           "label": "Colorado FAMLI",
@@ -643,6 +659,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [
         {
           "label": "Connecticut Paid Leave",
@@ -725,9 +742,20 @@
       "bracketWidthsAre2025": false,
       "localTaxesNotEstimated": true,
       "incomeTaxNote": null,
-      "omittedDeductionNote": "Delaware paid leave is not estimated. The wage percent was not confirmed.",
+      "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
-      "extras": [],
+      "retirementReducesStateWages": true,
+      "extras": [
+        {
+          "label": "Delaware Paid Leave",
+          "helper": "Up to 0.4% of wages, through the Social Security wage base. Your employer may pay some or all of it.",
+          "rate": 0.004,
+          "annualWageBase": 184500.0,
+          "annualMax": null,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        }
+      ],
       "married": {
         "standardDeduction": 6500.0,
         "taxCredit": 220.0
@@ -774,8 +802,9 @@
       "bracketWidthsAre2025": false,
       "localTaxesNotEstimated": false,
       "incomeTaxNote": null,
-      "omittedDeductionNote": "PFL is employer-paid with no employee deduction.",
+      "omittedDeductionNote": "DC Paid Family Leave is paid by the employer, so it is not deducted from this paycheck.",
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "standardDeduction": 32200.0
@@ -798,6 +827,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": []
     },
     {
@@ -819,6 +849,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "standardDeduction": 24000.0
@@ -887,6 +918,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": "The health-care share is not a fixed rate, so it is not estimated.",
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [
         {
           "label": "Hawaii TDI",
@@ -972,6 +1004,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "brackets": [
@@ -1002,6 +1035,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "exemptionDeduction": 5850.0
@@ -1026,6 +1060,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "exemptionDeduction": 2000.0
@@ -1050,6 +1085,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "standardDeduction": 32200.0,
@@ -1079,6 +1115,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "brackets": [
@@ -1114,6 +1151,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {}
     },
@@ -1136,6 +1174,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "standardDeduction": 25750.0
@@ -1168,6 +1207,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [
         {
           "label": "Maine PFML",
@@ -1253,6 +1293,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": "Maryland paid leave has not started, so it is not estimated.",
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "brackets": [
@@ -1324,6 +1365,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [
         {
           "label": "Massachusetts PFML",
@@ -1358,6 +1400,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "exemptionDeduction": 11800.0
@@ -1394,6 +1437,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [
         {
           "label": "Minnesota Paid Leave",
@@ -1446,6 +1490,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "standardDeduction": 4600.0,
@@ -1495,6 +1540,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "standardDeduction": 32200.0
@@ -1523,6 +1569,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "brackets": [
@@ -1565,6 +1612,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "brackets": [
@@ -1599,6 +1647,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": []
     },
     {
@@ -1615,6 +1664,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": []
     },
     {
@@ -1660,6 +1710,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": false,
+      "retirementReducesStateWages": true,
       "extras": [
         {
           "label": "New Jersey TDI",
@@ -1676,6 +1727,15 @@
           "rate": 0.0023,
           "annualWageBase": 171100.0,
           "annualMax": 393.53,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        },
+        {
+          "label": "New Jersey unemployment",
+          "helper": "0.425% of the first $44,800. This includes the workforce fund.",
+          "rate": 0.00425,
+          "annualWageBase": 44800.0,
+          "annualMax": 190.4,
           "weeklyMax": null,
           "excludePreTaxHealth": false
         }
@@ -1757,6 +1817,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "brackets": [
@@ -1839,6 +1900,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [
         {
           "label": "New York disability",
@@ -1920,6 +1982,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "standardDeduction": 25500.0
@@ -1948,6 +2011,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "brackets": [
@@ -1982,6 +2046,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "exemptionDeduction": 4800.0
@@ -2014,6 +2079,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "brackets": [
@@ -2065,6 +2131,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [
         {
           "label": "Oregon Paid Leave",
@@ -2127,7 +2194,18 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
-      "extras": [],
+      "retirementReducesStateWages": false,
+      "extras": [
+        {
+          "label": "Pennsylvania unemployment",
+          "helper": "0.07% of all wages. No wage cap.",
+          "rate": 0.0007,
+          "annualWageBase": null,
+          "annualMax": null,
+          "weeklyMax": null,
+          "excludePreTaxHealth": false
+        }
+      ],
       "married": {}
     },
     {
@@ -2157,6 +2235,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [
         {
           "label": "Rhode Island TDI",
@@ -2200,6 +2279,7 @@
       "incomeTaxNote": "The 6% top rate ends June 30, 2026.",
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "standardDeduction": 16700.0
@@ -2219,6 +2299,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": []
     },
     {
@@ -2235,6 +2316,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": []
     },
     {
@@ -2251,6 +2333,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": []
     },
     {
@@ -2272,6 +2355,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "taxCredit": 1932.0
@@ -2308,6 +2392,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "brackets": [
@@ -2363,6 +2448,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "standardDeduction": 17500.0,
@@ -2383,6 +2469,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [
         {
           "label": "WA Paid Family Leave",
@@ -2448,6 +2535,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "exemptionDeduction": 4000.0
@@ -2484,6 +2572,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": [],
       "married": {
         "brackets": [
@@ -2522,6 +2611,7 @@
       "incomeTaxNote": null,
       "omittedDeductionNote": null,
       "section125ReducesStateWages": true,
+      "retirementReducesStateWages": true,
       "extras": []
     }
   ]
